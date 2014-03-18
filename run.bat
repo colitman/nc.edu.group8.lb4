@@ -1,2 +1,0 @@
-mvn archetype:generate
-@pause
