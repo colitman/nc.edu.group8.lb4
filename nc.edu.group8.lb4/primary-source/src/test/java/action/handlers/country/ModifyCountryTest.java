@@ -57,7 +57,7 @@ public class ModifyCountryTest {
 					case "population" : return "100";
 					case "timezone" : return "1";
 					case "parent_id" : return "1";
-					case "id" : return "10";
+					case "id" : return "6";
 				}
 				return null;
 			}

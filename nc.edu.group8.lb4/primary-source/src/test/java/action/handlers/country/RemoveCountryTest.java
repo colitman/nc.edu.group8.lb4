@@ -51,7 +51,7 @@ public class RemoveCountryTest {
 					case "language" : return "zzz";
 					case "population" : return "100";
 					case "timezone" : return "1";
-					case "id" : return "6";
+					case "id" : return "10";
 					case "parent_id" : return "3";
 				}
 				return null;
