@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="0.061" errors="0" skipped="0" tests="4" name="action.handlers.region.AddRegionTest">
+<testsuite failures="0" time="0.074" errors="0" skipped="0" tests="4" name="action.handlers.region.AddRegionTest">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.7.0_51\jre\bin"/>
@@ -61,8 +61,8 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase time="0.002" classname="action.handlers.region.AddRegionTest" name="nullTest"/>
-  <testcase time="0.006" classname="action.handlers.region.AddRegionTest" name="forwardTest"/>
-  <testcase time="0.027" classname="action.handlers.region.AddRegionTest" name="logicTest"/>
-  <testcase time="0.026" classname="action.handlers.region.AddRegionTest" name="actionExceptionTest"/>
+  <testcase time="0.024" classname="action.handlers.region.AddRegionTest" name="actionExceptionTest"/>
+  <testcase time="0.001" classname="action.handlers.region.AddRegionTest" name="nullTest"/>
+  <testcase time="0.012" classname="action.handlers.region.AddRegionTest" name="forwardTest"/>
+  <testcase time="0.037" classname="action.handlers.region.AddRegionTest" name="logicTest"/>
 </testsuite>

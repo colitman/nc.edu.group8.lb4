@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="0.163" errors="0" skipped="0" tests="4" name="action.handlers.city.AddCityTest">
+<testsuite failures="0" time="0.175" errors="0" skipped="0" tests="4" name="action.handlers.city.AddCityTest">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.7.0_51\jre\bin"/>
@@ -61,8 +61,8 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase time="0.014" classname="action.handlers.city.AddCityTest" name="nullTest"/>
-  <testcase time="0.031" classname="action.handlers.city.AddCityTest" name="forwardTest"/>
-  <testcase time="0.073" classname="action.handlers.city.AddCityTest" name="logicTest"/>
-  <testcase time="0.045" classname="action.handlers.city.AddCityTest" name="actionExceptionTest"/>
+  <testcase time="0.035" classname="action.handlers.city.AddCityTest" name="actionExceptionTest"/>
+  <testcase time="0.022" classname="action.handlers.city.AddCityTest" name="nullTest"/>
+  <testcase time="0.037" classname="action.handlers.city.AddCityTest" name="forwardTest"/>
+  <testcase time="0.081" classname="action.handlers.city.AddCityTest" name="logicTest"/>
 </testsuite>

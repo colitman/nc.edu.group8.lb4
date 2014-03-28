@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: action.handlers.university.ShowOneUniversityTest
 -------------------------------------------------------------------------------
-Tests run: 4, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 5.166 sec
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 5.032 sec

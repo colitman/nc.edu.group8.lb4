@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="0.161" errors="0" skipped="0" tests="4" name="action.handlers.region.RemoveRegionTest">
+<testsuite failures="0" time="0.163" errors="0" skipped="0" tests="4" name="action.handlers.region.RemoveRegionTest">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.7.0_51\jre\bin"/>
@@ -61,8 +61,8 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase time="0.01" classname="action.handlers.region.RemoveRegionTest" name="nullTest"/>
-  <testcase time="0.051" classname="action.handlers.region.RemoveRegionTest" name="forwardTest"/>
-  <testcase time="0.074" classname="action.handlers.region.RemoveRegionTest" name="logicTest"/>
-  <testcase time="0.026" classname="action.handlers.region.RemoveRegionTest" name="actionExceptionTest"/>
+  <testcase time="0.022" classname="action.handlers.region.RemoveRegionTest" name="actionExceptionTest"/>
+  <testcase time="0.022" classname="action.handlers.region.RemoveRegionTest" name="nullTest"/>
+  <testcase time="0.039" classname="action.handlers.region.RemoveRegionTest" name="forwardTest"/>
+  <testcase time="0.08" classname="action.handlers.region.RemoveRegionTest" name="logicTest"/>
 </testsuite>

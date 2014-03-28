@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="10.274" errors="0" skipped="1" tests="4" name="action.handlers.university.ShowOneUniversityTest">
+<testsuite failures="0" time="10.02" errors="0" skipped="1" tests="4" name="action.handlers.university.ShowOneUniversityTest">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.7.0_51\jre\bin"/>
@@ -61,10 +61,10 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase time="0.019" classname="action.handlers.university.ShowOneUniversityTest" name="nullTest"/>
-  <testcase time="5.11" classname="action.handlers.university.ShowOneUniversityTest" name="forwardTest"/>
-  <testcase time="5.111" classname="action.handlers.university.ShowOneUniversityTest" name="logicTest">
+  <testcase time="0.033" classname="action.handlers.university.ShowOneUniversityTest" name="actionExceptionTest"/>
+  <testcase time="0.009" classname="action.handlers.university.ShowOneUniversityTest" name="nullTest"/>
+  <testcase time="4.989" classname="action.handlers.university.ShowOneUniversityTest" name="forwardTest"/>
+  <testcase time="4.989" classname="action.handlers.university.ShowOneUniversityTest" name="logicTest">
     <skipped/>
   </testcase>
-  <testcase time="0.034" classname="action.handlers.university.ShowOneUniversityTest" name="actionExceptionTest"/>
 </testsuite>
