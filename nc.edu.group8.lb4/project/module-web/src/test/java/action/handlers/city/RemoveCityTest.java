@@ -49,7 +49,7 @@ public class RemoveCityTest {
 					case "name" : return "skeleton";
 					case "population" : return "1000";
 					case "square" : return "0";
-					case "id" : return "6";
+					case "id" : return "10";
 					case "parent_id" : return "3";
 				}
 				return null;

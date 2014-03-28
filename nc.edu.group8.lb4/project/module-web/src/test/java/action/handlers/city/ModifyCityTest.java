@@ -50,7 +50,7 @@ public class ModifyCityTest {
 			@Override
 			public String getParameter(String name) {
 				switch (name) {	
-					case "id" : return "10";
+					case "id" : return "6";
 					case "name" : return "skeleton";
 					case "population" : return "1000";
 					case "square" : return "0";

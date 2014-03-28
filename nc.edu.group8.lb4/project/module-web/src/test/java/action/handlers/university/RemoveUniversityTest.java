@@ -49,7 +49,7 @@ public class RemoveUniversityTest {
 					case "name" : return "skeleton";
 					case "departs_count" : return "10";
 					case "www" : return "zzz";
-					case "id" : return "6";
+					case "id" : return "10";
 					case "parent_id" : return "3";
 				}
 				return null;

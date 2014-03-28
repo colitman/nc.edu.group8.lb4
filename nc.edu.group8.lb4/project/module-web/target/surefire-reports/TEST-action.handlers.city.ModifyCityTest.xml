@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="1" time="0.213" errors="0" skipped="0" tests="4" name="action.handlers.city.ModifyCityTest">
+<testsuite failures="1" time="0.204" errors="0" skipped="0" tests="4" name="action.handlers.city.ModifyCityTest">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.7.0_51\jre\bin"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.os.patch.level" value=""/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="D:\etc\JAVA Cource\Lab\4th\nc.edu.group8.lb4\nc.edu.group8.lb4\project"/>
+    <property name="user.dir" value="D:\etc\JAVA Cource\Lab\4th\nc.edu.group8.lb4\nc.edu.group8.lb4\project\module-web"/>
     <property name="java.runtime.version" value="1.7.0_51-b13"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
     <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.7.0_51\jre\lib\endorsed"/>
@@ -61,10 +61,9 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase time="0.029" classname="action.handlers.city.ModifyCityTest" name="actionExceptionTest"/>
-  <testcase time="0.019" classname="action.handlers.city.ModifyCityTest" name="nullTest"/>
+  <testcase time="0.007" classname="action.handlers.city.ModifyCityTest" name="nullTest"/>
   <testcase time="0.025" classname="action.handlers.city.ModifyCityTest" name="forwardTest"/>
-  <testcase time="0.14" classname="action.handlers.city.ModifyCityTest" name="logicTest">
+  <testcase time="0.104" classname="action.handlers.city.ModifyCityTest" name="logicTest">
     <failure message="expected:&lt;3&gt; but was:&lt;4&gt;" type="java.lang.AssertionError">java.lang.AssertionError: expected:&lt;3&gt; but was:&lt;4&gt;
 	at org.junit.Assert.fail(Assert.java:58)
 	at org.junit.Assert.failNotEquals(Assert.java:259)
@@ -98,67 +97,68 @@
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 </failure>
-    <system-out>2014-03-28 13:42:21,810 INFO main                action.ActionFactory - Getting ActionFactory
-2014-03-28 13:42:21,810 INFO main                action.ActionFactory - Building HttpAction
-2014-03-28 13:42:21,811 INFO main                mlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@81e4a1: display name [org.springframework.context.support.ClassPathXmlApplicationContext@81e4a1]; startup date [Fri Mar 28 13:42:21 EET 2014]; root of context hierarchy
-2014-03-28 13:42:21,811 INFO main                BeanDefinitionReader - Loading XML bean definitions from class path resource [beans.xml]
-2014-03-28 13:42:21,832 INFO main                mlApplicationContext - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@81e4a1]: org.springframework.beans.factory.support.DefaultListableBeanFactory@220549d4
-2014-03-28 13:42:21,836 INFO main                tListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@220549d4: defining beans [oracleGateway,addCountry,modifyCountry,removeCountry,showAllCountry,addRegion,modifyRegion,removeRegion,showAllRegionInCountry,addCity,modifyCity,removeCity,showAllCityInRegion,addUniversity,modifyUniversity,removeUniversity,showOneUniversity,showAllUniversityInCity]; root of factory hierarchy
-2014-03-28 13:42:21,837 INFO main                andlers.city.AddCity - Prepare to add city
-2014-03-28 13:42:21,837 INFO main                andlers.city.AddCity - City properties: 
-2014-03-28 13:42:21,838 INFO main                andlers.city.AddCity - Name: skeleton 
-2014-03-28 13:42:21,838 INFO main                andlers.city.AddCity - Population: 1000 
-2014-03-28 13:42:21,838 INFO main                andlers.city.AddCity - Square: 0 
-2014-03-28 13:42:21,838 INFO main                andlers.city.AddCity - ParentID: 3 
-2014-03-28 13:42:21,838 INFO main                tion.GatewayResolver - Getting gateway
-2014-03-28 13:42:21,838 INFO main                andlers.city.AddCity - City was successfully added
-2014-03-28 13:42:21,838 INFO main                andlers.city.AddCity - Send forward to showAllCity page
-2014-03-28 13:42:21,838 INFO main                action.ActionFactory - Getting ActionFactory
-2014-03-28 13:42:21,838 INFO main                action.ActionFactory - Building HttpAction
-2014-03-28 13:42:21,838 INFO main                mlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@35662250: display name [org.springframework.context.support.ClassPathXmlApplicationContext@35662250]; startup date [Fri Mar 28 13:42:21 EET 2014]; root of context hierarchy
-2014-03-28 13:42:21,839 INFO main                BeanDefinitionReader - Loading XML bean definitions from class path resource [beans.xml]
-2014-03-28 13:42:21,856 INFO main                mlApplicationContext - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@35662250]: org.springframework.beans.factory.support.DefaultListableBeanFactory@25b3cc1c
-2014-03-28 13:42:21,859 INFO main                tListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@25b3cc1c: defining beans [oracleGateway,addCountry,modifyCountry,removeCountry,showAllCountry,addRegion,modifyRegion,removeRegion,showAllRegionInCountry,addCity,modifyCity,removeCity,showAllCityInRegion,addUniversity,modifyUniversity,removeUniversity,showOneUniversity,showAllUniversityInCity]; root of factory hierarchy
-2014-03-28 13:42:21,862 INFO main                andlers.city.AddCity - Prepare to add city
-2014-03-28 13:42:21,862 INFO main                andlers.city.AddCity - City properties: 
-2014-03-28 13:42:21,862 INFO main                andlers.city.AddCity - Name: skeleton 
-2014-03-28 13:42:21,862 INFO main                andlers.city.AddCity - Population: 1000 
-2014-03-28 13:42:21,862 INFO main                andlers.city.AddCity - Square: 0 
-2014-03-28 13:42:21,862 INFO main                andlers.city.AddCity - ParentID: 3 
-2014-03-28 13:42:21,862 INFO main                tion.GatewayResolver - Getting gateway
-2014-03-28 13:42:21,862 INFO main                andlers.city.AddCity - City was successfully added
-2014-03-28 13:42:21,862 INFO main                andlers.city.AddCity - Send forward to showAllCity page
-2014-03-28 13:42:21,862 INFO main                action.ActionFactory - Getting ActionFactory
-2014-03-28 13:42:21,862 INFO main                action.ActionFactory - Building HttpAction
-2014-03-28 13:42:21,862 INFO main                mlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1edf11d5: display name [org.springframework.context.support.ClassPathXmlApplicationContext@1edf11d5]; startup date [Fri Mar 28 13:42:21 EET 2014]; root of context hierarchy
-2014-03-28 13:42:21,862 INFO main                BeanDefinitionReader - Loading XML bean definitions from class path resource [beans.xml]
-2014-03-28 13:42:21,881 INFO main                mlApplicationContext - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@1edf11d5]: org.springframework.beans.factory.support.DefaultListableBeanFactory@5746e7cc
-2014-03-28 13:42:21,886 INFO main                tListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@5746e7cc: defining beans [oracleGateway,addCountry,modifyCountry,removeCountry,showAllCountry,addRegion,modifyRegion,removeRegion,showAllRegionInCountry,addCity,modifyCity,removeCity,showAllCityInRegion,addUniversity,modifyUniversity,removeUniversity,showOneUniversity,showAllUniversityInCity]; root of factory hierarchy
-2014-03-28 13:42:21,889 INFO main                andlers.city.AddCity - Prepare to add city
-2014-03-28 13:42:21,889 INFO main                andlers.city.AddCity - City properties: 
-2014-03-28 13:42:21,889 INFO main                andlers.city.AddCity - Name: skeleton 
-2014-03-28 13:42:21,890 INFO main                andlers.city.AddCity - Population: 1000 
-2014-03-28 13:42:21,890 INFO main                andlers.city.AddCity - Square: 0 
-2014-03-28 13:42:21,890 INFO main                andlers.city.AddCity - ParentID: 3 
-2014-03-28 13:42:21,890 INFO main                tion.GatewayResolver - Getting gateway
-2014-03-28 13:42:21,891 INFO main                andlers.city.AddCity - City was successfully added
-2014-03-28 13:42:21,891 INFO main                andlers.city.AddCity - Send forward to showAllCity page
-2014-03-28 13:42:21,891 INFO main                action.ActionFactory - Getting ActionFactory
-2014-03-28 13:42:21,891 INFO main                action.ActionFactory - Building HttpAction
-2014-03-28 13:42:21,892 INFO main                mlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@4a475ec1: display name [org.springframework.context.support.ClassPathXmlApplicationContext@4a475ec1]; startup date [Fri Mar 28 13:42:21 EET 2014]; root of context hierarchy
-2014-03-28 13:42:21,893 INFO main                BeanDefinitionReader - Loading XML bean definitions from class path resource [beans.xml]
-2014-03-28 13:42:21,914 INFO main                mlApplicationContext - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@4a475ec1]: org.springframework.beans.factory.support.DefaultListableBeanFactory@378780a2
-2014-03-28 13:42:21,919 INFO main                tListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@378780a2: defining beans [oracleGateway,addCountry,modifyCountry,removeCountry,showAllCountry,addRegion,modifyRegion,removeRegion,showAllRegionInCountry,addCity,modifyCity,removeCity,showAllCityInRegion,addUniversity,modifyUniversity,removeUniversity,showOneUniversity,showAllUniversityInCity]; root of factory hierarchy
-2014-03-28 13:42:21,924 INFO main                lers.city.ModifyCity - Prepare to modify city
-2014-03-28 13:42:21,924 INFO main                lers.city.ModifyCity - Get region id: 10 
-2014-03-28 13:42:21,924 INFO main                lers.city.ModifyCity - New city properties: 
-2014-03-28 13:42:21,924 INFO main                lers.city.ModifyCity - Name: skeleton 
-2014-03-28 13:42:21,924 INFO main                lers.city.ModifyCity - Population: 1000 
-2014-03-28 13:42:21,924 INFO main                lers.city.ModifyCity - Square: 0 
-2014-03-28 13:42:21,924 INFO main                lers.city.ModifyCity - ParentID: 3 
-2014-03-28 13:42:21,924 INFO main                tion.GatewayResolver - Getting gateway
-2014-03-28 13:42:21,924 INFO main                lers.city.ModifyCity - City was successfully modified
-2014-03-28 13:42:21,925 INFO main                lers.city.ModifyCity - Send forward to showAllUniversityInCity page
+    <system-out>2014-03-28 14:27:23,248 INFO main                action.ActionFactory - Getting ActionFactory
+2014-03-28 14:27:23,248 INFO main                action.ActionFactory - Building HttpAction
+2014-03-28 14:27:23,248 INFO main                mlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@23f4ebfe: display name [org.springframework.context.support.ClassPathXmlApplicationContext@23f4ebfe]; startup date [Fri Mar 28 14:27:23 EET 2014]; root of context hierarchy
+2014-03-28 14:27:23,248 INFO main                BeanDefinitionReader - Loading XML bean definitions from class path resource [beans.xml]
+2014-03-28 14:27:23,261 INFO main                mlApplicationContext - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@23f4ebfe]: org.springframework.beans.factory.support.DefaultListableBeanFactory@67afe37f
+2014-03-28 14:27:23,264 INFO main                tListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@67afe37f: defining beans [oracleGateway,addCountry,modifyCountry,removeCountry,showAllCountry,addRegion,modifyRegion,removeRegion,showAllRegionInCountry,addCity,modifyCity,removeCity,showAllCityInRegion,addUniversity,modifyUniversity,removeUniversity,showOneUniversity,showAllUniversityInCity]; root of factory hierarchy
+2014-03-28 14:27:23,267 INFO main                andlers.city.AddCity - Prepare to add city
+2014-03-28 14:27:23,267 INFO main                andlers.city.AddCity - City properties: 
+2014-03-28 14:27:23,267 INFO main                andlers.city.AddCity - Name: skeleton 
+2014-03-28 14:27:23,267 INFO main                andlers.city.AddCity - Population: 1000 
+2014-03-28 14:27:23,267 INFO main                andlers.city.AddCity - Square: 0 
+2014-03-28 14:27:23,267 INFO main                andlers.city.AddCity - ParentID: 3 
+2014-03-28 14:27:23,267 INFO main                tion.GatewayResolver - Getting gateway
+2014-03-28 14:27:23,267 INFO main                andlers.city.AddCity - City was successfully added
+2014-03-28 14:27:23,267 INFO main                andlers.city.AddCity - Send forward to showAllCity page
+2014-03-28 14:27:23,267 INFO main                action.ActionFactory - Getting ActionFactory
+2014-03-28 14:27:23,267 INFO main                action.ActionFactory - Building HttpAction
+2014-03-28 14:27:23,267 INFO main                mlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1fed76ce: display name [org.springframework.context.support.ClassPathXmlApplicationContext@1fed76ce]; startup date [Fri Mar 28 14:27:23 EET 2014]; root of context hierarchy
+2014-03-28 14:27:23,268 INFO main                BeanDefinitionReader - Loading XML bean definitions from class path resource [beans.xml]
+2014-03-28 14:27:23,285 INFO main                mlApplicationContext - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@1fed76ce]: org.springframework.beans.factory.support.DefaultListableBeanFactory@37955233
+2014-03-28 14:27:23,288 INFO main                tListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@37955233: defining beans [oracleGateway,addCountry,modifyCountry,removeCountry,showAllCountry,addRegion,modifyRegion,removeRegion,showAllRegionInCountry,addCity,modifyCity,removeCity,showAllCityInRegion,addUniversity,modifyUniversity,removeUniversity,showOneUniversity,showAllUniversityInCity]; root of factory hierarchy
+2014-03-28 14:27:23,290 INFO main                andlers.city.AddCity - Prepare to add city
+2014-03-28 14:27:23,290 INFO main                andlers.city.AddCity - City properties: 
+2014-03-28 14:27:23,290 INFO main                andlers.city.AddCity - Name: skeleton 
+2014-03-28 14:27:23,290 INFO main                andlers.city.AddCity - Population: 1000 
+2014-03-28 14:27:23,290 INFO main                andlers.city.AddCity - Square: 0 
+2014-03-28 14:27:23,290 INFO main                andlers.city.AddCity - ParentID: 3 
+2014-03-28 14:27:23,290 INFO main                tion.GatewayResolver - Getting gateway
+2014-03-28 14:27:23,290 INFO main                andlers.city.AddCity - City was successfully added
+2014-03-28 14:27:23,290 INFO main                andlers.city.AddCity - Send forward to showAllCity page
+2014-03-28 14:27:23,291 INFO main                action.ActionFactory - Getting ActionFactory
+2014-03-28 14:27:23,291 INFO main                action.ActionFactory - Building HttpAction
+2014-03-28 14:27:23,291 INFO main                mlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1623a187: display name [org.springframework.context.support.ClassPathXmlApplicationContext@1623a187]; startup date [Fri Mar 28 14:27:23 EET 2014]; root of context hierarchy
+2014-03-28 14:27:23,291 INFO main                BeanDefinitionReader - Loading XML bean definitions from class path resource [beans.xml]
+2014-03-28 14:27:23,307 INFO main                mlApplicationContext - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@1623a187]: org.springframework.beans.factory.support.DefaultListableBeanFactory@43486eb0
+2014-03-28 14:27:23,310 INFO main                tListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@43486eb0: defining beans [oracleGateway,addCountry,modifyCountry,removeCountry,showAllCountry,addRegion,modifyRegion,removeRegion,showAllRegionInCountry,addCity,modifyCity,removeCity,showAllCityInRegion,addUniversity,modifyUniversity,removeUniversity,showOneUniversity,showAllUniversityInCity]; root of factory hierarchy
+2014-03-28 14:27:23,313 INFO main                andlers.city.AddCity - Prepare to add city
+2014-03-28 14:27:23,313 INFO main                andlers.city.AddCity - City properties: 
+2014-03-28 14:27:23,313 INFO main                andlers.city.AddCity - Name: skeleton 
+2014-03-28 14:27:23,313 INFO main                andlers.city.AddCity - Population: 1000 
+2014-03-28 14:27:23,313 INFO main                andlers.city.AddCity - Square: 0 
+2014-03-28 14:27:23,313 INFO main                andlers.city.AddCity - ParentID: 3 
+2014-03-28 14:27:23,313 INFO main                tion.GatewayResolver - Getting gateway
+2014-03-28 14:27:23,313 INFO main                andlers.city.AddCity - City was successfully added
+2014-03-28 14:27:23,313 INFO main                andlers.city.AddCity - Send forward to showAllCity page
+2014-03-28 14:27:23,314 INFO main                action.ActionFactory - Getting ActionFactory
+2014-03-28 14:27:23,314 INFO main                action.ActionFactory - Building HttpAction
+2014-03-28 14:27:23,314 INFO main                mlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@503dbd9a: display name [org.springframework.context.support.ClassPathXmlApplicationContext@503dbd9a]; startup date [Fri Mar 28 14:27:23 EET 2014]; root of context hierarchy
+2014-03-28 14:27:23,314 INFO main                BeanDefinitionReader - Loading XML bean definitions from class path resource [beans.xml]
+2014-03-28 14:27:23,331 INFO main                mlApplicationContext - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@503dbd9a]: org.springframework.beans.factory.support.DefaultListableBeanFactory@20b7fdb8
+2014-03-28 14:27:23,335 INFO main                tListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@20b7fdb8: defining beans [oracleGateway,addCountry,modifyCountry,removeCountry,showAllCountry,addRegion,modifyRegion,removeRegion,showAllRegionInCountry,addCity,modifyCity,removeCity,showAllCityInRegion,addUniversity,modifyUniversity,removeUniversity,showOneUniversity,showAllUniversityInCity]; root of factory hierarchy
+2014-03-28 14:27:23,338 INFO main                lers.city.ModifyCity - Prepare to modify city
+2014-03-28 14:27:23,338 INFO main                lers.city.ModifyCity - Get region id: 10 
+2014-03-28 14:27:23,338 INFO main                lers.city.ModifyCity - New city properties: 
+2014-03-28 14:27:23,338 INFO main                lers.city.ModifyCity - Name: skeleton 
+2014-03-28 14:27:23,338 INFO main                lers.city.ModifyCity - Population: 1000 
+2014-03-28 14:27:23,338 INFO main                lers.city.ModifyCity - Square: 0 
+2014-03-28 14:27:23,338 INFO main                lers.city.ModifyCity - ParentID: 3 
+2014-03-28 14:27:23,338 INFO main                tion.GatewayResolver - Getting gateway
+2014-03-28 14:27:23,339 INFO main                lers.city.ModifyCity - City was successfully modified
+2014-03-28 14:27:23,339 INFO main                lers.city.ModifyCity - Send forward to showAllUniversityInCity page
 </system-out>
   </testcase>
+  <testcase time="0.068" classname="action.handlers.city.ModifyCityTest" name="actionExceptionTest"/>
 </testsuite>

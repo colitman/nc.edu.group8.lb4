@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="1" time="0.166" errors="0" skipped="0" tests="4" name="action.handlers.country.ModifyCountryTest">
+<testsuite failures="1" time="0.156" errors="0" skipped="0" tests="4" name="action.handlers.country.ModifyCountryTest">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.7.0_51\jre\bin"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.os.patch.level" value=""/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="D:\etc\JAVA Cource\Lab\4th\nc.edu.group8.lb4\nc.edu.group8.lb4\project"/>
+    <property name="user.dir" value="D:\etc\JAVA Cource\Lab\4th\nc.edu.group8.lb4\nc.edu.group8.lb4\project\module-web"/>
     <property name="java.runtime.version" value="1.7.0_51-b13"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
     <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.7.0_51\jre\lib\endorsed"/>
@@ -61,10 +61,9 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase time="0.038" classname="action.handlers.country.ModifyCountryTest" name="actionExceptionTest"/>
-  <testcase time="0.027" classname="action.handlers.country.ModifyCountryTest" name="nullTest"/>
-  <testcase time="0.026" classname="action.handlers.country.ModifyCountryTest" name="forwardTest"/>
-  <testcase time="0.075" classname="action.handlers.country.ModifyCountryTest" name="logicTest">
+  <testcase time="0.002" classname="action.handlers.country.ModifyCountryTest" name="nullTest"/>
+  <testcase time="0.022" classname="action.handlers.country.ModifyCountryTest" name="forwardTest"/>
+  <testcase time="0.094" classname="action.handlers.country.ModifyCountryTest" name="logicTest">
     <failure message="expected:&lt;3&gt; but was:&lt;4&gt;" type="java.lang.AssertionError">java.lang.AssertionError: expected:&lt;3&gt; but was:&lt;4&gt;
 	at org.junit.Assert.fail(Assert.java:58)
 	at org.junit.Assert.failNotEquals(Assert.java:259)
@@ -98,75 +97,76 @@
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 </failure>
-    <system-out>2014-03-28 13:42:22,517 INFO main                action.ActionFactory - Getting ActionFactory
-2014-03-28 13:42:22,517 INFO main                action.ActionFactory - Building HttpAction
-2014-03-28 13:42:22,517 INFO main                mlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@434a40bd: display name [org.springframework.context.support.ClassPathXmlApplicationContext@434a40bd]; startup date [Fri Mar 28 13:42:22 EET 2014]; root of context hierarchy
-2014-03-28 13:42:22,518 INFO main                BeanDefinitionReader - Loading XML bean definitions from class path resource [beans.xml]
-2014-03-28 13:42:22,532 INFO main                mlApplicationContext - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@434a40bd]: org.springframework.beans.factory.support.DefaultListableBeanFactory@3bc1cac
-2014-03-28 13:42:22,536 INFO main                tListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@3bc1cac: defining beans [oracleGateway,addCountry,modifyCountry,removeCountry,showAllCountry,addRegion,modifyRegion,removeRegion,showAllRegionInCountry,addCity,modifyCity,removeCity,showAllCityInRegion,addUniversity,modifyUniversity,removeUniversity,showOneUniversity,showAllUniversityInCity]; root of factory hierarchy
-2014-03-28 13:42:22,538 INFO main                s.country.AddCountry - Prepare to add country
-2014-03-28 13:42:22,538 INFO main                s.country.AddCountry - Country properties: 
-2014-03-28 13:42:22,538 INFO main                s.country.AddCountry - Name: skeleton 
-2014-03-28 13:42:22,538 INFO main                s.country.AddCountry - Language: zzz 
-2014-03-28 13:42:22,538 INFO main                s.country.AddCountry - Capital: ZZZ 
-2014-03-28 13:42:22,538 INFO main                s.country.AddCountry - Population: 100 
-2014-03-28 13:42:22,538 INFO main                s.country.AddCountry - Timezone: 1 
-2014-03-28 13:42:22,539 INFO main                tion.GatewayResolver - Getting gateway
+    <system-out>2014-03-28 14:27:23,915 INFO main                action.ActionFactory - Getting ActionFactory
+2014-03-28 14:27:23,916 INFO main                action.ActionFactory - Building HttpAction
+2014-03-28 14:27:23,916 INFO main                mlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@7b77ca0: display name [org.springframework.context.support.ClassPathXmlApplicationContext@7b77ca0]; startup date [Fri Mar 28 14:27:23 EET 2014]; root of context hierarchy
+2014-03-28 14:27:23,916 INFO main                BeanDefinitionReader - Loading XML bean definitions from class path resource [beans.xml]
+2014-03-28 14:27:23,931 INFO main                mlApplicationContext - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@7b77ca0]: org.springframework.beans.factory.support.DefaultListableBeanFactory@2ba4f723
+2014-03-28 14:27:23,935 INFO main                tListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@2ba4f723: defining beans [oracleGateway,addCountry,modifyCountry,removeCountry,showAllCountry,addRegion,modifyRegion,removeRegion,showAllRegionInCountry,addCity,modifyCity,removeCity,showAllCityInRegion,addUniversity,modifyUniversity,removeUniversity,showOneUniversity,showAllUniversityInCity]; root of factory hierarchy
+2014-03-28 14:27:23,937 INFO main                s.country.AddCountry - Prepare to add country
+2014-03-28 14:27:23,937 INFO main                s.country.AddCountry - Country properties: 
+2014-03-28 14:27:23,938 INFO main                s.country.AddCountry - Name: skeleton 
+2014-03-28 14:27:23,938 INFO main                s.country.AddCountry - Language: zzz 
+2014-03-28 14:27:23,938 INFO main                s.country.AddCountry - Capital: ZZZ 
+2014-03-28 14:27:23,938 INFO main                s.country.AddCountry - Population: 100 
+2014-03-28 14:27:23,938 INFO main                s.country.AddCountry - Timezone: 1 
+2014-03-28 14:27:23,938 INFO main                tion.GatewayResolver - Getting gateway
 5
-2014-03-28 13:42:22,539 INFO main                s.country.AddCountry - Country was successfully added
-2014-03-28 13:42:22,539 INFO main                s.country.AddCountry - Send forward to showAllCountry page
-2014-03-28 13:42:22,539 INFO main                action.ActionFactory - Getting ActionFactory
-2014-03-28 13:42:22,539 INFO main                action.ActionFactory - Building HttpAction
-2014-03-28 13:42:22,539 INFO main                mlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@5adbb9b9: display name [org.springframework.context.support.ClassPathXmlApplicationContext@5adbb9b9]; startup date [Fri Mar 28 13:42:22 EET 2014]; root of context hierarchy
-2014-03-28 13:42:22,539 INFO main                BeanDefinitionReader - Loading XML bean definitions from class path resource [beans.xml]
-2014-03-28 13:42:22,553 INFO main                mlApplicationContext - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@5adbb9b9]: org.springframework.beans.factory.support.DefaultListableBeanFactory@ed99c9
-2014-03-28 13:42:22,555 INFO main                tListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@ed99c9: defining beans [oracleGateway,addCountry,modifyCountry,removeCountry,showAllCountry,addRegion,modifyRegion,removeRegion,showAllRegionInCountry,addCity,modifyCity,removeCity,showAllCityInRegion,addUniversity,modifyUniversity,removeUniversity,showOneUniversity,showAllUniversityInCity]; root of factory hierarchy
-2014-03-28 13:42:22,557 INFO main                s.country.AddCountry - Prepare to add country
-2014-03-28 13:42:22,557 INFO main                s.country.AddCountry - Country properties: 
-2014-03-28 13:42:22,557 INFO main                s.country.AddCountry - Name: skeleton 
-2014-03-28 13:42:22,557 INFO main                s.country.AddCountry - Language: zzz 
-2014-03-28 13:42:22,557 INFO main                s.country.AddCountry - Capital: ZZZ 
-2014-03-28 13:42:22,557 INFO main                s.country.AddCountry - Population: 100 
-2014-03-28 13:42:22,557 INFO main                s.country.AddCountry - Timezone: 1 
-2014-03-28 13:42:22,557 INFO main                tion.GatewayResolver - Getting gateway
+2014-03-28 14:27:23,938 INFO main                s.country.AddCountry - Country was successfully added
+2014-03-28 14:27:23,938 INFO main                s.country.AddCountry - Send forward to showAllCountry page
+2014-03-28 14:27:23,938 INFO main                action.ActionFactory - Getting ActionFactory
+2014-03-28 14:27:23,938 INFO main                action.ActionFactory - Building HttpAction
+2014-03-28 14:27:23,938 INFO main                mlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@434a40bd: display name [org.springframework.context.support.ClassPathXmlApplicationContext@434a40bd]; startup date [Fri Mar 28 14:27:23 EET 2014]; root of context hierarchy
+2014-03-28 14:27:23,939 INFO main                BeanDefinitionReader - Loading XML bean definitions from class path resource [beans.xml]
+2014-03-28 14:27:23,953 INFO main                mlApplicationContext - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@434a40bd]: org.springframework.beans.factory.support.DefaultListableBeanFactory@3bc1cac
+2014-03-28 14:27:23,956 INFO main                tListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@3bc1cac: defining beans [oracleGateway,addCountry,modifyCountry,removeCountry,showAllCountry,addRegion,modifyRegion,removeRegion,showAllRegionInCountry,addCity,modifyCity,removeCity,showAllCityInRegion,addUniversity,modifyUniversity,removeUniversity,showOneUniversity,showAllUniversityInCity]; root of factory hierarchy
+2014-03-28 14:27:23,958 INFO main                s.country.AddCountry - Prepare to add country
+2014-03-28 14:27:23,958 INFO main                s.country.AddCountry - Country properties: 
+2014-03-28 14:27:23,958 INFO main                s.country.AddCountry - Name: skeleton 
+2014-03-28 14:27:23,958 INFO main                s.country.AddCountry - Language: zzz 
+2014-03-28 14:27:23,958 INFO main                s.country.AddCountry - Capital: ZZZ 
+2014-03-28 14:27:23,958 INFO main                s.country.AddCountry - Population: 100 
+2014-03-28 14:27:23,958 INFO main                s.country.AddCountry - Timezone: 1 
+2014-03-28 14:27:23,958 INFO main                tion.GatewayResolver - Getting gateway
 6
-2014-03-28 13:42:22,557 INFO main                s.country.AddCountry - Country was successfully added
-2014-03-28 13:42:22,557 INFO main                s.country.AddCountry - Send forward to showAllCountry page
-2014-03-28 13:42:22,557 INFO main                action.ActionFactory - Getting ActionFactory
-2014-03-28 13:42:22,557 INFO main                action.ActionFactory - Building HttpAction
-2014-03-28 13:42:22,557 INFO main                mlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@52aa911c: display name [org.springframework.context.support.ClassPathXmlApplicationContext@52aa911c]; startup date [Fri Mar 28 13:42:22 EET 2014]; root of context hierarchy
-2014-03-28 13:42:22,558 INFO main                BeanDefinitionReader - Loading XML bean definitions from class path resource [beans.xml]
-2014-03-28 13:42:22,572 INFO main                mlApplicationContext - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@52aa911c]: org.springframework.beans.factory.support.DefaultListableBeanFactory@4758af63
-2014-03-28 13:42:22,574 INFO main                tListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@4758af63: defining beans [oracleGateway,addCountry,modifyCountry,removeCountry,showAllCountry,addRegion,modifyRegion,removeRegion,showAllRegionInCountry,addCity,modifyCity,removeCity,showAllCityInRegion,addUniversity,modifyUniversity,removeUniversity,showOneUniversity,showAllUniversityInCity]; root of factory hierarchy
-2014-03-28 13:42:22,575 INFO main                s.country.AddCountry - Prepare to add country
-2014-03-28 13:42:22,575 INFO main                s.country.AddCountry - Country properties: 
-2014-03-28 13:42:22,575 INFO main                s.country.AddCountry - Name: skeleton 
-2014-03-28 13:42:22,575 INFO main                s.country.AddCountry - Language: zzz 
-2014-03-28 13:42:22,576 INFO main                s.country.AddCountry - Capital: ZZZ 
-2014-03-28 13:42:22,576 INFO main                s.country.AddCountry - Population: 100 
-2014-03-28 13:42:22,576 INFO main                s.country.AddCountry - Timezone: 1 
-2014-03-28 13:42:22,576 INFO main                tion.GatewayResolver - Getting gateway
+2014-03-28 14:27:23,959 INFO main                s.country.AddCountry - Country was successfully added
+2014-03-28 14:27:23,959 INFO main                s.country.AddCountry - Send forward to showAllCountry page
+2014-03-28 14:27:23,959 INFO main                action.ActionFactory - Getting ActionFactory
+2014-03-28 14:27:23,959 INFO main                action.ActionFactory - Building HttpAction
+2014-03-28 14:27:23,959 INFO main                mlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@5adbb9b9: display name [org.springframework.context.support.ClassPathXmlApplicationContext@5adbb9b9]; startup date [Fri Mar 28 14:27:23 EET 2014]; root of context hierarchy
+2014-03-28 14:27:23,960 INFO main                BeanDefinitionReader - Loading XML bean definitions from class path resource [beans.xml]
+2014-03-28 14:27:23,974 INFO main                mlApplicationContext - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@5adbb9b9]: org.springframework.beans.factory.support.DefaultListableBeanFactory@ed99c9
+2014-03-28 14:27:23,978 INFO main                tListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@ed99c9: defining beans [oracleGateway,addCountry,modifyCountry,removeCountry,showAllCountry,addRegion,modifyRegion,removeRegion,showAllRegionInCountry,addCity,modifyCity,removeCity,showAllCityInRegion,addUniversity,modifyUniversity,removeUniversity,showOneUniversity,showAllUniversityInCity]; root of factory hierarchy
+2014-03-28 14:27:23,981 INFO main                s.country.AddCountry - Prepare to add country
+2014-03-28 14:27:23,981 INFO main                s.country.AddCountry - Country properties: 
+2014-03-28 14:27:23,981 INFO main                s.country.AddCountry - Name: skeleton 
+2014-03-28 14:27:23,982 INFO main                s.country.AddCountry - Language: zzz 
+2014-03-28 14:27:23,982 INFO main                s.country.AddCountry - Capital: ZZZ 
+2014-03-28 14:27:23,982 INFO main                s.country.AddCountry - Population: 100 
+2014-03-28 14:27:23,982 INFO main                s.country.AddCountry - Timezone: 1 
+2014-03-28 14:27:23,982 INFO main                tion.GatewayResolver - Getting gateway
 7
-2014-03-28 13:42:22,576 INFO main                s.country.AddCountry - Country was successfully added
-2014-03-28 13:42:22,576 INFO main                s.country.AddCountry - Send forward to showAllCountry page
-2014-03-28 13:42:22,576 INFO main                action.ActionFactory - Getting ActionFactory
-2014-03-28 13:42:22,576 INFO main                action.ActionFactory - Building HttpAction
-2014-03-28 13:42:22,576 INFO main                mlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@185e093f: display name [org.springframework.context.support.ClassPathXmlApplicationContext@185e093f]; startup date [Fri Mar 28 13:42:22 EET 2014]; root of context hierarchy
-2014-03-28 13:42:22,577 INFO main                BeanDefinitionReader - Loading XML bean definitions from class path resource [beans.xml]
-2014-03-28 13:42:22,587 INFO main                mlApplicationContext - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@185e093f]: org.springframework.beans.factory.support.DefaultListableBeanFactory@763613f6
-2014-03-28 13:42:22,590 INFO main                tListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@763613f6: defining beans [oracleGateway,addCountry,modifyCountry,removeCountry,showAllCountry,addRegion,modifyRegion,removeRegion,showAllRegionInCountry,addCity,modifyCity,removeCity,showAllCityInRegion,addUniversity,modifyUniversity,removeUniversity,showOneUniversity,showAllUniversityInCity]; root of factory hierarchy
-2014-03-28 13:42:22,592 INFO main                ountry.ModifyCountry - Prepare to modify country
-2014-03-28 13:42:22,592 INFO main                ountry.ModifyCountry - Get country id: 10 
-2014-03-28 13:42:22,592 INFO main                ountry.ModifyCountry - New country properties: 
-2014-03-28 13:42:22,592 INFO main                ountry.ModifyCountry - Name: skeleton 
-2014-03-28 13:42:22,592 INFO main                ountry.ModifyCountry - Language: zzz 
-2014-03-28 13:42:22,592 INFO main                ountry.ModifyCountry - Capital: ZZZ 
-2014-03-28 13:42:22,592 INFO main                ountry.ModifyCountry - Population: 100 
-2014-03-28 13:42:22,592 INFO main                ountry.ModifyCountry - Timezone: 1 
-2014-03-28 13:42:22,592 INFO main                tion.GatewayResolver - Getting gateway
+2014-03-28 14:27:23,983 INFO main                s.country.AddCountry - Country was successfully added
+2014-03-28 14:27:23,983 INFO main                s.country.AddCountry - Send forward to showAllCountry page
+2014-03-28 14:27:23,983 INFO main                action.ActionFactory - Getting ActionFactory
+2014-03-28 14:27:23,983 INFO main                action.ActionFactory - Building HttpAction
+2014-03-28 14:27:23,984 INFO main                mlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@52aa911c: display name [org.springframework.context.support.ClassPathXmlApplicationContext@52aa911c]; startup date [Fri Mar 28 14:27:23 EET 2014]; root of context hierarchy
+2014-03-28 14:27:23,985 INFO main                BeanDefinitionReader - Loading XML bean definitions from class path resource [beans.xml]
+2014-03-28 14:27:24,002 INFO main                mlApplicationContext - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@52aa911c]: org.springframework.beans.factory.support.DefaultListableBeanFactory@4758af63
+2014-03-28 14:27:24,005 INFO main                tListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@4758af63: defining beans [oracleGateway,addCountry,modifyCountry,removeCountry,showAllCountry,addRegion,modifyRegion,removeRegion,showAllRegionInCountry,addCity,modifyCity,removeCity,showAllCityInRegion,addUniversity,modifyUniversity,removeUniversity,showOneUniversity,showAllUniversityInCity]; root of factory hierarchy
+2014-03-28 14:27:24,008 INFO main                ountry.ModifyCountry - Prepare to modify country
+2014-03-28 14:27:24,008 INFO main                ountry.ModifyCountry - Get country id: 10 
+2014-03-28 14:27:24,008 INFO main                ountry.ModifyCountry - New country properties: 
+2014-03-28 14:27:24,008 INFO main                ountry.ModifyCountry - Name: skeleton 
+2014-03-28 14:27:24,008 INFO main                ountry.ModifyCountry - Language: zzz 
+2014-03-28 14:27:24,008 INFO main                ountry.ModifyCountry - Capital: ZZZ 
+2014-03-28 14:27:24,009 INFO main                ountry.ModifyCountry - Population: 100 
+2014-03-28 14:27:24,009 INFO main                ountry.ModifyCountry - Timezone: 1 
+2014-03-28 14:27:24,009 INFO main                tion.GatewayResolver - Getting gateway
 8
-2014-03-28 13:42:22,592 INFO main                ountry.ModifyCountry - Country was successfully modified
-2014-03-28 13:42:22,592 INFO main                ountry.ModifyCountry - Send redirect to region/showAllInCountry page
+2014-03-28 14:27:24,009 INFO main                ountry.ModifyCountry - Country was successfully modified
+2014-03-28 14:27:24,009 INFO main                ountry.ModifyCountry - Send redirect to region/showAllInCountry page
 </system-out>
   </testcase>
+  <testcase time="0.038" classname="action.handlers.country.ModifyCountryTest" name="actionExceptionTest"/>
 </testsuite>
