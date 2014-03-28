@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="1" time="0.144" errors="0" skipped="0" tests="4" name="action.handlers.region.ModifyRegionTest">
+<testsuite failures="0" time="0.147" errors="0" skipped="0" tests="4" name="action.handlers.region.ModifyRegionTest">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.7.0_51\jre\bin"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.os.patch.level" value=""/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="D:\etc\JAVA Cource\Lab\4th\nc.edu.group8.lb4\nc.edu.group8.lb4\project\module-web"/>
+    <property name="user.dir" value="D:\etc\JAVA Cource\Lab\4th\nc.edu.group8.lb4\nc.edu.group8.lb4\project"/>
     <property name="java.runtime.version" value="1.7.0_51-b13"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
     <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.7.0_51\jre\lib\endorsed"/>
@@ -62,103 +62,7 @@
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
   <testcase time="0.012" classname="action.handlers.region.ModifyRegionTest" name="nullTest"/>
-  <testcase time="0.022" classname="action.handlers.region.ModifyRegionTest" name="forwardTest"/>
-  <testcase time="0.083" classname="action.handlers.region.ModifyRegionTest" name="logicTest">
-    <failure message="expected:&lt;3&gt; but was:&lt;4&gt;" type="java.lang.AssertionError">java.lang.AssertionError: expected:&lt;3&gt; but was:&lt;4&gt;
-	at org.junit.Assert.fail(Assert.java:58)
-	at org.junit.Assert.failNotEquals(Assert.java:259)
-	at org.junit.Assert.assertEquals(Assert.java:80)
-	at org.junit.Assert.assertEquals(Assert.java:88)
-	at action.handlers.region.ModifyRegionTest.logicTest(ModifyRegionTest.java:74)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:606)
-	at org.junit.internal.runners.TestMethodRunner.executeMethodBody(TestMethodRunner.java:99)
-	at org.junit.internal.runners.TestMethodRunner.runUnprotected(TestMethodRunner.java:81)
-	at org.junit.internal.runners.BeforeAndAfterRunner.runProtected(BeforeAndAfterRunner.java:34)
-	at org.junit.internal.runners.TestMethodRunner.runMethod(TestMethodRunner.java:75)
-	at org.junit.internal.runners.TestMethodRunner.run(TestMethodRunner.java:45)
-	at org.junit.internal.runners.TestClassMethodsRunner.invokeTestMethod(TestClassMethodsRunner.java:71)
-	at org.junit.internal.runners.TestClassMethodsRunner.run(TestClassMethodsRunner.java:35)
-	at org.junit.internal.runners.TestClassRunner$1.runUnprotected(TestClassRunner.java:42)
-	at org.junit.internal.runners.BeforeAndAfterRunner.runProtected(BeforeAndAfterRunner.java:34)
-	at org.junit.internal.runners.TestClassRunner.run(TestClassRunner.java:52)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:606)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
-	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
-</failure>
-    <system-out>2014-03-28 14:27:24,404 INFO main                action.ActionFactory - Getting ActionFactory
-2014-03-28 14:27:24,404 INFO main                action.ActionFactory - Building HttpAction
-2014-03-28 14:27:24,405 INFO main                mlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1c06a62a: display name [org.springframework.context.support.ClassPathXmlApplicationContext@1c06a62a]; startup date [Fri Mar 28 14:27:24 EET 2014]; root of context hierarchy
-2014-03-28 14:27:24,405 INFO main                BeanDefinitionReader - Loading XML bean definitions from class path resource [beans.xml]
-2014-03-28 14:27:24,420 INFO main                mlApplicationContext - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@1c06a62a]: org.springframework.beans.factory.support.DefaultListableBeanFactory@23ddb577
-2014-03-28 14:27:24,423 INFO main                tListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@23ddb577: defining beans [oracleGateway,addCountry,modifyCountry,removeCountry,showAllCountry,addRegion,modifyRegion,removeRegion,showAllRegionInCountry,addCity,modifyCity,removeCity,showAllCityInRegion,addUniversity,modifyUniversity,removeUniversity,showOneUniversity,showAllUniversityInCity]; root of factory hierarchy
-2014-03-28 14:27:24,425 INFO main                ers.region.AddRegion - Prepare to add region
-2014-03-28 14:27:24,425 INFO main                ers.region.AddRegion - Region properties: 
-2014-03-28 14:27:24,425 INFO main                ers.region.AddRegion - Name: skeleton 
-2014-03-28 14:27:24,425 INFO main                ers.region.AddRegion - Population: 1000 
-2014-03-28 14:27:24,425 INFO main                ers.region.AddRegion - Square: 0 
-2014-03-28 14:27:24,425 INFO main                ers.region.AddRegion - ParentID: 3 
-2014-03-28 14:27:24,425 INFO main                tion.GatewayResolver - Getting gateway
-2014-03-28 14:27:24,425 INFO main                ers.region.AddRegion - Region was successfully added
-2014-03-28 14:27:24,425 INFO main                ers.region.AddRegion - Send redirect to showAllRegion page
-2014-03-28 14:27:24,425 INFO main                action.ActionFactory - Getting ActionFactory
-2014-03-28 14:27:24,425 INFO main                action.ActionFactory - Building HttpAction
-2014-03-28 14:27:24,426 INFO main                mlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@250688e5: display name [org.springframework.context.support.ClassPathXmlApplicationContext@250688e5]; startup date [Fri Mar 28 14:27:24 EET 2014]; root of context hierarchy
-2014-03-28 14:27:24,426 INFO main                BeanDefinitionReader - Loading XML bean definitions from class path resource [beans.xml]
-2014-03-28 14:27:24,440 INFO main                mlApplicationContext - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@250688e5]: org.springframework.beans.factory.support.DefaultListableBeanFactory@61284cb6
-2014-03-28 14:27:24,442 INFO main                tListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@61284cb6: defining beans [oracleGateway,addCountry,modifyCountry,removeCountry,showAllCountry,addRegion,modifyRegion,removeRegion,showAllRegionInCountry,addCity,modifyCity,removeCity,showAllCityInRegion,addUniversity,modifyUniversity,removeUniversity,showOneUniversity,showAllUniversityInCity]; root of factory hierarchy
-2014-03-28 14:27:24,444 INFO main                ers.region.AddRegion - Prepare to add region
-2014-03-28 14:27:24,444 INFO main                ers.region.AddRegion - Region properties: 
-2014-03-28 14:27:24,444 INFO main                ers.region.AddRegion - Name: skeleton 
-2014-03-28 14:27:24,444 INFO main                ers.region.AddRegion - Population: 1000 
-2014-03-28 14:27:24,444 INFO main                ers.region.AddRegion - Square: 0 
-2014-03-28 14:27:24,444 INFO main                ers.region.AddRegion - ParentID: 3 
-2014-03-28 14:27:24,444 INFO main                tion.GatewayResolver - Getting gateway
-2014-03-28 14:27:24,444 INFO main                ers.region.AddRegion - Region was successfully added
-2014-03-28 14:27:24,444 INFO main                ers.region.AddRegion - Send redirect to showAllRegion page
-2014-03-28 14:27:24,444 INFO main                action.ActionFactory - Getting ActionFactory
-2014-03-28 14:27:24,444 INFO main                action.ActionFactory - Building HttpAction
-2014-03-28 14:27:24,445 INFO main                mlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@253d190a: display name [org.springframework.context.support.ClassPathXmlApplicationContext@253d190a]; startup date [Fri Mar 28 14:27:24 EET 2014]; root of context hierarchy
-2014-03-28 14:27:24,445 INFO main                BeanDefinitionReader - Loading XML bean definitions from class path resource [beans.xml]
-2014-03-28 14:27:24,460 INFO main                mlApplicationContext - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@253d190a]: org.springframework.beans.factory.support.DefaultListableBeanFactory@4c011fe
-2014-03-28 14:27:24,463 INFO main                tListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@4c011fe: defining beans [oracleGateway,addCountry,modifyCountry,removeCountry,showAllCountry,addRegion,modifyRegion,removeRegion,showAllRegionInCountry,addCity,modifyCity,removeCity,showAllCityInRegion,addUniversity,modifyUniversity,removeUniversity,showOneUniversity,showAllUniversityInCity]; root of factory hierarchy
-2014-03-28 14:27:24,465 INFO main                ers.region.AddRegion - Prepare to add region
-2014-03-28 14:27:24,465 INFO main                ers.region.AddRegion - Region properties: 
-2014-03-28 14:27:24,465 INFO main                ers.region.AddRegion - Name: skeleton 
-2014-03-28 14:27:24,466 INFO main                ers.region.AddRegion - Population: 1000 
-2014-03-28 14:27:24,466 INFO main                ers.region.AddRegion - Square: 0 
-2014-03-28 14:27:24,466 INFO main                ers.region.AddRegion - ParentID: 3 
-2014-03-28 14:27:24,466 INFO main                tion.GatewayResolver - Getting gateway
-2014-03-28 14:27:24,466 INFO main                ers.region.AddRegion - Region was successfully added
-2014-03-28 14:27:24,466 INFO main                ers.region.AddRegion - Send redirect to showAllRegion page
-2014-03-28 14:27:24,466 INFO main                action.ActionFactory - Getting ActionFactory
-2014-03-28 14:27:24,466 INFO main                action.ActionFactory - Building HttpAction
-2014-03-28 14:27:24,466 INFO main                mlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@67d871ab: display name [org.springframework.context.support.ClassPathXmlApplicationContext@67d871ab]; startup date [Fri Mar 28 14:27:24 EET 2014]; root of context hierarchy
-2014-03-28 14:27:24,467 INFO main                BeanDefinitionReader - Loading XML bean definitions from class path resource [beans.xml]
-2014-03-28 14:27:24,481 INFO main                mlApplicationContext - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@67d871ab]: org.springframework.beans.factory.support.DefaultListableBeanFactory@71c5eff4
-2014-03-28 14:27:24,483 INFO main                tListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@71c5eff4: defining beans [oracleGateway,addCountry,modifyCountry,removeCountry,showAllCountry,addRegion,modifyRegion,removeRegion,showAllRegionInCountry,addCity,modifyCity,removeCity,showAllCityInRegion,addUniversity,modifyUniversity,removeUniversity,showOneUniversity,showAllUniversityInCity]; root of factory hierarchy
-2014-03-28 14:27:24,485 INFO main                .region.ModifyRegion - Prepare to modify region
-2014-03-28 14:27:24,485 INFO main                .region.ModifyRegion - Get region id: 10 
-2014-03-28 14:27:24,485 INFO main                .region.ModifyRegion - New region properties: 
-2014-03-28 14:27:24,485 INFO main                .region.ModifyRegion - Name: skeleton 
-2014-03-28 14:27:24,486 INFO main                .region.ModifyRegion - Population: 1000 
-2014-03-28 14:27:24,486 INFO main                .region.ModifyRegion - Square: 0 
-2014-03-28 14:27:24,486 INFO main                .region.ModifyRegion - ParentID: 3 
-2014-03-28 14:27:24,486 INFO main                tion.GatewayResolver - Getting gateway
-2014-03-28 14:27:24,486 INFO main                .region.ModifyRegion - Region was successfully modified
-2014-03-28 14:27:24,486 INFO main                .region.ModifyRegion - Send redirect to city/showAllInRegion page
-</system-out>
-  </testcase>
-  <testcase time="0.027" classname="action.handlers.region.ModifyRegionTest" name="actionExceptionTest"/>
+  <testcase time="0.024" classname="action.handlers.region.ModifyRegionTest" name="forwardTest"/>
+  <testcase time="0.087" classname="action.handlers.region.ModifyRegionTest" name="logicTest"/>
+  <testcase time="0.024" classname="action.handlers.region.ModifyRegionTest" name="actionExceptionTest"/>
 </testsuite>

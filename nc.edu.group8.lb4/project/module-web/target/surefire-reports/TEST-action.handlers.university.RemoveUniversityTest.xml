@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="1" time="0.106" errors="0" skipped="0" tests="4" name="action.handlers.university.RemoveUniversityTest">
+<testsuite failures="0" time="0.153" errors="0" skipped="0" tests="4" name="action.handlers.university.RemoveUniversityTest">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.7.0_51\jre\bin"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.os.patch.level" value=""/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="D:\etc\JAVA Cource\Lab\4th\nc.edu.group8.lb4\nc.edu.group8.lb4\project\module-web"/>
+    <property name="user.dir" value="D:\etc\JAVA Cource\Lab\4th\nc.edu.group8.lb4\nc.edu.group8.lb4\project"/>
     <property name="java.runtime.version" value="1.7.0_51-b13"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
     <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.7.0_51\jre\lib\endorsed"/>
@@ -61,103 +61,8 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase time="0.002" classname="action.handlers.university.RemoveUniversityTest" name="nullTest"/>
-  <testcase time="0.025" classname="action.handlers.university.RemoveUniversityTest" name="forwardTest"/>
-  <testcase time="0.048" classname="action.handlers.university.RemoveUniversityTest" name="logicTest">
-    <failure message="expected:&lt;2&gt; but was:&lt;3&gt;" type="java.lang.AssertionError">java.lang.AssertionError: expected:&lt;2&gt; but was:&lt;3&gt;
-	at org.junit.Assert.fail(Assert.java:58)
-	at org.junit.Assert.failNotEquals(Assert.java:259)
-	at org.junit.Assert.assertEquals(Assert.java:80)
-	at org.junit.Assert.assertEquals(Assert.java:88)
-	at action.handlers.university.RemoveUniversityTest.logicTest(RemoveUniversityTest.java:70)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:606)
-	at org.junit.internal.runners.TestMethodRunner.executeMethodBody(TestMethodRunner.java:99)
-	at org.junit.internal.runners.TestMethodRunner.runUnprotected(TestMethodRunner.java:81)
-	at org.junit.internal.runners.BeforeAndAfterRunner.runProtected(BeforeAndAfterRunner.java:34)
-	at org.junit.internal.runners.TestMethodRunner.runMethod(TestMethodRunner.java:75)
-	at org.junit.internal.runners.TestMethodRunner.run(TestMethodRunner.java:45)
-	at org.junit.internal.runners.TestClassMethodsRunner.invokeTestMethod(TestClassMethodsRunner.java:71)
-	at org.junit.internal.runners.TestClassMethodsRunner.run(TestClassMethodsRunner.java:35)
-	at org.junit.internal.runners.TestClassRunner$1.runUnprotected(TestClassRunner.java:42)
-	at org.junit.internal.runners.BeforeAndAfterRunner.runProtected(BeforeAndAfterRunner.java:34)
-	at org.junit.internal.runners.TestClassRunner.run(TestClassRunner.java:52)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:606)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
-	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
-</failure>
-    <system-out>2014-03-28 14:27:25,043 INFO main                action.ActionFactory - Getting ActionFactory
-2014-03-28 14:27:25,043 INFO main                action.ActionFactory - Building HttpAction
-2014-03-28 14:27:25,043 INFO main                mlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@4af9999b: display name [org.springframework.context.support.ClassPathXmlApplicationContext@4af9999b]; startup date [Fri Mar 28 14:27:25 EET 2014]; root of context hierarchy
-2014-03-28 14:27:25,043 INFO main                BeanDefinitionReader - Loading XML bean definitions from class path resource [beans.xml]
-2014-03-28 14:27:25,051 INFO main                mlApplicationContext - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@4af9999b]: org.springframework.beans.factory.support.DefaultListableBeanFactory@46e91e2f
-2014-03-28 14:27:25,052 INFO main                tListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@46e91e2f: defining beans [oracleGateway,addCountry,modifyCountry,removeCountry,showAllCountry,addRegion,modifyRegion,removeRegion,showAllRegionInCountry,addCity,modifyCity,removeCity,showAllCityInRegion,addUniversity,modifyUniversity,removeUniversity,showOneUniversity,showAllUniversityInCity]; root of factory hierarchy
-2014-03-28 14:27:25,053 INFO main                ersity.AddUniversity - Prepare to add university
-2014-03-28 14:27:25,053 INFO main                ersity.AddUniversity - University properties: 
-2014-03-28 14:27:25,053 INFO main                ersity.AddUniversity - Name: skeleton 
-2014-03-28 14:27:25,054 INFO main                ersity.AddUniversity - DepartamentsCount: 10 
-2014-03-28 14:27:25,054 INFO main                ersity.AddUniversity - WWW: zzz 
-2014-03-28 14:27:25,054 INFO main                ersity.AddUniversity - ParentID: 3 
-2014-03-28 14:27:25,054 INFO main                tion.GatewayResolver - Getting gateway
-10
-2014-03-28 14:27:25,054 INFO main                ersity.AddUniversity - University was successfully added
-2014-03-28 14:27:25,054 INFO main                ersity.AddUniversity - Send redirect to showAllUniversity page
-2014-03-28 14:27:25,054 INFO main                action.ActionFactory - Getting ActionFactory
-2014-03-28 14:27:25,054 INFO main                action.ActionFactory - Building HttpAction
-2014-03-28 14:27:25,054 INFO main                mlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@46e9e26a: display name [org.springframework.context.support.ClassPathXmlApplicationContext@46e9e26a]; startup date [Fri Mar 28 14:27:25 EET 2014]; root of context hierarchy
-2014-03-28 14:27:25,055 INFO main                BeanDefinitionReader - Loading XML bean definitions from class path resource [beans.xml]
-2014-03-28 14:27:25,062 INFO main                mlApplicationContext - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@46e9e26a]: org.springframework.beans.factory.support.DefaultListableBeanFactory@194285ad
-2014-03-28 14:27:25,063 INFO main                tListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@194285ad: defining beans [oracleGateway,addCountry,modifyCountry,removeCountry,showAllCountry,addRegion,modifyRegion,removeRegion,showAllRegionInCountry,addCity,modifyCity,removeCity,showAllCityInRegion,addUniversity,modifyUniversity,removeUniversity,showOneUniversity,showAllUniversityInCity]; root of factory hierarchy
-2014-03-28 14:27:25,064 INFO main                ersity.AddUniversity - Prepare to add university
-2014-03-28 14:27:25,064 INFO main                ersity.AddUniversity - University properties: 
-2014-03-28 14:27:25,064 INFO main                ersity.AddUniversity - Name: skeleton 
-2014-03-28 14:27:25,064 INFO main                ersity.AddUniversity - DepartamentsCount: 10 
-2014-03-28 14:27:25,064 INFO main                ersity.AddUniversity - WWW: zzz 
-2014-03-28 14:27:25,064 INFO main                ersity.AddUniversity - ParentID: 3 
-2014-03-28 14:27:25,064 INFO main                tion.GatewayResolver - Getting gateway
-11
-2014-03-28 14:27:25,065 INFO main                ersity.AddUniversity - University was successfully added
-2014-03-28 14:27:25,065 INFO main                ersity.AddUniversity - Send redirect to showAllUniversity page
-2014-03-28 14:27:25,065 INFO main                action.ActionFactory - Getting ActionFactory
-2014-03-28 14:27:25,065 INFO main                action.ActionFactory - Building HttpAction
-2014-03-28 14:27:25,065 INFO main                mlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@6bd9a16b: display name [org.springframework.context.support.ClassPathXmlApplicationContext@6bd9a16b]; startup date [Fri Mar 28 14:27:25 EET 2014]; root of context hierarchy
-2014-03-28 14:27:25,065 INFO main                BeanDefinitionReader - Loading XML bean definitions from class path resource [beans.xml]
-2014-03-28 14:27:25,073 INFO main                mlApplicationContext - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@6bd9a16b]: org.springframework.beans.factory.support.DefaultListableBeanFactory@13db71f1
-2014-03-28 14:27:25,074 INFO main                tListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@13db71f1: defining beans [oracleGateway,addCountry,modifyCountry,removeCountry,showAllCountry,addRegion,modifyRegion,removeRegion,showAllRegionInCountry,addCity,modifyCity,removeCity,showAllCityInRegion,addUniversity,modifyUniversity,removeUniversity,showOneUniversity,showAllUniversityInCity]; root of factory hierarchy
-2014-03-28 14:27:25,075 INFO main                ersity.AddUniversity - Prepare to add university
-2014-03-28 14:27:25,075 INFO main                ersity.AddUniversity - University properties: 
-2014-03-28 14:27:25,075 INFO main                ersity.AddUniversity - Name: skeleton 
-2014-03-28 14:27:25,075 INFO main                ersity.AddUniversity - DepartamentsCount: 10 
-2014-03-28 14:27:25,075 INFO main                ersity.AddUniversity - WWW: zzz 
-2014-03-28 14:27:25,075 INFO main                ersity.AddUniversity - ParentID: 3 
-2014-03-28 14:27:25,075 INFO main                tion.GatewayResolver - Getting gateway
-12
-2014-03-28 14:27:25,076 INFO main                ersity.AddUniversity - University was successfully added
-2014-03-28 14:27:25,076 INFO main                ersity.AddUniversity - Send redirect to showAllUniversity page
-2014-03-28 14:27:25,076 INFO main                action.ActionFactory - Getting ActionFactory
-2014-03-28 14:27:25,076 INFO main                action.ActionFactory - Building HttpAction
-2014-03-28 14:27:25,076 INFO main                mlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@3b798826: display name [org.springframework.context.support.ClassPathXmlApplicationContext@3b798826]; startup date [Fri Mar 28 14:27:25 EET 2014]; root of context hierarchy
-2014-03-28 14:27:25,077 INFO main                BeanDefinitionReader - Loading XML bean definitions from class path resource [beans.xml]
-2014-03-28 14:27:25,084 INFO main                mlApplicationContext - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@3b798826]: org.springframework.beans.factory.support.DefaultListableBeanFactory@75430472
-2014-03-28 14:27:25,085 INFO main                tListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@75430472: defining beans [oracleGateway,addCountry,modifyCountry,removeCountry,showAllCountry,addRegion,modifyRegion,removeRegion,showAllRegionInCountry,addCity,modifyCity,removeCity,showAllCityInRegion,addUniversity,modifyUniversity,removeUniversity,showOneUniversity,showAllUniversityInCity]; root of factory hierarchy
-2014-03-28 14:27:25,086 INFO main                ity.RemoveUniversity - Prepare to remove university
-2014-03-28 14:27:25,086 INFO main                ity.RemoveUniversity - Removing university id: 6 
-2014-03-28 14:27:25,086 INFO main                ity.RemoveUniversity - Get parent id: 3 
-2014-03-28 14:27:25,086 INFO main                tion.GatewayResolver - Getting gateway
-2014-03-28 14:27:25,086 INFO main                ity.RemoveUniversity - University was successfully removed
-2014-03-28 14:27:25,086 INFO main                ity.RemoveUniversity - Send redirect to showAllUniversity page
-</system-out>
-  </testcase>
-  <testcase time="0.031" classname="action.handlers.university.RemoveUniversityTest" name="actionExceptionTest"/>
+  <testcase time="0.007" classname="action.handlers.university.RemoveUniversityTest" name="nullTest"/>
+  <testcase time="0.062" classname="action.handlers.university.RemoveUniversityTest" name="forwardTest"/>
+  <testcase time="0.063" classname="action.handlers.university.RemoveUniversityTest" name="logicTest"/>
+  <testcase time="0.021" classname="action.handlers.university.RemoveUniversityTest" name="actionExceptionTest"/>
 </testsuite>

@@ -10,8 +10,16 @@ import javax.servlet.http.HttpServletResponse;
 
 public class ServletResponseSkeleton implements HttpServletResponse {
 
-	public ServletResponseSkeleton() {
-		// TODO Auto-generated constructor stub
+	@Override
+	public void flushBuffer() throws IOException {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public int getBufferSize() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 	@Override
@@ -22,6 +30,12 @@ public class ServletResponseSkeleton implements HttpServletResponse {
 
 	@Override
 	public String getContentType() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Locale getLocale() {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -39,48 +53,6 @@ public class ServletResponseSkeleton implements HttpServletResponse {
 	}
 
 	@Override
-	public void setCharacterEncoding(String charset) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void setContentLength(int len) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void setContentType(String type) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void setBufferSize(int size) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public int getBufferSize() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public void flushBuffer() throws IOException {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void resetBuffer() {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
 	public boolean isCommitted() {
 		// TODO Auto-generated method stub
 		return false;
@@ -93,115 +65,139 @@ public class ServletResponseSkeleton implements HttpServletResponse {
 	}
 
 	@Override
-	public void setLocale(Locale loc) {
+	public void resetBuffer() {
 		// TODO Auto-generated method stub
 
 	}
 
 	@Override
-	public Locale getLocale() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void addCookie(Cookie cookie) {
+	public void setBufferSize(int arg0) {
 		// TODO Auto-generated method stub
 
 	}
 
 	@Override
-	public boolean containsHeader(String name) {
+	public void setCharacterEncoding(String arg0) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void setContentLength(int arg0) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void setContentType(String arg0) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void setLocale(Locale arg0) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void addCookie(Cookie arg0) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void addDateHeader(String arg0, long arg1) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void addHeader(String arg0, String arg1) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void addIntHeader(String arg0, int arg1) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public boolean containsHeader(String arg0) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
-	public String encodeURL(String url) {
+	public String encodeRedirectURL(String arg0) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public String encodeRedirectURL(String url) {
+	public String encodeRedirectUrl(String arg0) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public String encodeUrl(String url) {
+	public String encodeURL(String arg0) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public String encodeRedirectUrl(String url) {
+	public String encodeUrl(String arg0) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public void sendError(int sc, String msg) throws IOException {
+	public void sendError(int arg0) throws IOException {
 		// TODO Auto-generated method stub
 
 	}
 
 	@Override
-	public void sendError(int sc) throws IOException {
+	public void sendError(int arg0, String arg1) throws IOException {
 		// TODO Auto-generated method stub
 
 	}
 
 	@Override
-	public void sendRedirect(String location) throws IOException {
+	public void sendRedirect(String arg0) throws IOException {
 		// TODO Auto-generated method stub
 
 	}
 
 	@Override
-	public void setDateHeader(String name, long date) {
+	public void setDateHeader(String arg0, long arg1) {
 		// TODO Auto-generated method stub
 
 	}
 
 	@Override
-	public void addDateHeader(String name, long date) {
+	public void setHeader(String arg0, String arg1) {
 		// TODO Auto-generated method stub
 
 	}
 
 	@Override
-	public void setHeader(String name, String value) {
+	public void setIntHeader(String arg0, int arg1) {
 		// TODO Auto-generated method stub
 
 	}
 
 	@Override
-	public void addHeader(String name, String value) {
+	public void setStatus(int arg0) {
 		// TODO Auto-generated method stub
 
 	}
 
 	@Override
-	public void setIntHeader(String name, int value) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void addIntHeader(String name, int value) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void setStatus(int sc) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void setStatus(int sc, String sm) {
+	public void setStatus(int arg0, String arg1) {
 		// TODO Auto-generated method stub
 
 	}
