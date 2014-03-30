@@ -1,15 +1,16 @@
 package hibernate.dao;
 
-import hibernate.util.*;
-import hibernate.logic.*;
-import java.sql.*;
-import java.util.*;
-import java.lang.reflect.*;
-import org.hibernate.*;
-import org.hibernate.criterion.*;
-import org.apache.log4j.*;
+import hibernate.util.HibernateUtil;
+
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+
+import org.apache.log4j.Logger;
+import org.hibernate.Session;
+import org.hibernate.criterion.Expression;
 import org.springframework.stereotype.Service;
-import java.lang.InstantiationException;
 
 @Service
 public class OracleGateway<T> implements Gateway<T> {

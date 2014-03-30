@@ -1,6 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page isELIgnored="false" %>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!DOCTYPE HTML>
 <html>
 <head>
 <c:import url="/meta.html"/>
@@ -14,8 +14,8 @@
 <h1>All Cities</h1>
 <div id="content">
     <div id="navPath">
-        <a href="action?code=showAllCountry">Top</a> >
-        <a href="action?code=showAllRegionInCountry&parent_id=${country.ID}">${country.name}</a> >
+        <a href="action?code=showAllCountry">Top</a>
+        <a href="action?code=showAllRegionInCountry&parent_id=${country.ID}">${country.name}</a>
         <a href="action?code=showAllCityInRegion&parent_id=${parent.ID}">${parent.name}</a>
     </div>
 	<div id="paramsCurrent">

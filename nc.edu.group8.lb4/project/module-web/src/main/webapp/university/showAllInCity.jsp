@@ -14,9 +14,9 @@
 <h1>All Universities</h1>
 <div id="content">
     <div id="navPath">
-        <a href="action?code=showAllCountry">Top</a> >
-        <a href="action?code=showAllRegionInCountry&parent_id=${country.ID}">${country.name}</a> >
-        <a href="action?code=showAllCityInRegion&parent_id=${region.ID}">${region.name}</a> > 
+        <a href="action?code=showAllCountry">Top</a>
+        <a href="action?code=showAllRegionInCountry&parent_id=${country.ID}">${country.name}</a>
+        <a href="action?code=showAllCityInRegion&parent_id=${region.ID}">${region.name}</a> 
         <a href="action?code=showAllUniversityInCity&parent_id=${parent.ID}">${parent.name}</a>
     </div>
 	<div id="paramsCurrent">

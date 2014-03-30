@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ejb-jar xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+			xmlns="http://java.sun.com/xml/ns/javaee" 
+			xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+								http://java.sun.com/xml/ns/javaee/ejb-jar_3_1.xsd" 
+			version="3.1">
+  <display-name>module-ejb</display-name>
+  <enterprise-beans>
+  	<entity>
+  		<ejb-name>University</ejb-name>
+  		<home>beans.uni.UniversityHome</home>
+  		<remote>beans.uni.UniversityRemote</remote>
+  		<ejb-class>beans.uni.University</ejb-class>
+  		<persistence-type>Bean</persistence-type>
+  		<prim-key-class>java.lang.Integer</prim-key-class>
+  		<reentrant>false</reentrant>
+  	</entity>
+  </enterprise-beans>
+</ejb-jar>
