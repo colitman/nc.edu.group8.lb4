@@ -20,11 +20,11 @@ public class University implements EntityBean {
 		this.parentID = parentId;
 	}
 	
-	public Integer getParentID() {
+	public int getParentID() {
 		return parentID;
 	}
 	
-	public Integer getID() {
+	public int getID() {
 		return ID;
 	}
 	
@@ -89,6 +89,8 @@ public class University implements EntityBean {
 		}
 	}
 
+	public void ejbPostCreate(Integer id, Integer pid, String name, int depCount, String www) {}
+	
 	public Integer ejbCreate(Integer id, Integer pid, String name, int depCount, String www) {
 		try {
 			createInstance(id, pid, name, depCount, www);
