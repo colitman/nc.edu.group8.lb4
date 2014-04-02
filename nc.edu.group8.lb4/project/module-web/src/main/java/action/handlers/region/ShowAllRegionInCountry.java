@@ -11,15 +11,16 @@ import org.apache.log4j.*;
 import hibernate.dao.*;
 import hibernate.logic.*;
 import java.util.Collection;
+import org.springframework.util.*;
 
 public class ShowAllRegionInCountry implements HttpAction {
 	
 	private static final Logger logger = Logger.getLogger(ShowAllRegionInCountry.class);	
 
 	public String perform(HttpServletRequest request, HttpServletResponse response) throws ActionException {
-		if (request == null || response == null) {
-			throw new NullPointerException();
-		}
+		Assert.notNull(request, "Request must be not null");
+		Assert.notNull(response, "Responce must be not null");
+		
 		try {
 			logger.info("Prepare to show all regions");
 

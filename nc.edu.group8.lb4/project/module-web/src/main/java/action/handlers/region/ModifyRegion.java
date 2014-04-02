@@ -8,15 +8,16 @@ import java.sql.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import org.apache.log4j.*;
+import org.springframework.util.*;
 
 public class ModifyRegion implements HttpAction {
 	
 	private static final Logger logger = Logger.getLogger(ModifyRegion.class);	
 
 	public String perform(HttpServletRequest request, HttpServletResponse response) throws ActionException {
-		if (request == null || response == null) {
-			throw new NullPointerException();
-		}
+		Assert.notNull(request, "Request must be not null");
+		Assert.notNull(response, "Responce must be not null");
+		
 		try {
 			logger.info("Prepare to modify region");
 

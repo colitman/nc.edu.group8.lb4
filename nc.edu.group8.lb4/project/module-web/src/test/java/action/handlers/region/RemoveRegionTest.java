@@ -11,7 +11,7 @@ import javax.servlet.http.*;
 
 public class RemoveRegionTest {
 
-	@Test(expected = NullPointerException.class)
+	@Test(expected = IllegalArgumentException.class)
 	public void nullTest() throws Exception {
 		Utils.perform("removeRegion", null, null);
 	}

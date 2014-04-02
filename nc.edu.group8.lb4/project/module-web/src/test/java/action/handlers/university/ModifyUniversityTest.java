@@ -11,7 +11,7 @@ import javax.servlet.http.*;
 
 public class ModifyUniversityTest {
 
-	@Test(expected = NullPointerException.class)
+	@Test(expected = IllegalArgumentException.class)
 	public void nullTest() throws Exception {
 		Utils.perform("modifyUniversity", null, null);
 	}

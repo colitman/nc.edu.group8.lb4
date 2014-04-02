@@ -11,17 +11,18 @@ import org.apache.log4j.xml.*;
 import hibernate.dao.*;
 import hibernate.logic.*;
 import java.util.Collection;
+import org.springframework.util.*;
 
 public class ShowAllCountry implements HttpAction {
 	
 	private static final Logger logger = Logger.getLogger(ShowAllCountry.class);	
 
 	public String perform(HttpServletRequest request, HttpServletResponse response) throws ActionException {
-		if (request == null || response == null) {
-			throw new NullPointerException();
-		}
+		Assert.notNull(request, "Request must be not null");
+		Assert.notNull(response, "Responce must be not null");
+		
 		try {
-			DOMConfigurator.configure("log4j.xml");
+			//DOMConfigurator.configure("log4j.xml");
 			logger.info("Logger installed");
 			logger.info("Prepare to show all countries");
 
