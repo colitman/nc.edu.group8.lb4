@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="0.491" errors="0" skipped="0" tests="4" name="action.handlers.country.ModifyCountryTest">
+<testsuite failures="0" time="0.393" errors="0" skipped="0" tests="4" name="action.handlers.country.ModifyCountryTest">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.7.0_11\jre\bin"/>
@@ -61,8 +61,8 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="pentium_pro+mmx pentium_pro pentium+mmx pentium i486 i386 i86"/>
   </properties>
-  <testcase time="0.05" classname="action.handlers.country.ModifyCountryTest" name="nullTest"/>
-  <testcase time="0.05" classname="action.handlers.country.ModifyCountryTest" name="forwardTest"/>
-  <testcase time="0.321" classname="action.handlers.country.ModifyCountryTest" name="logicTest"/>
-  <testcase time="0.07" classname="action.handlers.country.ModifyCountryTest" name="actionExceptionTest"/>
+  <testcase time="0.01" classname="action.handlers.country.ModifyCountryTest" name="nullTest"/>
+  <testcase time="0.03" classname="action.handlers.country.ModifyCountryTest" name="forwardTest"/>
+  <testcase time="0.322" classname="action.handlers.country.ModifyCountryTest" name="logicTest"/>
+  <testcase time="0.031" classname="action.handlers.country.ModifyCountryTest" name="actionExceptionTest"/>
 </testsuite>
