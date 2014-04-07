@@ -1,4 +1,4 @@
-package beans.uni;
+package beans.region;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -14,16 +14,16 @@ import javax.ejb.NoSuchEntityException;
 
 import util.DBTool;
 
-public class University implements EntityBean {
+public class RegionBean implements EntityBean {
 	private static final long serialVersionUID = 1L;
 	private Integer parentID;
 	private Integer ID;
 	private String name;
-	private int depCount;
-	private String WWW;
+	private int population;
+	private int square;
 	private EntityContext context;
 	
-	private static final String TABLE_NAME = "UNIVERSITY";
+	private static final String TABLE_NAME = "REGION";
 	
 	public void setParentID(int parentId) {
 		this.parentID = parentId;
@@ -45,20 +45,20 @@ public class University implements EntityBean {
 		return name;
 	}
 	
-	public void setDepartamentsCount(int count) {
-		this.depCount = count;
+	public void setPopulation(int population) {
+		this.population = population;
 	}
 	
-	public int getDepartamentsCount() {
-		return depCount;
+	public int getPopulation() {
+		return population;
 	}
 	
-	public void setWWW(String www) {
-		this.WWW = www;
+	public void setSquare(int square) {
+		this.square = square;
 	}
 	
-	public String getWWW() {
-		return WWW;
+	public int getSquare() {
+		return square;
 	}
 
 	@Override
@@ -98,19 +98,19 @@ public class University implements EntityBean {
 		}
 	}
 
-	public void ejbPostCreate(Integer pid, String name, int depCount, String www) {}
+	public void ejbPostCreate(Integer pid, String name, int population, int square) {}
 	
-	public Integer ejbCreate(Integer pid, String name, int depCount, String www) {
+	public Integer ejbCreate(Integer pid, String name, int population, int square) {
 		try {
-			this.ID = createInstance(pid, name, depCount, www);
+			this.ID = createInstance(pid, name, population, square);
 		} catch (Exception e) {
 			throw new EJBException("Creation failed: " + e.getMessage());
 		}
 		
 		this.parentID = pid;
 		this.name = name;
-		this.WWW = www;
-		this.depCount = depCount;
+		this.square = square;
+		this.population = population;
 		return ID;
 	}
 
@@ -144,16 +144,16 @@ public class University implements EntityBean {
 		context = null;
 	}
 	
-	private Integer createInstance(Integer pid, String name, int depCount, String www) throws SQLException {
+	private Integer createInstance(Integer pid, String name, int population, int square) throws SQLException {
 
 		Connection con = null;
 		PreparedStatement stm = null;
 		
-		this.ID = Integer.valueOf(DBTool.getTool().getNextIdFor("TABLE_NAME"));
+		this.ID = Integer.valueOf(DBTool.getTool().getNextIdFor(TABLE_NAME));
 		
 		if(ID == -1) {
 			DBTool.getTool().releaseConnection();
-			throw new SQLException("Invalid table name or DB access problem");
+			throw new SQLException("Invalid table name or DB access problem - " + TABLE_NAME);
 		}
 		
 		con = DBTool.getTool().getConnection();
@@ -161,8 +161,8 @@ public class University implements EntityBean {
 		stm.setInt(1, pid);
 		stm.setInt(2, ID);
 		stm.setString(3, name);
-		stm.setInt(4, depCount);
-		stm.setString(5, www);
+		stm.setInt(4, population);
+		stm.setInt(5, square);
 		
 		stm.executeUpdate();
 		
@@ -179,16 +179,16 @@ public class University implements EntityBean {
 		this.ID = (Integer) context.getPrimaryKey();
 		
 		con = DBTool.getTool().getConnection();
-		stm = con.prepareStatement("select PARENT_ID, NAME, DEPTS_COUNT, WWW from " + TABLE_NAME + " where ID = ?");
+		stm = con.prepareStatement("select PARENT_ID, NAME, POPULATION, SQUARE from " + TABLE_NAME + " where ID = ?");
 		stm.setInt(1, ID);
 		rs = stm.executeQuery();
 		if(rs.next()) {
 			this.parentID = rs.getInt(1);
 			this.name = rs.getString(2);
-			this.depCount = rs.getInt(3);
-			this.WWW = rs.getString(4);
+			this.population = rs.getInt(3);
+			this.square = rs.getInt(4);
 		} else {
-			throw new NoSuchEntityException("Entity with ID = " + ID + " is not found in the database");
+			throw new NoSuchEntityException("Region with ID = " + ID + " is not found in the database");
 		}
 		
 		rs.close();
@@ -219,20 +219,20 @@ public class University implements EntityBean {
 		con = DBTool.getTool().getConnection();
 		stm = con.prepareStatement("update " + TABLE_NAME + " set PARENT_ID = ?, "
 																+ "NAME = ?, "
-																+ "DEPTS_COUNT = ?, "
-																+ "WWW = ? "
+																+ "POPULATION = ?, "
+																+ "SQUARE = ? "
 															+ "where ID = ?");
 		
 		stm.setInt(1, parentID);
 		stm.setString(2, name);
-		stm.setInt(3, depCount);
-		stm.setString(4, WWW);
+		stm.setInt(3, population);
+		stm.setInt(4, square);
 		stm.setInt(5, ID);
 		
 		int rowsUpd = stm.executeUpdate();
 		
 		if(rowsUpd == 0) {
-			throw new EJBException("Updating entity with ID = " + ID + " failed.");
+			throw new EJBException("Updating region with ID = " + ID + " failed.");
 		}
 		
 		stm.close();
