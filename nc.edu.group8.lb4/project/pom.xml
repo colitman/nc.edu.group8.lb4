@@ -7,8 +7,8 @@
   <packaging>pom</packaging>
   <name>project</name>
   <modules>
-    <module>module-ear</module>
     <module>module-ejb</module>
+    <module>module-ear</module>
     <module>module-web</module>
   </modules>
 </project>

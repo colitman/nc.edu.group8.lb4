@@ -1,17 +1,30 @@
 package hibernate.dao;
 
+import java.rmi.RemoteException;
 import java.sql.SQLException;
 import java.util.Collection;
+import java.util.ArrayList;
+import java.util.Properties;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
+import javax.naming.NamingException;
 import javax.rmi.PortableRemoteObject;
 
 import org.springframework.stereotype.Service;
+import org.apache.log4j.Logger;
+
+import beans.city.*;
+import beans.country.*;
+import beans.region.*;
+import beans.uni.*;
+
+import hibernate.logic.*;
 
 @Service
 public class EJBBeansGateway<T> implements Gateway<T> {
 
+	private static final Logger logger = Logger.getLogger(EJBBeansGateway.class);
 	private Context context = createContext();
 	
 	@Override
@@ -68,12 +81,14 @@ public class EJBBeansGateway<T> implements Gateway<T> {
 			}
 		}
 		catch (NamingException ne) {
-			//TODO something
+			logger.error("Bean has not be found. Ensure that bean name is correct", ne);
+		}
+		catch (RemoteException re) {
+			logger.error("Connection problems. Ensure that weblogic is running", re);
 		}
 		catch (Exception e) {
-			//Other exceptions
+			logger.error("Exception occured in EJBBeansGateway", e);
 		}
-		
 	}
 
 	@Override
@@ -132,23 +147,26 @@ public class EJBBeansGateway<T> implements Gateway<T> {
 				
 				remote.setName(object.getName());
 				remote.setLanguage(object.getLanguage());
-				remote.setCapital(object.getCapital()));
+				remote.setCapital(object.getCapital());
 				remote.setPopulation(object.getPopulation());
-				remote.setTimezone(object.getTimezone());
+				remote.setTimezone(String.valueOf(object.getTimezone()));
 			}
 		}
 		catch (NamingException ne) {
-			//TODO something
+			logger.info("Bean has not be found. Ensure that bean name is correct", ne);
+		}
+		catch (RemoteException re) {
+			logger.error("Connection problems. Ensure that weblogic is running", re);
 		}
 		catch (Exception e) {
-			//Other exceptions
+			logger.error("Exception occured in EJBBeansGateway", e);
 		}
 	}
 
 	@Override
 	public T get(Class<T> className, int id) throws SQLException {
 		try {
-			if (entity instanceof University) {
+			if (className.getName().equals("University")) {
 				Object ref = context.lookup("UniversityBean");
 				
 				UniversityHome home = (UniversityHome) PortableRemoteObject.narrow(ref, UniversityHome.class);
@@ -162,9 +180,9 @@ public class EJBBeansGateway<T> implements Gateway<T> {
 				object.setDepartamentsCount(remote.getDepartamentsCount());
 				object.setWWW(remote.getWWW());
 				
-				return object;
+				return (T) object;
 			}
-			if (entity instanceof City) {
+			if (className.getName().equals("City")) {
 				Object ref = context.lookup("CityBean");
 				
 				CityHome home = (CityHome) PortableRemoteObject.narrow(ref, CityHome.class);
@@ -178,9 +196,9 @@ public class EJBBeansGateway<T> implements Gateway<T> {
 				object.setPopulation(remote.getPopulation());
 				object.setSquare(remote.getSquare());
 				
-				return object;
+				return (T) object;
 			}
-			if (entity instanceof Region) {
+			if (className.getName().equals("Region")) {
 				Object ref = context.lookup("RegionBean");
 				
 				RegionHome home = (RegionHome) PortableRemoteObject.narrow(ref, RegionHome.class);
@@ -194,9 +212,9 @@ public class EJBBeansGateway<T> implements Gateway<T> {
 				object.setPopulation(remote.getPopulation());
 				object.setSquare(remote.getSquare());
 				
-				return object;
+				return (T) object;
 			}
-			if (entity instanceof Country) {
+			if (className.getName().equals("Country")) {
 				Object ref = context.lookup("CountryBean");
 				
 				CountryHome home = (CountryHome) PortableRemoteObject.narrow(ref, CountryHome.class);
@@ -207,18 +225,21 @@ public class EJBBeansGateway<T> implements Gateway<T> {
 				
 				object.setName(remote.getName());
 				object.setLanguage(remote.getLanguage());
-				object.setCapital(remote.getCapital()));
+				object.setCapital(remote.getCapital());
 				object.setPopulation(remote.getPopulation());
 				object.setTimezone(remote.getTimezone());
 				
-				return object;
+				return (T) object;
 			}
 		}
 		catch (NamingException ne) {
-			//TODO something
+			logger.info("Bean has not be found. Ensure that bean name is correct", ne);
+		}
+		catch (RemoteException re) {
+			logger.error("Connection problems. Ensure that weblogic is running", re);
 		}
 		catch (Exception e) {
-			//Other exceptions
+			logger.error("Exception occured in EJBBeansGateway", e);
 		}
 		return null;
 	}
@@ -245,7 +266,7 @@ public class EJBBeansGateway<T> implements Gateway<T> {
 					objectList.add(object);
 				}
 				
-				return objectList;
+				return (Collection<T>) objectList;
 			}
 			if (className.getName().equals("City")) {
 				Object ref = context.lookup("CityBean");
@@ -266,7 +287,7 @@ public class EJBBeansGateway<T> implements Gateway<T> {
 					objectList.add(object);
 				}
 				
-				return objectList;
+				return (Collection<T>) objectList;
 			}
 			if (className.getName().equals("Region")) {
 				Object ref = context.lookup("RegionBean");
@@ -287,7 +308,7 @@ public class EJBBeansGateway<T> implements Gateway<T> {
 					objectList.add(object);
 				}
 				
-				return objectList;
+				return (Collection<T>) objectList;
 			}
 			if (className.getName().equals("Country")) {
 				Object ref = context.lookup("CountryBean");
@@ -302,21 +323,24 @@ public class EJBBeansGateway<T> implements Gateway<T> {
 					Country object = new Country();
 					object.setName(remote.getName());
 					object.setLanguage(remote.getLanguage());
-					object.setCapital(remote.getCapital()));
+					object.setCapital(remote.getCapital());
 					object.setPopulation(remote.getPopulation());
 					object.setTimezone(remote.getTimezone());
 				
-					objectList.add(onject);
+					objectList.add(object);
 				}
 				
-				return objectList;
+				return (Collection<T>) objectList;
 			}
 		}
 		catch (NamingException ne) {
-			//TODO something
+			logger.info("Bean has not be found. Ensure that bean name is correct", ne);
+		}
+		catch (RemoteException re) {
+			logger.error("Connection problems. Ensure that weblogic is running", re);
 		}
 		catch (Exception e) {
-			//Other exceptions
+			logger.error("Exception occured in EJBBeansGateway", e);
 		}
 		return null;
 	}
@@ -345,7 +369,7 @@ public class EJBBeansGateway<T> implements Gateway<T> {
 						objectList.add(object);
 					}
 				}
-				return objectList;
+				return (Collection<T>) objectList;
 			}
 			if (className.getName().equals("City")) {
 				Object ref = context.lookup("CityBean");
@@ -367,7 +391,7 @@ public class EJBBeansGateway<T> implements Gateway<T> {
 						objectList.add(object);
 					}
 				}
-				return objectList;
+				return (Collection<T>) objectList;
 			}
 			if (className.getName().equals("Region")) {
 				Object ref = context.lookup("RegionBean");
@@ -389,8 +413,9 @@ public class EJBBeansGateway<T> implements Gateway<T> {
 						objectList.add(object);
 					}
 				}
-				return objectList;
+				return (Collection<T>) objectList;
 			}
+			/*
 			if (className.getName().equals("Country")) {
 				Object ref = context.lookup("CountryBean");
 				
@@ -405,38 +430,94 @@ public class EJBBeansGateway<T> implements Gateway<T> {
 						Country object = new Country();
 						object.setName(remote.getName());
 						object.setLanguage(remote.getLanguage());
-						object.setCapital(remote.getCapital()));
+						object.setCapital(remote.getCapital());
 						object.setPopulation(remote.getPopulation());
 						object.setTimezone(remote.getTimezone());
 					
 						objectList.add(onject);
 					}
 				}
-				return objectList;
+				return (Collection<T>) objectList;
 			}
+			*/
 		}
 		catch (NamingException ne) {
-			//TODO something
+			logger.info("Bean has not be found. Ensure that bean name is correct", ne);
+		}
+		catch (RemoteException re) {
+			logger.error("Connection problems. Ensure that weblogic is running", re);
 		}
 		catch (Exception e) {
-			//Other exceptions
+			logger.error("Exception occured in EJBBeansGateway", e);
 		}
 		return null;
 	}
 
 	@Override
 	public void remove(T entity) throws SQLException {
-		// TODO Auto-generated method stub
-		
+		try {
+			if (entity instanceof University) {
+				Object ref = context.lookup("UniversityBean");
+				
+				UniversityHome home = (UniversityHome) PortableRemoteObject.narrow(ref, UniversityHome.class);
+				
+				University object = (University) entity;
+				
+				home.remove(object.getID());
+			}
+			if (entity instanceof City) {
+				Object ref = context.lookup("CityBean");
+				
+				CityHome home = (CityHome) PortableRemoteObject.narrow(ref, CityHome.class);
+				
+				City object = (City) entity;
+				
+				home.remove(object.getID());
+			}
+			if (entity instanceof Region) {
+				Object ref = context.lookup("RegionBean");
+				
+				RegionHome home = (RegionHome) PortableRemoteObject.narrow(ref, RegionHome.class);
+				
+				Region object = (Region) entity;
+				
+				home.remove(object.getID());
+			}
+			if (entity instanceof Country) {
+				Object ref = context.lookup("CountryBean");
+				
+				CountryHome home = (CountryHome) PortableRemoteObject.narrow(ref, CountryHome.class);
+
+				Country object = (Country) entity;
+				
+				home.remove(object.getID());
+			}
+		}
+		catch (NamingException ne) {
+			logger.info("Bean has not be found. Ensure that bean name is correct", ne);
+		}
+		catch (RemoteException re) {
+			logger.error("Connection problems. Ensure that weblogic is running", re);
+		}
+		catch (Exception e) {
+			logger.error("Exception occured in EJBBeansGateway", e);
+		}
 	}
 	
-	private Context createContext() throws NamingException {
-		Properties p = new Properties();
-		p.put(Context.INITIAL_CONTEXT_FACTORY, "weblogic.jndi.WLInitialContextFactory");
-		p.put(Context.PROVIDER_URL, "t3://127.0.0.1:7001");
-		p.put(Context.SECURITY_PRINCIPAL, "admin");
-		p.put(Context.SECURITY_CREDENTIALS, "admin33284");
-		return new InitialContext(p);
+	private Context createContext() {
+		try {
+			Properties p = new Properties();
+			p.put(Context.INITIAL_CONTEXT_FACTORY, "weblogic.jndi.WLInitialContextFactory");
+			p.put(Context.PROVIDER_URL, "t3://127.0.0.1:7001");
+			p.put(Context.SECURITY_PRINCIPAL, "admin");
+			p.put(Context.SECURITY_CREDENTIALS, "admin33284");
+			return new InitialContext(p);
+		}
+		catch (NamingException e) {
+			logger.error("Connection problems. Please ensure that weblogic is already run and check"
+					+ " you provider url, login and password", e);
+		}
+		return null;
 	}
 	
 }
