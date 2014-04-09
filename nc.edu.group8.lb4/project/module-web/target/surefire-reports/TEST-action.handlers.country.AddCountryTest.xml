@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="0.251" errors="0" skipped="0" tests="4" name="action.handlers.country.AddCountryTest">
+<testsuite failures="0" time="0.741" errors="0" skipped="0" tests="4" name="action.handlers.country.AddCountryTest">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.7.0_11\jre\bin"/>
@@ -62,7 +62,7 @@
     <property name="sun.cpu.isalist" value="pentium_pro+mmx pentium_pro pentium+mmx pentium i486 i386 i86"/>
   </properties>
   <testcase time="0.04" classname="action.handlers.country.AddCountryTest" name="nullTest"/>
-  <testcase time="0.05" classname="action.handlers.country.AddCountryTest" name="forwardTest"/>
-  <testcase time="0.1" classname="action.handlers.country.AddCountryTest" name="logicTest"/>
-  <testcase time="0.061" classname="action.handlers.country.AddCountryTest" name="actionExceptionTest"/>
+  <testcase time="0.481" classname="action.handlers.country.AddCountryTest" name="forwardTest"/>
+  <testcase time="0.16" classname="action.handlers.country.AddCountryTest" name="logicTest"/>
+  <testcase time="0.06" classname="action.handlers.country.AddCountryTest" name="actionExceptionTest"/>
 </testsuite>

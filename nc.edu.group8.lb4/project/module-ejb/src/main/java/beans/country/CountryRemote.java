@@ -14,6 +14,6 @@ public interface CountryRemote extends EJBObject {
 	public String getCapital() throws RemoteException;
 	public void setPopulation(int population) throws RemoteException;
 	public int getPopulation() throws RemoteException;
-	public void setTimezone(String tz) throws RemoteException;
+	public void setTimezone(int tz) throws RemoteException;
 	public int getTimezone() throws RemoteException;
 }

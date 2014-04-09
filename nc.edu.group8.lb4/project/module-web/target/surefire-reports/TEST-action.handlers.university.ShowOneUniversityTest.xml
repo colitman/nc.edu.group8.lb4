@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="0.52" errors="1" skipped="1" tests="4" name="action.handlers.university.ShowOneUniversityTest">
+<testsuite failures="0" time="0.33" errors="1" skipped="1" tests="4" name="action.handlers.university.ShowOneUniversityTest">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.7.0_11\jre\bin"/>
@@ -61,8 +61,8 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="pentium_pro+mmx pentium_pro pentium+mmx pentium i486 i386 i86"/>
   </properties>
-  <testcase time="0.04" classname="action.handlers.university.ShowOneUniversityTest" name="nullTest"/>
-  <testcase time="0.21" classname="action.handlers.university.ShowOneUniversityTest" name="forwardTest">
+  <testcase time="0.05" classname="action.handlers.university.ShowOneUniversityTest" name="nullTest"/>
+  <testcase time="0.11" classname="action.handlers.university.ShowOneUniversityTest" name="forwardTest">
     <error message="java.lang.NullPointerException" type="action.ActionException">action.ActionException: java.lang.NullPointerException
 	at action.handlers.university.ShowOneUniversity.perform(ShowOneUniversity.java:60)
 	at util.Utils.perform(Utils.java:11)
@@ -94,16 +94,16 @@
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 Caused by: java.lang.NullPointerException
-	at action.handlers.university.ShowOneUniversity.perform(ShowOneUniversity.java:43)
+	at action.handlers.university.ShowOneUniversity.perform(ShowOneUniversity.java:33)
 	... 28 more
 </error>
-    <system-out>2014-04-08 19:04:49,944 INFO main                action.ActionFactory - Getting ActionFactory
-2014-04-08 19:04:49,944 INFO main                action.ActionFactory - Building HttpAction
-2014-04-08 19:04:49,944 INFO main                mlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@b88745: display name [org.springframework.context.support.ClassPathXmlApplicationContext@b88745]; startup date [Tue Apr 08 19:04:49 EEST 2014]; root of context hierarchy
-2014-04-08 19:04:49,944 INFO main                BeanDefinitionReader - Loading XML bean definitions from class path resource [beans.xml]
-2014-04-08 19:04:49,954 INFO main                mlApplicationContext - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@b88745]: org.springframework.beans.factory.support.DefaultListableBeanFactory@1f66dc1
-2014-04-08 19:04:49,954 INFO main                tListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@1f66dc1: defining beans [oracleGateway,addCountry,modifyCountry,removeCountry,showAllCountry,addRegion,modifyRegion,removeRegion,showAllRegionInCountry,addCity,modifyCity,removeCity,showAllCityInRegion,addUniversity,modifyUniversity,removeUniversity,showOneUniversity,showAllUniversityInCity]; root of factory hierarchy
-2014-04-08 19:04:49,954 ERRORmain                .dao.EJBBeansGateway - Connection problems. Please ensure that weblogic is already run and check you provider url, login and password
+    <system-out>2014-04-09 16:23:10,146 INFO main                action.ActionFactory - Getting ActionFactory
+2014-04-09 16:23:10,146 INFO main                action.ActionFactory - Building HttpAction
+2014-04-09 16:23:10,146 INFO main                mlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@b88745: display name [org.springframework.context.support.ClassPathXmlApplicationContext@b88745]; startup date [Wed Apr 09 16:23:10 EEST 2014]; root of context hierarchy
+2014-04-09 16:23:10,146 INFO main                BeanDefinitionReader - Loading XML bean definitions from class path resource [beans.xml]
+2014-04-09 16:23:10,156 INFO main                mlApplicationContext - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@b88745]: org.springframework.beans.factory.support.DefaultListableBeanFactory@1f66dc1
+2014-04-09 16:23:10,156 INFO main                tListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@1f66dc1: defining beans [oracleGateway,addCountry,modifyCountry,removeCountry,showAllCountry,addRegion,modifyRegion,removeRegion,showAllRegionInCountry,addCity,modifyCity,removeCity,showAllCityInRegion,addUniversity,modifyUniversity,removeUniversity,showOneUniversity,showAllUniversityInCity]; root of factory hierarchy
+2014-04-09 16:23:10,156 ERRORmain                .dao.EJBBeansGateway - Connection problems. Please ensure that weblogic is already run and check you provider url, login and password
 javax.naming.NoInitialContextException: Cannot instantiate class: weblogic.jndi.WLInitialContextFactory [Root exception is java.lang.ClassNotFoundException: weblogic.jndi.WLInitialContextFactory]
 	at javax.naming.spi.NamingManager.getInitialContext(NamingManager.java:674)
 	at javax.naming.InitialContext.getDefaultInitCtx(InitialContext.java:307)
@@ -174,23 +174,23 @@ Caused by: java.lang.ClassNotFoundException: weblogic.jndi.WLInitialContextFacto
 	at com.sun.naming.internal.VersionHelper12.loadClass(VersionHelper12.java:63)
 	at javax.naming.spi.NamingManager.getInitialContext(NamingManager.java:671)
 	... 55 more
-2014-04-08 19:04:49,954 INFO main                ersity.AddUniversity - Prepare to add university
-2014-04-08 19:04:49,954 INFO main                ersity.AddUniversity - University properties: 
-2014-04-08 19:04:49,954 INFO main                ersity.AddUniversity - Name: skeleton 
-2014-04-08 19:04:49,954 INFO main                ersity.AddUniversity - DepartamentsCount: 1000 
-2014-04-08 19:04:49,954 INFO main                ersity.AddUniversity - WWW: zzz 
-2014-04-08 19:04:49,954 INFO main                ersity.AddUniversity - ParentID: 14 
-2014-04-08 19:04:49,954 INFO main                tion.GatewayResolver - Getting gateway
+2014-04-09 16:23:10,156 INFO main                ersity.AddUniversity - Prepare to add university
+2014-04-09 16:23:10,156 INFO main                ersity.AddUniversity - University properties: 
+2014-04-09 16:23:10,156 INFO main                ersity.AddUniversity - Name: skeleton 
+2014-04-09 16:23:10,156 INFO main                ersity.AddUniversity - DepartamentsCount: 1000 
+2014-04-09 16:23:10,156 INFO main                ersity.AddUniversity - WWW: zzz 
+2014-04-09 16:23:10,156 INFO main                ersity.AddUniversity - ParentID: 11 
+2014-04-09 16:23:10,156 INFO main                tion.GatewayResolver - Getting gateway
 14
-2014-04-08 19:04:49,954 INFO main                ersity.AddUniversity - University was successfully added
-2014-04-08 19:04:49,954 INFO main                ersity.AddUniversity - Send redirect to showAllUniversity page
-2014-04-08 19:04:49,954 INFO main                action.ActionFactory - Getting ActionFactory
-2014-04-08 19:04:49,954 INFO main                action.ActionFactory - Building HttpAction
-2014-04-08 19:04:49,954 INFO main                mlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@f454e4: display name [org.springframework.context.support.ClassPathXmlApplicationContext@f454e4]; startup date [Tue Apr 08 19:04:49 EEST 2014]; root of context hierarchy
-2014-04-08 19:04:49,954 INFO main                BeanDefinitionReader - Loading XML bean definitions from class path resource [beans.xml]
-2014-04-08 19:04:49,974 INFO main                mlApplicationContext - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@f454e4]: org.springframework.beans.factory.support.DefaultListableBeanFactory@1c90d92
-2014-04-08 19:04:49,974 INFO main                tListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@1c90d92: defining beans [oracleGateway,addCountry,modifyCountry,removeCountry,showAllCountry,addRegion,modifyRegion,removeRegion,showAllRegionInCountry,addCity,modifyCity,removeCity,showAllCityInRegion,addUniversity,modifyUniversity,removeUniversity,showOneUniversity,showAllUniversityInCity]; root of factory hierarchy
-2014-04-08 19:04:49,974 ERRORmain                .dao.EJBBeansGateway - Connection problems. Please ensure that weblogic is already run and check you provider url, login and password
+2014-04-09 16:23:10,156 INFO main                ersity.AddUniversity - University was successfully added
+2014-04-09 16:23:10,156 INFO main                ersity.AddUniversity - Send redirect to showAllUniversity page
+2014-04-09 16:23:10,156 INFO main                action.ActionFactory - Getting ActionFactory
+2014-04-09 16:23:10,156 INFO main                action.ActionFactory - Building HttpAction
+2014-04-09 16:23:10,156 INFO main                mlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@f454e4: display name [org.springframework.context.support.ClassPathXmlApplicationContext@f454e4]; startup date [Wed Apr 09 16:23:10 EEST 2014]; root of context hierarchy
+2014-04-09 16:23:10,156 INFO main                BeanDefinitionReader - Loading XML bean definitions from class path resource [beans.xml]
+2014-04-09 16:23:10,166 INFO main                mlApplicationContext - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@f454e4]: org.springframework.beans.factory.support.DefaultListableBeanFactory@1c90d92
+2014-04-09 16:23:10,176 INFO main                tListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@1c90d92: defining beans [oracleGateway,addCountry,modifyCountry,removeCountry,showAllCountry,addRegion,modifyRegion,removeRegion,showAllRegionInCountry,addCity,modifyCity,removeCity,showAllCityInRegion,addUniversity,modifyUniversity,removeUniversity,showOneUniversity,showAllUniversityInCity]; root of factory hierarchy
+2014-04-09 16:23:10,176 ERRORmain                .dao.EJBBeansGateway - Connection problems. Please ensure that weblogic is already run and check you provider url, login and password
 javax.naming.NoInitialContextException: Cannot instantiate class: weblogic.jndi.WLInitialContextFactory [Root exception is java.lang.ClassNotFoundException: weblogic.jndi.WLInitialContextFactory]
 	at javax.naming.spi.NamingManager.getInitialContext(NamingManager.java:674)
 	at javax.naming.InitialContext.getDefaultInitCtx(InitialContext.java:307)
@@ -261,170 +261,12 @@ Caused by: java.lang.ClassNotFoundException: weblogic.jndi.WLInitialContextFacto
 	at com.sun.naming.internal.VersionHelper12.loadClass(VersionHelper12.java:63)
 	at javax.naming.spi.NamingManager.getInitialContext(NamingManager.java:671)
 	... 55 more
-2014-04-08 19:04:49,974 INFO main                ty.ShowOneUniversity - Prepare to show university
-2014-04-08 19:04:49,974 INFO main                tion.GatewayResolver - Getting gateway
-2014-04-08 19:04:49,974 INFO main                ty.ShowOneUniversity - University properties: 
-2014-04-08 19:04:49,974 INFO main                ty.ShowOneUniversity - Name: skeleton 
-2014-04-08 19:04:49,974 INFO main                ty.ShowOneUniversity - DepartamentsCount: 1000 
-2014-04-08 19:04:49,974 INFO main                ty.ShowOneUniversity - WWW: zzz 
-2014-04-08 19:04:49,974 INFO main                ty.ShowOneUniversity - ParentID: 14 
-2014-04-08 19:04:49,974 INFO main                tion.GatewayResolver - Getting gateway
-2014-04-08 19:04:49,974 INFO main                mlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@805af4: display name [org.springframework.context.support.ClassPathXmlApplicationContext@805af4]; startup date [Tue Apr 08 19:04:49 EEST 2014]; root of context hierarchy
-2014-04-08 19:04:49,974 INFO main                BeanDefinitionReader - Loading XML bean definitions from class path resource [beans.xml]
-2014-04-08 19:04:49,984 INFO main                mlApplicationContext - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@805af4]: org.springframework.beans.factory.support.DefaultListableBeanFactory@147bc1e
-2014-04-08 19:04:49,984 INFO main                tListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@147bc1e: defining beans [oracleGateway,addCountry,modifyCountry,removeCountry,showAllCountry,addRegion,modifyRegion,removeRegion,showAllRegionInCountry,addCity,modifyCity,removeCity,showAllCityInRegion,addUniversity,modifyUniversity,removeUniversity,showOneUniversity,showAllUniversityInCity]; root of factory hierarchy
-2014-04-08 19:04:49,984 ERRORmain                .dao.EJBBeansGateway - Connection problems. Please ensure that weblogic is already run and check you provider url, login and password
-javax.naming.NoInitialContextException: Cannot instantiate class: weblogic.jndi.WLInitialContextFactory [Root exception is java.lang.ClassNotFoundException: weblogic.jndi.WLInitialContextFactory]
-	at javax.naming.spi.NamingManager.getInitialContext(NamingManager.java:674)
-	at javax.naming.InitialContext.getDefaultInitCtx(InitialContext.java:307)
-	at javax.naming.InitialContext.init(InitialContext.java:242)
-	at javax.naming.InitialContext.&lt;init&gt;(InitialContext.java:216)
-	at hibernate.dao.EJBBeansGateway.createContext(EJBBeansGateway.java:514)
-	at hibernate.dao.EJBBeansGateway.&lt;init&gt;(EJBBeansGateway.java:28)
-	at sun.reflect.GeneratedConstructorAccessor8.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:525)
-	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:100)
-	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:61)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:877)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:839)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:440)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory$1.run(AbstractAutowireCapableBeanFactory.java:409)
-	at java.security.AccessController.doPrivileged(Native Method)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:380)
-	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:264)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:261)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:185)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:164)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:429)
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:728)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:380)
-	at org.springframework.context.support.ClassPathXmlApplicationContext.&lt;init&gt;(ClassPathXmlApplicationContext.java:139)
-	at org.springframework.context.support.ClassPathXmlApplicationContext.&lt;init&gt;(ClassPathXmlApplicationContext.java:83)
-	at action.GatewayResolver.getGateway(GatewayResolver.java:28)
-	at action.handlers.university.ShowOneUniversity.perform(ShowOneUniversity.java:39)
-	at util.Utils.perform(Utils.java:11)
-	at action.handlers.university.ShowOneUniversityTest.forwardTest(ShowOneUniversityTest.java:98)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:601)
-	at org.junit.internal.runners.TestMethodRunner.executeMethodBody(TestMethodRunner.java:99)
-	at org.junit.internal.runners.TestMethodRunner.runUnprotected(TestMethodRunner.java:81)
-	at org.junit.internal.runners.BeforeAndAfterRunner.runProtected(BeforeAndAfterRunner.java:34)
-	at org.junit.internal.runners.TestMethodRunner.runMethod(TestMethodRunner.java:75)
-	at org.junit.internal.runners.TestMethodRunner.run(TestMethodRunner.java:45)
-	at org.junit.internal.runners.TestClassMethodsRunner.invokeTestMethod(TestClassMethodsRunner.java:71)
-	at org.junit.internal.runners.TestClassMethodsRunner.run(TestClassMethodsRunner.java:35)
-	at org.junit.internal.runners.TestClassRunner$1.runUnprotected(TestClassRunner.java:42)
-	at org.junit.internal.runners.BeforeAndAfterRunner.runProtected(BeforeAndAfterRunner.java:34)
-	at org.junit.internal.runners.TestClassRunner.run(TestClassRunner.java:52)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:601)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
-	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
-Caused by: java.lang.ClassNotFoundException: weblogic.jndi.WLInitialContextFactory
-	at java.net.URLClassLoader$1.run(URLClassLoader.java:366)
-	at java.net.URLClassLoader$1.run(URLClassLoader.java:355)
-	at java.security.AccessController.doPrivileged(Native Method)
-	at java.net.URLClassLoader.findClass(URLClassLoader.java:354)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:423)
-	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:308)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:356)
-	at java.lang.Class.forName0(Native Method)
-	at java.lang.Class.forName(Class.java:264)
-	at com.sun.naming.internal.VersionHelper12.loadClass(VersionHelper12.java:63)
-	at javax.naming.spi.NamingManager.getInitialContext(NamingManager.java:671)
-	... 56 more
-2014-04-08 19:04:49,984 INFO main                tion.GatewayResolver - Getting gateway
-2014-04-08 19:04:49,984 INFO main                mlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@a40b6e: display name [org.springframework.context.support.ClassPathXmlApplicationContext@a40b6e]; startup date [Tue Apr 08 19:04:49 EEST 2014]; root of context hierarchy
-2014-04-08 19:04:49,984 INFO main                BeanDefinitionReader - Loading XML bean definitions from class path resource [beans.xml]
-2014-04-08 19:04:49,994 INFO main                mlApplicationContext - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@a40b6e]: org.springframework.beans.factory.support.DefaultListableBeanFactory@351b05
-2014-04-08 19:04:50,004 INFO main                tListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@351b05: defining beans [oracleGateway,addCountry,modifyCountry,removeCountry,showAllCountry,addRegion,modifyRegion,removeRegion,showAllRegionInCountry,addCity,modifyCity,removeCity,showAllCityInRegion,addUniversity,modifyUniversity,removeUniversity,showOneUniversity,showAllUniversityInCity]; root of factory hierarchy
-2014-04-08 19:04:50,004 ERRORmain                .dao.EJBBeansGateway - Connection problems. Please ensure that weblogic is already run and check you provider url, login and password
-javax.naming.NoInitialContextException: Cannot instantiate class: weblogic.jndi.WLInitialContextFactory [Root exception is java.lang.ClassNotFoundException: weblogic.jndi.WLInitialContextFactory]
-	at javax.naming.spi.NamingManager.getInitialContext(NamingManager.java:674)
-	at javax.naming.InitialContext.getDefaultInitCtx(InitialContext.java:307)
-	at javax.naming.InitialContext.init(InitialContext.java:242)
-	at javax.naming.InitialContext.&lt;init&gt;(InitialContext.java:216)
-	at hibernate.dao.EJBBeansGateway.createContext(EJBBeansGateway.java:514)
-	at hibernate.dao.EJBBeansGateway.&lt;init&gt;(EJBBeansGateway.java:28)
-	at sun.reflect.GeneratedConstructorAccessor8.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:525)
-	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:100)
-	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:61)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:877)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:839)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:440)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory$1.run(AbstractAutowireCapableBeanFactory.java:409)
-	at java.security.AccessController.doPrivileged(Native Method)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:380)
-	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:264)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:261)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:185)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:164)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:429)
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:728)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:380)
-	at org.springframework.context.support.ClassPathXmlApplicationContext.&lt;init&gt;(ClassPathXmlApplicationContext.java:139)
-	at org.springframework.context.support.ClassPathXmlApplicationContext.&lt;init&gt;(ClassPathXmlApplicationContext.java:83)
-	at action.GatewayResolver.getGateway(GatewayResolver.java:28)
-	at action.handlers.university.ShowOneUniversity.perform(ShowOneUniversity.java:42)
-	at util.Utils.perform(Utils.java:11)
-	at action.handlers.university.ShowOneUniversityTest.forwardTest(ShowOneUniversityTest.java:98)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:601)
-	at org.junit.internal.runners.TestMethodRunner.executeMethodBody(TestMethodRunner.java:99)
-	at org.junit.internal.runners.TestMethodRunner.runUnprotected(TestMethodRunner.java:81)
-	at org.junit.internal.runners.BeforeAndAfterRunner.runProtected(BeforeAndAfterRunner.java:34)
-	at org.junit.internal.runners.TestMethodRunner.runMethod(TestMethodRunner.java:75)
-	at org.junit.internal.runners.TestMethodRunner.run(TestMethodRunner.java:45)
-	at org.junit.internal.runners.TestClassMethodsRunner.invokeTestMethod(TestClassMethodsRunner.java:71)
-	at org.junit.internal.runners.TestClassMethodsRunner.run(TestClassMethodsRunner.java:35)
-	at org.junit.internal.runners.TestClassRunner$1.runUnprotected(TestClassRunner.java:42)
-	at org.junit.internal.runners.BeforeAndAfterRunner.runProtected(BeforeAndAfterRunner.java:34)
-	at org.junit.internal.runners.TestClassRunner.run(TestClassRunner.java:52)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:601)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
-	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
-Caused by: java.lang.ClassNotFoundException: weblogic.jndi.WLInitialContextFactory
-	at java.net.URLClassLoader$1.run(URLClassLoader.java:366)
-	at java.net.URLClassLoader$1.run(URLClassLoader.java:355)
-	at java.security.AccessController.doPrivileged(Native Method)
-	at java.net.URLClassLoader.findClass(URLClassLoader.java:354)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:423)
-	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:308)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:356)
-	at java.lang.Class.forName0(Native Method)
-	at java.lang.Class.forName(Class.java:264)
-	at com.sun.naming.internal.VersionHelper12.loadClass(VersionHelper12.java:63)
-	at javax.naming.spi.NamingManager.getInitialContext(NamingManager.java:671)
-	... 56 more
-2014-04-08 19:04:50,004 ERRORmain                ty.ShowOneUniversity - Error occured in ShowOneUniversity action
+2014-04-09 16:23:10,176 INFO main                ty.ShowOneUniversity - Prepare to show university
+2014-04-09 16:23:10,176 INFO main                tion.GatewayResolver - Getting gateway
+2014-04-09 16:23:10,176 INFO main                ty.ShowOneUniversity - University properties: 
+2014-04-09 16:23:10,176 ERRORmain                ty.ShowOneUniversity - Error occured in ShowOneUniversity action
 java.lang.NullPointerException
-	at action.handlers.university.ShowOneUniversity.perform(ShowOneUniversity.java:43)
+	at action.handlers.university.ShowOneUniversity.perform(ShowOneUniversity.java:33)
 	at util.Utils.perform(Utils.java:11)
 	at action.handlers.university.ShowOneUniversityTest.forwardTest(ShowOneUniversityTest.java:98)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -455,7 +297,7 @@ java.lang.NullPointerException
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 </system-out>
   </testcase>
-  <testcase time="0.21" classname="action.handlers.university.ShowOneUniversityTest" name="logicTest">
+  <testcase time="0.11" classname="action.handlers.university.ShowOneUniversityTest" name="logicTest">
     <skipped/>
   </testcase>
   <testcase time="0.06" classname="action.handlers.university.ShowOneUniversityTest" name="actionExceptionTest"/>

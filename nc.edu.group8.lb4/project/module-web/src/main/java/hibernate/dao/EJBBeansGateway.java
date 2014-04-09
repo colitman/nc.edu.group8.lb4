@@ -149,7 +149,7 @@ public class EJBBeansGateway<T> implements Gateway<T> {
 				remote.setLanguage(object.getLanguage());
 				remote.setCapital(object.getCapital());
 				remote.setPopulation(object.getPopulation());
-				remote.setTimezone(String.valueOf(object.getTimezone()));
+				remote.setTimezone(object.getTimezone());
 			}
 		}
 		catch (NamingException ne) {
