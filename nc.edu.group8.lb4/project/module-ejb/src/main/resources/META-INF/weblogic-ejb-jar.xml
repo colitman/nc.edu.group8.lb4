@@ -1,0 +1,21 @@
+<weblogic-ejb-jar>
+  <weblogic-enterprise-bean>
+    <ejb-name>CityBean</ejb-name>
+    <local-jndi-name>CityBean</local-jndi-name>
+  </weblogic-enterprise-bean>
+  
+  <weblogic-enterprise-bean>
+    <ejb-name>CountryBean</ejb-name>
+    <local-jndi-name>CountryBean</local-jndi-name>
+  </weblogic-enterprise-bean>
+  
+  <weblogic-enterprise-bean>
+    <ejb-name>RegionBean</ejb-name>
+    <local-jndi-name>RegionBean</local-jndi-name>
+  </weblogic-enterprise-bean>
+  
+  <weblogic-enterprise-bean>
+    <ejb-name>UniversityBean</ejb-name>
+    <local-jndi-name>UniversityBean</local-jndi-name>
+  </weblogic-enterprise-bean>
+</weblogic-ejb-jar>

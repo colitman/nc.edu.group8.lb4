@@ -166,15 +166,16 @@ public class EJBBeansGateway<T> implements Gateway<T> {
 	@Override
 	public T get(Class<T> className, int id) throws SQLException {
 		try {
-			if (className.getName().equals("University")) {
+			if (className.getSimpleName().equals("University")) {
 				Object ref = context.lookup("UniversityBean");
 				
 				UniversityHome home = (UniversityHome) PortableRemoteObject.narrow(ref, UniversityHome.class);
 				
 				University object = new University();
 				
-				UniversityRemote remote = home.findByPrimaryKey(object.getID());
+				UniversityRemote remote = home.findByPrimaryKey(id);
 				
+				object.setID(remote.getID());
 				object.setParentID(remote.getParentID());
 				object.setName(remote.getName());
 				object.setDepartamentsCount(remote.getDepartamentsCount());
@@ -182,15 +183,16 @@ public class EJBBeansGateway<T> implements Gateway<T> {
 				
 				return (T) object;
 			}
-			if (className.getName().equals("City")) {
+			if (className.getSimpleName().equals("City")) {
 				Object ref = context.lookup("CityBean");
 				
 				CityHome home = (CityHome) PortableRemoteObject.narrow(ref, CityHome.class);
 				
 				City object = new City();
 				
-				CityRemote remote = home.findByPrimaryKey(object.getID());
+				CityRemote remote = home.findByPrimaryKey(id);
 				
+				object.setID(remote.getID());
 				object.setParentID(remote.getParentID());
 				object.setName(remote.getName());
 				object.setPopulation(remote.getPopulation());
@@ -198,15 +200,16 @@ public class EJBBeansGateway<T> implements Gateway<T> {
 				
 				return (T) object;
 			}
-			if (className.getName().equals("Region")) {
+			if (className.getSimpleName().equals("Region")) {
 				Object ref = context.lookup("RegionBean");
 				
 				RegionHome home = (RegionHome) PortableRemoteObject.narrow(ref, RegionHome.class);
 				
 				Region object = new Region();
 				
-				RegionRemote remote = home.findByPrimaryKey(object.getID());
+				RegionRemote remote = home.findByPrimaryKey(id);
 				
+				object.setID(remote.getID());
 				object.setParentID(remote.getParentID());
 				object.setName(remote.getName());
 				object.setPopulation(remote.getPopulation());
@@ -214,15 +217,16 @@ public class EJBBeansGateway<T> implements Gateway<T> {
 				
 				return (T) object;
 			}
-			if (className.getName().equals("Country")) {
+			if (className.getSimpleName().equals("Country")) {
 				Object ref = context.lookup("CountryBean");
 				
 				CountryHome home = (CountryHome) PortableRemoteObject.narrow(ref, CountryHome.class);
 				
 				Country object = new Country();
 				
-				CountryRemote remote = home.findByPrimaryKey(object.getID());
+				CountryRemote remote = home.findByPrimaryKey(id);
 				
+				object.setID(remote.getID());
 				object.setName(remote.getName());
 				object.setLanguage(remote.getLanguage());
 				object.setCapital(remote.getCapital());
@@ -247,7 +251,7 @@ public class EJBBeansGateway<T> implements Gateway<T> {
 	@Override
 	public Collection<T> getAll(Class className) throws SQLException {
 		try {
-			if (className.getName().equals("University")) {
+			if (className.getSimpleName().equals("University")) {
 				Object ref = context.lookup("UniversityBean");
 				
 				UniversityHome home = (UniversityHome) PortableRemoteObject.narrow(ref, UniversityHome.class);
@@ -258,6 +262,7 @@ public class EJBBeansGateway<T> implements Gateway<T> {
 				
 				for (UniversityRemote remote : remoteList) {
 					University object = new University();
+					object.setID(remote.getID());
 					object.setParentID(remote.getParentID());
 					object.setName(remote.getName());
 					object.setDepartamentsCount(remote.getDepartamentsCount());
@@ -268,7 +273,7 @@ public class EJBBeansGateway<T> implements Gateway<T> {
 				
 				return (Collection<T>) objectList;
 			}
-			if (className.getName().equals("City")) {
+			if (className.getSimpleName().equals("City")) {
 				Object ref = context.lookup("CityBean");
 				
 				CityHome home = (CityHome) PortableRemoteObject.narrow(ref, CityHome.class);
@@ -279,6 +284,7 @@ public class EJBBeansGateway<T> implements Gateway<T> {
 				
 				for (CityRemote remote : remoteList) {
 					City object = new City();
+					object.setID(remote.getID());
 					object.setParentID(remote.getParentID());
 					object.setName(remote.getName());
 					object.setPopulation(remote.getPopulation());
@@ -289,7 +295,7 @@ public class EJBBeansGateway<T> implements Gateway<T> {
 				
 				return (Collection<T>) objectList;
 			}
-			if (className.getName().equals("Region")) {
+			if (className.getSimpleName().equals("Region")) {
 				Object ref = context.lookup("RegionBean");
 				
 				RegionHome home = (RegionHome) PortableRemoteObject.narrow(ref, RegionHome.class);
@@ -300,6 +306,7 @@ public class EJBBeansGateway<T> implements Gateway<T> {
 				
 				for (RegionRemote remote : remoteList) {
 					Region object = new Region();
+					object.setID(remote.getID());
 					object.setParentID(remote.getParentID());
 					object.setName(remote.getName());
 					object.setPopulation(remote.getPopulation());
@@ -310,7 +317,7 @@ public class EJBBeansGateway<T> implements Gateway<T> {
 				
 				return (Collection<T>) objectList;
 			}
-			if (className.getName().equals("Country")) {
+			if (className.getSimpleName().equals("Country")) {
 				Object ref = context.lookup("CountryBean");
 				
 				CountryHome home = (CountryHome) PortableRemoteObject.narrow(ref, CountryHome.class);
@@ -321,6 +328,7 @@ public class EJBBeansGateway<T> implements Gateway<T> {
 				
 				for (CountryRemote remote : remoteList) {
 					Country object = new Country();
+					object.setID(remote.getID());
 					object.setName(remote.getName());
 					object.setLanguage(remote.getLanguage());
 					object.setCapital(remote.getCapital());
@@ -349,7 +357,7 @@ public class EJBBeansGateway<T> implements Gateway<T> {
 	public Collection<T> getAllBy(Class className, int parentID)
 			throws SQLException {
 		try {
-			if (className.getName().equals("University")) {
+			if (className.getSimpleName().equals("University")) {
 				Object ref = context.lookup("UniversityBean");
 				
 				UniversityHome home = (UniversityHome) PortableRemoteObject.narrow(ref, UniversityHome.class);
@@ -361,6 +369,7 @@ public class EJBBeansGateway<T> implements Gateway<T> {
 				for (UniversityRemote remote : remoteList) {
 					if (remote.getParentID() == parentID) {
 						University object = new University();
+						object.setID(remote.getID());
 						object.setParentID(remote.getParentID());
 						object.setName(remote.getName());
 						object.setDepartamentsCount(remote.getDepartamentsCount());
@@ -371,7 +380,7 @@ public class EJBBeansGateway<T> implements Gateway<T> {
 				}
 				return (Collection<T>) objectList;
 			}
-			if (className.getName().equals("City")) {
+			if (className.getSimpleName().equals("City")) {
 				Object ref = context.lookup("CityBean");
 				
 				CityHome home = (CityHome) PortableRemoteObject.narrow(ref, CityHome.class);
@@ -383,6 +392,7 @@ public class EJBBeansGateway<T> implements Gateway<T> {
 				for (CityRemote remote : remoteList) {
 					if (remote.getParentID() == parentID) {
 						City object = new City();
+						object.setID(remote.getID());
 						object.setParentID(remote.getParentID());
 						object.setName(remote.getName());
 						object.setPopulation(remote.getPopulation());
@@ -393,7 +403,7 @@ public class EJBBeansGateway<T> implements Gateway<T> {
 				}
 				return (Collection<T>) objectList;
 			}
-			if (className.getName().equals("Region")) {
+			if (className.getSimpleName().equals("Region")) {
 				Object ref = context.lookup("RegionBean");
 				
 				RegionHome home = (RegionHome) PortableRemoteObject.narrow(ref, RegionHome.class);
@@ -405,6 +415,7 @@ public class EJBBeansGateway<T> implements Gateway<T> {
 				for (RegionRemote remote : remoteList) {
 					if (remote.getParentID() == parentID) {
 						Region object = new Region();
+						object.setID(remote.getID());
 						object.setParentID(remote.getParentID());
 						object.setName(remote.getName());
 						object.setPopulation(remote.getPopulation());
@@ -428,6 +439,7 @@ public class EJBBeansGateway<T> implements Gateway<T> {
 				for (CountryRemote remote : remoteList) {
 					if (remote.getParentID() == parentID) {
 						Country object = new Country();
+						object.setID(remote.getID());
 						object.setName(remote.getName());
 						object.setLanguage(remote.getLanguage());
 						object.setCapital(remote.getCapital());

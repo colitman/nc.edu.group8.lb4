@@ -16,7 +16,7 @@
 	<h1 class="greeting">Welcome!</h1>
 	<h2 class="greeting">Press the <span id="start">Start</span> button below to begin working.</h2>
 	<div id="start-button-img">
-		<a class="greeting" href="/WebPrototype/action?code=showAllCountry" >
+		<a class="greeting" href="/module-web/action?code=showAllCountry" >
 			<img width="75px" height="75px" id="start-button" alt="Go-go-go!" src="http://fotki.ykt.ru/albums/userpics/2014/01-01/start_button.png">
 		</a>
 	</div>
