@@ -71,7 +71,7 @@ public class RegionBean implements EntityBean {
 		try {
 			loadInstance();
 		} catch (SQLException e) {
-			throw new EJBException("Loading failed: " + e.getMessage());
+			throw new EJBException("Loading failed: " + e.getMessage(), e);
 		}
 	}
 
@@ -85,7 +85,7 @@ public class RegionBean implements EntityBean {
 		try {
 			removeInstance();
 		} catch (SQLException e) {
-			throw new EJBException("Removing failed: " + e.getMessage());
+			throw new EJBException("Removing failed: " + e.getMessage(), e);
 		}
 	}
 
@@ -94,7 +94,7 @@ public class RegionBean implements EntityBean {
 		try {
 			storeInstance();
 		} catch (SQLException e) {
-			throw new EJBException("Updating failed: " + e.getMessage());
+			throw new EJBException("Updating failed: " + e.getMessage(), e);
 		}
 	}
 
@@ -104,7 +104,7 @@ public class RegionBean implements EntityBean {
 		try {
 			this.ID = createInstance(pid, name, population, square);
 		} catch (Exception e) {
-			throw new EJBException("Creation failed: " + e.getMessage());
+			throw new EJBException("Creation failed: " + e.getMessage(), e);
 		}
 		
 		this.parentID = pid;
@@ -122,7 +122,7 @@ public class RegionBean implements EntityBean {
 				return -1;
 			}
 		} catch (SQLException e) {
-			throw new EJBException("Find by PK failed: " + e.getMessage());
+			throw new EJBException("Find by PK failed: " + e.getMessage(), e);
 		}
 	}
 
@@ -130,7 +130,7 @@ public class RegionBean implements EntityBean {
 		try {
 			return selectAll();
 		} catch (SQLException e) {
-			throw new EJBException("Find all failed: " + e.getMessage());
+			throw new EJBException("Find all failed: " + e.getMessage(), e);
 		}
 	}
 

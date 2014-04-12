@@ -24,6 +24,10 @@ import hibernate.logic.*;
 @Service
 public class EJBBeansGateway<T> implements Gateway<T> {
 
+	private static final String COUNTRY_BEAN = "java:global.project.module-ejb-1.0.CountryBean!beans.country.CountryHome";
+	private static final String CITY_BEAN = "java:global.project.module-ejb-1.0.CityBean!beans.city.CityHome";
+	private static final String REGION_BEAN = "java:global.project.module-ejb-1.0.RegionBean!beans.region.RegionHome";
+	private static final String UNIVERSITY_BEAN = "java:global.project.module-ejb-1.0.UniversityBean!beans.uni.UniversityHome";
 	private static final Logger logger = Logger.getLogger(EJBBeansGateway.class);
 	private Context context = createContext();
 	
@@ -31,7 +35,7 @@ public class EJBBeansGateway<T> implements Gateway<T> {
 	public void add(T entity) throws SQLException {
 		try {
 			if (entity instanceof Country) {
-				Object ref = context.lookup("UniversityBean");
+				Object ref = context.lookup(UNIVERSITY_BEAN);
 				
 				UniversityHome home = (UniversityHome) PortableRemoteObject.narrow(ref, UniversityHome.class);
 				
@@ -43,7 +47,7 @@ public class EJBBeansGateway<T> implements Gateway<T> {
 							object.getWWW());
 			}
 			if (entity instanceof City) {
-				Object ref = context.lookup("CityBean");
+				Object ref = context.lookup(CITY_BEAN);
 				
 				CityHome home = (CityHome) PortableRemoteObject.narrow(ref, CityHome.class);
 					
@@ -55,7 +59,7 @@ public class EJBBeansGateway<T> implements Gateway<T> {
 							object.getSquare());
 			}
 			if (entity instanceof Region) {
-				Object ref = context.lookup("RegionBean");
+				Object ref = context.lookup(REGION_BEAN);
 				
 				RegionHome home = (RegionHome) PortableRemoteObject.narrow(ref, RegionHome.class);
 					
@@ -67,7 +71,7 @@ public class EJBBeansGateway<T> implements Gateway<T> {
 							object.getSquare());
 			}
 			if (entity instanceof Country) {
-				Object ref = context.lookup("CountryBean");
+				Object ref = context.lookup(COUNTRY_BEAN);
 				
 				CountryHome home = (CountryHome) PortableRemoteObject.narrow(ref, CountryHome.class);
 					
@@ -95,7 +99,7 @@ public class EJBBeansGateway<T> implements Gateway<T> {
 	public void modify(T entity) throws SQLException {
 		try {
 			if (entity instanceof University) {
-				Object ref = context.lookup("UniversityBean");
+				Object ref = context.lookup(UNIVERSITY_BEAN);
 				
 				UniversityHome home = (UniversityHome) PortableRemoteObject.narrow(ref, UniversityHome.class);
 				
@@ -109,7 +113,7 @@ public class EJBBeansGateway<T> implements Gateway<T> {
 				remote.setWWW(object.getWWW());
 			}
 			if (entity instanceof City) {
-				Object ref = context.lookup("CityBean");
+				Object ref = context.lookup(CITY_BEAN);
 				
 				CityHome home = (CityHome) PortableRemoteObject.narrow(ref, CityHome.class);
 				
@@ -123,7 +127,7 @@ public class EJBBeansGateway<T> implements Gateway<T> {
 				remote.setSquare(object.getSquare());
 			}
 			if (entity instanceof Region) {
-				Object ref = context.lookup("RegionBean");
+				Object ref = context.lookup(REGION_BEAN);
 				
 				RegionHome home = (RegionHome) PortableRemoteObject.narrow(ref, RegionHome.class);
 				
@@ -137,7 +141,7 @@ public class EJBBeansGateway<T> implements Gateway<T> {
 				remote.setSquare(object.getSquare());
 			}
 			if (entity instanceof Country) {
-				Object ref = context.lookup("CountryBean");
+				Object ref = context.lookup(COUNTRY_BEAN);
 				
 				CountryHome home = (CountryHome) PortableRemoteObject.narrow(ref, CountryHome.class);
 				
@@ -167,7 +171,7 @@ public class EJBBeansGateway<T> implements Gateway<T> {
 	public T get(Class<T> className, int id) throws SQLException {
 		try {
 			if (className.getSimpleName().equals("University")) {
-				Object ref = context.lookup("UniversityBean");
+				Object ref = context.lookup(UNIVERSITY_BEAN);
 				
 				UniversityHome home = (UniversityHome) PortableRemoteObject.narrow(ref, UniversityHome.class);
 				
@@ -184,7 +188,7 @@ public class EJBBeansGateway<T> implements Gateway<T> {
 				return (T) object;
 			}
 			if (className.getSimpleName().equals("City")) {
-				Object ref = context.lookup("CityBean");
+				Object ref = context.lookup(CITY_BEAN);
 				
 				CityHome home = (CityHome) PortableRemoteObject.narrow(ref, CityHome.class);
 				
@@ -201,7 +205,7 @@ public class EJBBeansGateway<T> implements Gateway<T> {
 				return (T) object;
 			}
 			if (className.getSimpleName().equals("Region")) {
-				Object ref = context.lookup("RegionBean");
+				Object ref = context.lookup(REGION_BEAN);
 				
 				RegionHome home = (RegionHome) PortableRemoteObject.narrow(ref, RegionHome.class);
 				
@@ -218,7 +222,7 @@ public class EJBBeansGateway<T> implements Gateway<T> {
 				return (T) object;
 			}
 			if (className.getSimpleName().equals("Country")) {
-				Object ref = context.lookup("CountryBean");
+				Object ref = context.lookup(COUNTRY_BEAN);
 				
 				CountryHome home = (CountryHome) PortableRemoteObject.narrow(ref, CountryHome.class);
 				
@@ -252,7 +256,7 @@ public class EJBBeansGateway<T> implements Gateway<T> {
 	public Collection<T> getAll(Class className) throws SQLException {
 		try {
 			if (className.getSimpleName().equals("University")) {
-				Object ref = context.lookup("UniversityBean");
+				Object ref = context.lookup(UNIVERSITY_BEAN);
 				
 				UniversityHome home = (UniversityHome) PortableRemoteObject.narrow(ref, UniversityHome.class);
 				
@@ -274,7 +278,7 @@ public class EJBBeansGateway<T> implements Gateway<T> {
 				return (Collection<T>) objectList;
 			}
 			if (className.getSimpleName().equals("City")) {
-				Object ref = context.lookup("CityBean");
+				Object ref = context.lookup(CITY_BEAN);
 				
 				CityHome home = (CityHome) PortableRemoteObject.narrow(ref, CityHome.class);
 				
@@ -296,7 +300,7 @@ public class EJBBeansGateway<T> implements Gateway<T> {
 				return (Collection<T>) objectList;
 			}
 			if (className.getSimpleName().equals("Region")) {
-				Object ref = context.lookup("RegionBean");
+				Object ref = context.lookup(REGION_BEAN);
 				
 				RegionHome home = (RegionHome) PortableRemoteObject.narrow(ref, RegionHome.class);
 				
@@ -318,7 +322,7 @@ public class EJBBeansGateway<T> implements Gateway<T> {
 				return (Collection<T>) objectList;
 			}
 			if (className.getSimpleName().equals("Country")) {
-				Object ref = context.lookup("CountryBean");
+				Object ref = context.lookup(COUNTRY_BEAN);
 				
 				CountryHome home = (CountryHome) PortableRemoteObject.narrow(ref, CountryHome.class);
 				
@@ -358,7 +362,7 @@ public class EJBBeansGateway<T> implements Gateway<T> {
 			throws SQLException {
 		try {
 			if (className.getSimpleName().equals("University")) {
-				Object ref = context.lookup("UniversityBean");
+				Object ref = context.lookup(UNIVERSITY_BEAN);
 				
 				UniversityHome home = (UniversityHome) PortableRemoteObject.narrow(ref, UniversityHome.class);
 				
@@ -381,7 +385,7 @@ public class EJBBeansGateway<T> implements Gateway<T> {
 				return (Collection<T>) objectList;
 			}
 			if (className.getSimpleName().equals("City")) {
-				Object ref = context.lookup("CityBean");
+				Object ref = context.lookup(CITY_BEAN);
 				
 				CityHome home = (CityHome) PortableRemoteObject.narrow(ref, CityHome.class);
 				
@@ -404,7 +408,7 @@ public class EJBBeansGateway<T> implements Gateway<T> {
 				return (Collection<T>) objectList;
 			}
 			if (className.getSimpleName().equals("Region")) {
-				Object ref = context.lookup("RegionBean");
+				Object ref = context.lookup(REGION_BEAN);
 				
 				RegionHome home = (RegionHome) PortableRemoteObject.narrow(ref, RegionHome.class);
 				
@@ -469,7 +473,7 @@ public class EJBBeansGateway<T> implements Gateway<T> {
 	public void remove(T entity) throws SQLException {
 		try {
 			if (entity instanceof University) {
-				Object ref = context.lookup("UniversityBean");
+				Object ref = context.lookup(UNIVERSITY_BEAN);
 				
 				UniversityHome home = (UniversityHome) PortableRemoteObject.narrow(ref, UniversityHome.class);
 				
@@ -478,7 +482,7 @@ public class EJBBeansGateway<T> implements Gateway<T> {
 				home.remove(object.getID());
 			}
 			if (entity instanceof City) {
-				Object ref = context.lookup("CityBean");
+				Object ref = context.lookup(CITY_BEAN);
 				
 				CityHome home = (CityHome) PortableRemoteObject.narrow(ref, CityHome.class);
 				
@@ -487,7 +491,7 @@ public class EJBBeansGateway<T> implements Gateway<T> {
 				home.remove(object.getID());
 			}
 			if (entity instanceof Region) {
-				Object ref = context.lookup("RegionBean");
+				Object ref = context.lookup(REGION_BEAN);
 				
 				RegionHome home = (RegionHome) PortableRemoteObject.narrow(ref, RegionHome.class);
 				
@@ -496,7 +500,7 @@ public class EJBBeansGateway<T> implements Gateway<T> {
 				home.remove(object.getID());
 			}
 			if (entity instanceof Country) {
-				Object ref = context.lookup("CountryBean");
+				Object ref = context.lookup(COUNTRY_BEAN);
 				
 				CountryHome home = (CountryHome) PortableRemoteObject.narrow(ref, CountryHome.class);
 

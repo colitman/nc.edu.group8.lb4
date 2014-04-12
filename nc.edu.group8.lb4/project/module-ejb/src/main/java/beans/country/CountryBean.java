@@ -80,7 +80,7 @@ public class CountryBean implements EntityBean {
 		try {
 			loadInstance();
 		} catch (SQLException e) {
-			throw new EJBException("Loading failed: " + e.getMessage());
+			throw new EJBException("Loading failed: " + e.getMessage(), e);
 		}
 	}
 
@@ -94,7 +94,7 @@ public class CountryBean implements EntityBean {
 		try {
 			removeInstance();
 		} catch (SQLException e) {
-			throw new EJBException("Removing failed: " + e.getMessage());
+			throw new EJBException("Removing failed: " + e.getMessage(), e);
 		}
 	}
 
@@ -103,7 +103,7 @@ public class CountryBean implements EntityBean {
 		try {
 			storeInstance();
 		} catch (SQLException e) {
-			throw new EJBException("Updating failed: " + e.getMessage());
+			throw new EJBException("Updating failed: " + e.getMessage(), e);
 		}
 	}
 
@@ -113,7 +113,7 @@ public class CountryBean implements EntityBean {
 		try {
 			this.ID = createInstance(name, lang, capital, population, timezone);
 		} catch (Exception e) {
-			throw new EJBException("Creation failed: " + e.getMessage());
+			throw new EJBException("Creation failed: " + e.getMessage(), e);
 		}
 		
 		this.name = name;
@@ -132,7 +132,7 @@ public class CountryBean implements EntityBean {
 				return -1;
 			}
 		} catch (SQLException e) {
-			throw new EJBException("Find by PK failed: " + e.getMessage());
+			throw new EJBException("Find by PK failed: " + e.getMessage(), e);
 		}
 	}
 
@@ -140,7 +140,7 @@ public class CountryBean implements EntityBean {
 		try {
 			return selectAll();
 		} catch (SQLException e) {
-			throw new EJBException("Find all failed: " + e.getMessage());
+			throw new EJBException("Find all failed: " + e.getMessage(), e);
 		}
 	}
 
