@@ -6,6 +6,16 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import java.util.Locale;
+import java.util.Properties;
+
+import oracle.jdbc.pool.OracleDataSource;
+
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+import javax.sql.DataSource;
+
 public class DBTool {
 	
 	private static DBTool instance = null;
@@ -35,11 +45,38 @@ public class DBTool {
 	
 	public Connection getConnection() {
 		try {
-			if(con.isClosed() || con == null) {
-				con = DriverManager.getConnection(DB_URL, USERNAME, PASSWORD);
+			if(con == null || con.isClosed()) {
+				
+				//con = DriverManager.getConnection(DB_URL, USERNAME, PASSWORD);
+				/*
+				OracleDataSource source = new OracleDataSource();
+				source.setUser("admin");
+				source.setPassword("admin");
+				source.setDriverType("thin");
+				source.setDatabaseName("xe");
+				source.setServerName("localhost");
+				source.setPortNumber(1521);
+				Locale.setDefault(Locale.ENGLISH);
+				con = source.getConnection();
+				source.setConnectionCachingEnabled(true);
+				*/
+
+				//JNDI
+				Properties p = new Properties();
+				p.put(Context.INITIAL_CONTEXT_FACTORY, "weblogic.jndi.WLInitialContextFactory");
+				p.put(Context.PROVIDER_URL, "t3://127.0.0.1:7001");
+				p.put(Context.SECURITY_PRINCIPAL, "admin");
+				p.put(Context.SECURITY_CREDENTIALS, "admin33284");
+				Context context = new InitialContext(p);
+				
+				DataSource source = (DataSource) context.lookup("test");
+				
+				con = source.getConnection();
 			}
 		} catch (SQLException sqle) {
 			sqle.printStackTrace();
+		} catch (NamingException ne) {
+			ne.printStackTrace();
 		}
 		
 		return con;
