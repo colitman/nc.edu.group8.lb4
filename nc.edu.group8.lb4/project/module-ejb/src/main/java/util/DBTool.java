@@ -72,8 +72,8 @@ public class DBTool {
 		int ID = -1;
 		getConnection();
 		try {
-			stm = con.prepareStatement("select max(ID) from ?");
-			stm.setString(1, tableName);
+			stm = con.prepareStatement("select nextval('" + tablename + "_SEQ')");
+			//stm.setString(1, tableName);
 			rs = stm.executeQuery();
 			if(rs.next()) {
 				ID = rs.getInt(1);
@@ -90,7 +90,7 @@ public class DBTool {
 				
 		}
 		
-		return (ID == -1)? ID: ID + 1;
+		return ID;//(ID == -1)? ID: ID + 1;
 	}
 	
 	public void releaseConnection() {

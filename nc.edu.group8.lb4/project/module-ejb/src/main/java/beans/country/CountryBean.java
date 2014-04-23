@@ -167,6 +167,7 @@ public class CountryBean implements EntityBean {
 		}
 		
 		con = DBTool.getTool().getConnection();
+		
 		stm = con.prepareStatement("insert into " + TABLE_NAME + " values (?, ?, ?, ?, ?, ?)");
 		stm.setInt(1, ID);
 		stm.setString(2, name);
