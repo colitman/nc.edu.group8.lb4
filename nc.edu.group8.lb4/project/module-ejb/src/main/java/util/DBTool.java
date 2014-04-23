@@ -25,6 +25,8 @@ public class DBTool {
 	private static final String USERNAME = "admin";
 	private static final String PASSWORD = "admin";
 	
+	private DataSource source = null;
+	
 	private Connection con = null;
 	
 	private DBTool() {
@@ -46,14 +48,16 @@ public class DBTool {
 	public Connection getConnection() {
 		try {
 			if(con == null || con.isClosed()) {
-				Properties p = new Properties();
-				p.put(Context.INITIAL_CONTEXT_FACTORY, "weblogic.jndi.WLInitialContextFactory");
-				p.put(Context.PROVIDER_URL, "t3://127.0.0.1:7001");
-				p.put(Context.SECURITY_PRINCIPAL, "admin");
-				p.put(Context.SECURITY_CREDENTIALS, "admin33284");
-				Context context = new InitialContext(p);
-				
-				DataSource source = (DataSource) context.lookup("jdbc/test");
+				if(source == null) {
+					Properties p = new Properties();
+					p.put(Context.INITIAL_CONTEXT_FACTORY, "weblogic.jndi.WLInitialContextFactory");
+					p.put(Context.PROVIDER_URL, "t3://127.0.0.1:7001");
+					p.put(Context.SECURITY_PRINCIPAL, "admin");
+					p.put(Context.SECURITY_CREDENTIALS, "admin33284");
+					Context context = new InitialContext(p);
+					
+					source = (DataSource) context.lookup("jdbc/test");
+				}
 				
 				con = source.getConnection();
 			}
