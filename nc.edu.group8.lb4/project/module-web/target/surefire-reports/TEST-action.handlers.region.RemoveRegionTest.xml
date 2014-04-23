@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="0.701" errors="0" skipped="0" tests="4" name="action.handlers.region.RemoveRegionTest">
+<testsuite failures="0" time="0.751" errors="0" skipped="0" tests="4" name="action.handlers.region.RemoveRegionTest">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.7.0_11\jre\bin"/>
     <property name="java.vm.version" value="23.6-b04"/>
+    <property name="user.country.format" value="US"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
     <property name="java.vendor.url" value="http://java.oracle.com/"/>
     <property name="path.separator" value=";"/>
@@ -28,8 +29,8 @@
     <property name="user.variant" value=""/>
     <property name="os.name" value="Windows XP"/>
     <property name="classworlds.conf" value="C:\apache-maven-3.2.1\bin\m2.conf"/>
-    <property name="sun.jnu.encoding" value="Cp1251"/>
-    <property name="java.library.path" value="C:\Program Files\Java\jdk1.7.0_11\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Git\git-cheetah\..\bin;C:\XEClient\bin;C:\oraclexe\app\oracle\product\10.2.0\server\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\Program Files\TortoiseGit\bin;C:\Program Files\Java\jdk1.7.0_11\bin;C:\apache-ant-1.9.3/bin;C:\apache-maven-3.2.1/bin;C:\Program Files\Git\bin;."/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk1.7.0_11\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Git\git-cheetah\..\bin;C:\oraclexe\app\oracle\product\10.2.0\server\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\Program Files\TortoiseGit\bin;C:\Program Files\Java\jdk1.7.0_11\bin;C:\apache-ant-1.9.3/bin;C:\apache-maven-3.2.1/bin;C:\Program Files\Git\bin;."/>
     <property name="source" value="${project.basedir}/module-ear/target/module-ear-1.0.ear"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.class.version" value="51.0"/>
@@ -40,7 +41,7 @@
     <property name="user.timezone" value="Europe/Athens"/>
     <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
     <property name="java.specification.version" value="1.7"/>
-    <property name="file.encoding" value="Cp1251"/>
+    <property name="file.encoding" value="Cp1252"/>
     <property name="password" value="admin33284"/>
     <property name="user.name" value="USER-XP"/>
     <property name="java.class.path" value="C:\apache-maven-3.2.1\boot\plexus-classworlds-2.5.1.jar"/>
@@ -51,6 +52,7 @@
     <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher clean package com.oracle.weblogic:weblogic-maven-plugin:deploy -Dsource=${project.basedir}/module-ear/target/module-ear-1.0.ear -Dname=project -Duser=admin -Dpassword=admin33284"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
     <property name="user.language" value="ru"/>
+    <property name="user.language.format" value="en"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
     <property name="java.vm.info" value="mixed mode, sharing"/>
     <property name="java.version" value="1.7.0_11"/>
@@ -65,8 +67,8 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="pentium_pro+mmx pentium_pro pentium+mmx pentium i486 i386 i86"/>
   </properties>
-  <testcase time="0.05" classname="action.handlers.region.RemoveRegionTest" name="nullTest"/>
-  <testcase time="0.19" classname="action.handlers.region.RemoveRegionTest" name="forwardTest"/>
-  <testcase time="0.361" classname="action.handlers.region.RemoveRegionTest" name="logicTest"/>
-  <testcase time="0.1" classname="action.handlers.region.RemoveRegionTest" name="actionExceptionTest"/>
+  <testcase time="0.06" classname="action.handlers.region.RemoveRegionTest" name="nullTest"/>
+  <testcase time="0.21" classname="action.handlers.region.RemoveRegionTest" name="forwardTest"/>
+  <testcase time="0.371" classname="action.handlers.region.RemoveRegionTest" name="logicTest"/>
+  <testcase time="0.11" classname="action.handlers.region.RemoveRegionTest" name="actionExceptionTest"/>
 </testsuite>

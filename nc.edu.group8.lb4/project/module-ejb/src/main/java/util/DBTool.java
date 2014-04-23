@@ -46,22 +46,6 @@ public class DBTool {
 	public Connection getConnection() {
 		try {
 			if(con == null || con.isClosed()) {
-				
-				//con = DriverManager.getConnection(DB_URL, USERNAME, PASSWORD);
-				/*
-				OracleDataSource source = new OracleDataSource();
-				source.setUser("admin");
-				source.setPassword("admin");
-				source.setDriverType("thin");
-				source.setDatabaseName("xe");
-				source.setServerName("localhost");
-				source.setPortNumber(1521);
-				Locale.setDefault(Locale.ENGLISH);
-				con = source.getConnection();
-				source.setConnectionCachingEnabled(true);
-				*/
-
-				//JNDI
 				Properties p = new Properties();
 				p.put(Context.INITIAL_CONTEXT_FACTORY, "weblogic.jndi.WLInitialContextFactory");
 				p.put(Context.PROVIDER_URL, "t3://127.0.0.1:7001");
@@ -69,7 +53,7 @@ public class DBTool {
 				p.put(Context.SECURITY_CREDENTIALS, "admin33284");
 				Context context = new InitialContext(p);
 				
-				DataSource source = (DataSource) context.lookup("test");
+				DataSource source = (DataSource) context.lookup("jdbc/test");
 				
 				con = source.getConnection();
 			}

@@ -34,7 +34,7 @@ public class EJBBeansGateway<T> implements Gateway<T> {
 	@Override
 	public void add(T entity) throws SQLException {
 		try {
-			if (entity instanceof Country) {
+			if (entity instanceof University) {
 				Object ref = context.lookup(UNIVERSITY_BEAN);
 				
 				UniversityHome home = (UniversityHome) PortableRemoteObject.narrow(ref, UniversityHome.class);
