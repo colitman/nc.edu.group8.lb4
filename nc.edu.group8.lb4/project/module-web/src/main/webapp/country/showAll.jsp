@@ -59,7 +59,7 @@
 						<tr>
 							<td>Capital:</td>
 							<td>
-								<input class="numeric" name="capital" type="text" />
+								<input name="capital" type="text" />
 							</td>
 						</tr>
 						<tr>

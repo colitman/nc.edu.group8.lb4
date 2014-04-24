@@ -76,7 +76,7 @@ public class DBTool {
 		int ID = -1;
 		getConnection();
 		try {
-			stm = con.prepareStatement("select nextval('" + tablename + "_SEQ')");
+			stm = con.prepareStatement("select nextval('" + tableName + "_SEQ')");
 			//stm.setString(1, tableName);
 			rs = stm.executeQuery();
 			if(rs.next()) {
