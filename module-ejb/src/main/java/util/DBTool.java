@@ -16,6 +16,8 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
 
+import org.apache.log4j.*;
+
 public class DBTool {
 
 	private static final Logger logger = Logger.getLogger(DBTool.class);

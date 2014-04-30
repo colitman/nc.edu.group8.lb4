@@ -430,32 +430,6 @@ public class EJBBeansGateway<T> implements Gateway<T> {
 				}
 				return (Collection<T>) objectList;
 			}
-			/*
-			if (className.getName().equals("Country")) {
-				Object ref = context.lookup("CountryBean");
-				
-				CountryHome home = (CountryHome) PortableRemoteObject.narrow(ref, CountryHome.class);
-				
-				Collection<Country> objectList = new ArrayList<Country>();
-				
-				Collection<CountryRemote> remoteList = home.findAll();
-				
-				for (CountryRemote remote : remoteList) {
-					if (remote.getParentID() == parentID) {
-						Country object = new Country();
-						object.setID(remote.getID());
-						object.setName(remote.getName());
-						object.setLanguage(remote.getLanguage());
-						object.setCapital(remote.getCapital());
-						object.setPopulation(remote.getPopulation());
-						object.setTimezone(remote.getTimezone());
-					
-						objectList.add(onject);
-					}
-				}
-				return (Collection<T>) objectList;
-			}
-			*/
 		}
 		catch (NamingException ne) {
 			logger.info("Bean has not be found. Ensure that bean name is correct", ne);

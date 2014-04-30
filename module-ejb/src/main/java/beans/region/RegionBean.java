@@ -149,25 +149,29 @@ public class RegionBean implements EntityBean {
 		Connection con = null;
 		PreparedStatement stm = null;
 		
-		this.ID = Integer.valueOf(DBTool.getTool().getNextIdFor(TABLE_NAME));
-		
-		if(ID == -1) {
-			DBTool.getTool().releaseConnection();
-			throw new SQLException("Invalid table name or DB access problem - " + TABLE_NAME);
+		try {
+			this.ID = Integer.valueOf(DBTool.getTool().getNextIdFor(TABLE_NAME));
+			
+			if(ID == -1) {
+				DBTool.getTool().releaseConnection();
+				throw new SQLException("Invalid table name or DB access problem - " + TABLE_NAME);
+			}
+			
+			con = DBTool.getTool().getConnection();
+			stm = con.prepareStatement("insert into " + TABLE_NAME + " values (?, ?, ?, ?, ?)");
+			stm.setInt(1, pid);
+			stm.setInt(2, ID);
+			stm.setString(3, name);
+			stm.setInt(4, population);
+			stm.setInt(5, square);
+			
+			stm.executeUpdate();
+			
+			stm.close();
 		}
-		
-		con = DBTool.getTool().getConnection();
-		stm = con.prepareStatement("insert into " + TABLE_NAME + " values (?, ?, ?, ?, ?)");
-		stm.setInt(1, pid);
-		stm.setInt(2, ID);
-		stm.setString(3, name);
-		stm.setInt(4, population);
-		stm.setInt(5, square);
-		
-		stm.executeUpdate();
-		
-		stm.close();
-		DBTool.getTool().releaseConnection();
+		finally {
+			DBTool.getTool().releaseConnection();
+		}
 		return ID;
 	}
 	
@@ -176,25 +180,28 @@ public class RegionBean implements EntityBean {
 		PreparedStatement stm = null;
 		ResultSet rs = null;
 		
-		this.ID = (Integer) context.getPrimaryKey();
-		
-		con = DBTool.getTool().getConnection();
-		stm = con.prepareStatement("select PARENT_ID, NAME, POPULATION, SQUARE from " + TABLE_NAME + " where ID = ?");
-		stm.setInt(1, ID);
-		rs = stm.executeQuery();
-		if(rs.next()) {
-			this.parentID = rs.getInt(1);
-			this.name = rs.getString(2);
-			this.population = rs.getInt(3);
-			this.square = rs.getInt(4);
-		} else {
-			throw new NoSuchEntityException("Region with ID = " + ID + " is not found in the database");
+		try {	
+			this.ID = (Integer) context.getPrimaryKey();
+			
+			con = DBTool.getTool().getConnection();
+			stm = con.prepareStatement("select PARENT_ID, NAME, POPULATION, SQUARE from " + TABLE_NAME + " where ID = ?");
+			stm.setInt(1, ID);
+			rs = stm.executeQuery();
+			if(rs.next()) {
+				this.parentID = rs.getInt(1);
+				this.name = rs.getString(2);
+				this.population = rs.getInt(3);
+				this.square = rs.getInt(4);
+			} else {
+				throw new NoSuchEntityException("Region with ID = " + ID + " is not found in the database");
+			}
+			
+			rs.close();
+			stm.close();
 		}
-		
-		rs.close();
-		stm.close();
-		DBTool.getTool().releaseConnection();
-		
+		finally {
+			DBTool.getTool().releaseConnection();
+		}
 	}
 
 	private void removeInstance() throws SQLException {
@@ -202,42 +209,48 @@ public class RegionBean implements EntityBean {
 		Connection con = null;
 		PreparedStatement stm = null;
 		
-		con = DBTool.getTool().getConnection();
-		stm = con.prepareStatement("delete from " + TABLE_NAME + " where ID = ?");
-		stm.setInt(1, ID);
-		stm.executeUpdate();
-		
-		stm.close();
-		
-		DBTool.getTool().releaseConnection();
+		try {
+			con = DBTool.getTool().getConnection();
+			stm = con.prepareStatement("delete from " + TABLE_NAME + " where ID = ?");
+			stm.setInt(1, ID);
+			stm.executeUpdate();
+			
+			stm.close();
+		}
+		finally {
+			DBTool.getTool().releaseConnection();
+		}
 	}
 	
 	private void storeInstance() throws SQLException {
 		Connection con = null;
 		PreparedStatement stm = null;
 		
-		con = DBTool.getTool().getConnection();
-		stm = con.prepareStatement("update " + TABLE_NAME + " set PARENT_ID = ?, "
-																+ "NAME = ?, "
-																+ "POPULATION = ?, "
-																+ "SQUARE = ? "
-															+ "where ID = ?");
-		
-		stm.setInt(1, parentID);
-		stm.setString(2, name);
-		stm.setInt(3, population);
-		stm.setInt(4, square);
-		stm.setInt(5, ID);
-		
-		int rowsUpd = stm.executeUpdate();
-		
-		if(rowsUpd == 0) {
-			throw new EJBException("Updating region with ID = " + ID + " failed.");
+		try {
+			con = DBTool.getTool().getConnection();
+			stm = con.prepareStatement("update " + TABLE_NAME + " set PARENT_ID = ?, "
+																	+ "NAME = ?, "
+																	+ "POPULATION = ?, "
+																	+ "SQUARE = ? "
+																+ "where ID = ?");
+			
+			stm.setInt(1, parentID);
+			stm.setString(2, name);
+			stm.setInt(3, population);
+			stm.setInt(4, square);
+			stm.setInt(5, ID);
+			
+			int rowsUpd = stm.executeUpdate();
+			
+			if(rowsUpd == 0) {
+				throw new EJBException("Updating region with ID = " + ID + " failed.");
+			}
+			
+			stm.close();
 		}
-		
-		stm.close();
-		DBTool.getTool().releaseConnection();
-		
+		finally {
+			DBTool.getTool().releaseConnection();
+		}
 	}
 	
 	private boolean selectByPK(Integer key) throws SQLException {
@@ -246,16 +259,19 @@ public class RegionBean implements EntityBean {
 		ResultSet rs = null;
 		boolean exists = false;
 		
-		con = DBTool.getTool().getConnection();
-		stm = con.prepareStatement("select ID from " + TABLE_NAME + " where ID = ?");
-		stm.setInt(1, key);
-		rs = stm.executeQuery();
-		exists = rs.next();
-		
-		rs.close();
-		stm.close();
-		DBTool.getTool().releaseConnection();
-		
+		try {
+			con = DBTool.getTool().getConnection();
+			stm = con.prepareStatement("select ID from " + TABLE_NAME + " where ID = ?");
+			stm.setInt(1, key);
+			rs = stm.executeQuery();
+			exists = rs.next();
+			
+			rs.close();
+			stm.close();
+		}
+		finally {
+			DBTool.getTool().releaseConnection();
+		}
 		return exists;
 	}
 	
@@ -265,18 +281,21 @@ public class RegionBean implements EntityBean {
 		ResultSet rs = null;
 		Collection<Integer> list = new ArrayList<Integer>();
 		
-		con = DBTool.getTool().getConnection();
-		stm = con.prepareStatement("select ID from " + TABLE_NAME);
-		rs = stm.executeQuery();
-		
-		while(rs.next()) {
-			list.add(rs.getInt(1));
+		try {
+			con = DBTool.getTool().getConnection();
+			stm = con.prepareStatement("select ID from " + TABLE_NAME);
+			rs = stm.executeQuery();
+			
+			while(rs.next()) {
+				list.add(rs.getInt(1));
+			}
+			
+			rs.close();
+			stm.close();
+		} 
+		finally {
+			DBTool.getTool().releaseConnection();
 		}
-		
-		rs.close();
-		stm.close();
-		DBTool.getTool().releaseConnection();
-		
 		return list;
 	}
 }
