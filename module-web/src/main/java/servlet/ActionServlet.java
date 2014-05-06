@@ -6,9 +6,9 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import org.apache.log4j.*;
 
-public class ServletPrototype extends HttpServlet {
+public class ActionServlet extends HttpServlet {
 	
-	private static final Logger logger = Logger.getLogger(ServletPrototype.class);	
+	private static final Logger logger = Logger.getLogger(ActionServlet.class);	
 
 	@Override
 	public void service(HttpServletRequest request, HttpServletResponse response) {
