@@ -1,0 +1,10 @@
+.settings
+.project
+/module-ear/.settings
+/module-ear/.project
+/module-ejb/.settings
+/module-ejb/.classpath
+/module-web/.settings
+/module-web/.classpath
+/module-ejb/.project
+/module-web/.project
