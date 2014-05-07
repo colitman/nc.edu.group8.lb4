@@ -17,7 +17,7 @@
   	</welcome-file-list>
  	<servlet>
 		<servlet-name>ServletPrototype</servlet-name>
-		<servlet-class>servlet.ServletPrototype</servlet-class>
+		<servlet-class>servlet.ActionServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>ServletPrototype</servlet-name>
