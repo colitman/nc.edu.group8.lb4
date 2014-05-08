@@ -25,6 +25,8 @@ public class CityBean implements EntityBean {
 	
 	private static final String TABLE_NAME = "CITY";
 	
+	private static final Logger logger = Logger.getLogger(CityBean.class);
+	
 	public void setParentID(int parentId) {
 		this.parentID = parentId;
 	}
@@ -157,7 +159,7 @@ public class CityBean implements EntityBean {
 			}
 			
 			con = DBTool.getTool().getConnection();
-			stm = con.prepareStatement("insert into " + TABLE_NAME + " values (?, ?, ?, ?, ?)");
+			stm = con.prepareStatement("insert into " + TABLE_NAME + " (PARENT_ID, ID, NAME, POPULATION, SQUARE) values (?, ?, ?, ?, ?)");
 			stm.setInt(1, pid);
 			stm.setInt(2, ID);
 			stm.setString(3, name);
@@ -240,9 +242,7 @@ public class CityBean implements EntityBean {
 			
 			int rowsUpd = stm.executeUpdate();
 			
-			if(rowsUpd == 0) {
-				throw new EJBException("Updating city with ID = " + ID + " failed.");
-			}
+			
 			
 			stm.close();
 		}

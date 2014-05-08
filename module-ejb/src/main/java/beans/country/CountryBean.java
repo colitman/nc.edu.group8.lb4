@@ -169,7 +169,7 @@ public class CountryBean implements EntityBean {
 			
 			con = DBTool.getTool().getConnection();
 			
-			stm = con.prepareStatement("insert into " + TABLE_NAME + " values (?, ?, ?, ?, ?, ?)");
+			stm = con.prepareStatement("insert into " + TABLE_NAME + " (ID, NAME, LANG, CAPITAL, POPULATION, TIMEZONE) values (?, ?, ?, ?, ?, ?)");
 			stm.setInt(1, ID);
 			stm.setString(2, name);
 			stm.setString(3, lang);
@@ -256,9 +256,7 @@ public class CountryBean implements EntityBean {
 			
 			int rowsUpd = stm.executeUpdate();
 			
-			if(rowsUpd == 0) {
-				throw new EJBException("Updating country with ID = " + ID + " failed.");
-			}
+			
 			
 			stm.close();
 		}

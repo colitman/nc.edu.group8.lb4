@@ -158,7 +158,7 @@ public class UniversityBean implements EntityBean {
 			}
 			
 			con = DBTool.getTool().getConnection();
-			stm = con.prepareStatement("insert into " + TABLE_NAME + " values (?, ?, ?, ?, ?)");
+			stm = con.prepareStatement("insert into " + TABLE_NAME + " (PARENT_ID, ID, NAME, DEPTS_COUNT, WWW) values (?, ?, ?, ?, ?)");
 			stm.setInt(1, pid);
 			stm.setInt(2, ID);
 			stm.setString(3, name);
@@ -242,9 +242,7 @@ public class UniversityBean implements EntityBean {
 			
 			int rowsUpd = stm.executeUpdate();
 			
-			if(rowsUpd == 0) {
-				throw new EJBException("Updating university with ID = " + ID + " failed.");
-			}
+			
 			
 			stm.close();
 		}
