@@ -4,9 +4,9 @@ import java.util.*;
 import javax.persistence.*;
 import org.hibernate.annotations.GenericGenerator;
 
-@Entity
+@javax.persistence.Entity
 @Table(name="REGION")
-public class Region {
+public class Region implements hibernate.logic.Entity {
 
 	@Column(name="PARENT_ID", nullable=false)
 	private int parentID;

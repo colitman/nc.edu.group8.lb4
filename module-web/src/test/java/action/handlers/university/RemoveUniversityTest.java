@@ -18,7 +18,7 @@ public class RemoveUniversityTest {
 
 	@Test(expected = ActionException.class)
 	public void actionExceptionTest() throws Exception {
-		UniversityListGateway gateway = new UniversityListGateway();
+		ListGateway<University> gateway = new ListGateway<University>();
 	
 		GatewayResolver.setGateway(gateway);
 
@@ -38,7 +38,7 @@ public class RemoveUniversityTest {
 
 	@Test
 	public void logicTest() throws Exception {
-		UniversityListGateway gateway = new UniversityListGateway();
+		ListGateway<University> gateway = new ListGateway<University>();
 
 		GatewayResolver.setGateway(gateway);
 
@@ -49,7 +49,7 @@ public class RemoveUniversityTest {
 					case "name" : return "skeleton";
 					case "departs_count" : return "10";
 					case "www" : return "zzz";
-					case "id" : return "10";
+					case "id" : return "48";
 					case "parent_id" : return "3";
 				}
 				return null;
@@ -72,7 +72,7 @@ public class RemoveUniversityTest {
 
 	@Test
 	public void forwardTest() throws Exception {
-		UniversityListGateway gateway = new UniversityListGateway();
+		ListGateway<University> gateway = new ListGateway<University>();
 
 		GatewayResolver.setGateway(gateway);
 

@@ -25,18 +25,21 @@ public class ShowOneUniversity implements HttpAction {
 
 			int id = Integer.valueOf(request.getParameter("parent_id"));
 
-			Gateway<University> gateway = GatewayResolver.getGateway();
-			University university = gateway.get(University.class, id);
-	
-			logger.info("University properties: ");
-	
-			LoggerUtils.info(logger, "Name:", university.getName());
-			LoggerUtils.info(logger, "DepartamentsCount:", String.valueOf(university.getDepartamentsCount()));
-			LoggerUtils.info(logger, "WWW:", university.getWWW());
-			LoggerUtils.info(logger, "ParentID:", String.valueOf(university.getParentID()));	
-            	
+			University university = null;
+			        	
 			if (GatewayResolver.getGateway() instanceof EJBBeansGateway) {
-	            Gateway<City> cityGateway = GatewayResolver.getGateway();
+
+				Gateway<University> gateway = GatewayResolver.getGateway();
+				university = gateway.get(University.class, id);
+		
+				logger.info("University properties: ");
+		
+				LoggerUtils.info(logger, "Name:", university.getName());
+				LoggerUtils.info(logger, "DepartamentsCount:", String.valueOf(university.getDepartamentsCount()));
+				LoggerUtils.info(logger, "WWW:", university.getWWW());
+				LoggerUtils.info(logger, "ParentID:", String.valueOf(university.getParentID()));	
+				
+				Gateway<City> cityGateway = GatewayResolver.getGateway();
 				City city = cityGateway.get(City.class, university.getParentID());
 	            
 	            Gateway<Region> regionGateway = GatewayResolver.getGateway();

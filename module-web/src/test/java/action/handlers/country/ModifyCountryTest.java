@@ -18,7 +18,7 @@ public class ModifyCountryTest {
 
 	@Test(expected = ActionException.class)
 	public void actionExceptionTest() throws Exception {
-		CountryListGateway gateway = new CountryListGateway();
+		ListGateway<Country> gateway = new ListGateway<Country>();
 	
 		GatewayResolver.setGateway(gateway);
 
@@ -43,7 +43,7 @@ public class ModifyCountryTest {
 
 	@Test
 	public void logicTest() throws Exception {
-		CountryListGateway gateway = new CountryListGateway();
+		ListGateway<Country> gateway = new ListGateway<Country>();
 
 		GatewayResolver.setGateway(gateway);
 
@@ -57,7 +57,7 @@ public class ModifyCountryTest {
 					case "population" : return "100";
 					case "timezone" : return "1";
 					case "parent_id" : return "1";
-					case "id" : return "6";
+					case "id" : return "19";
 				}
 				return null;
 			}
@@ -79,7 +79,7 @@ public class ModifyCountryTest {
 
 	@Test
 	public void forwardTest() throws Exception {
-		CountryListGateway gateway = new CountryListGateway();
+		ListGateway<Country> gateway = new ListGateway<Country>();
 
 		GatewayResolver.setGateway(gateway);
 

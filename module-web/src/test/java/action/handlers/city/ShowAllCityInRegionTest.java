@@ -18,7 +18,7 @@ public class ShowAllCityInRegionTest {
 
 	@Test(expected = ActionException.class)
 	public void actionExceptionTest() throws Exception {
-		CityListGateway gateway = new CityListGateway();
+		ListGateway<City> gateway = new ListGateway<City>();
 	
 		GatewayResolver.setGateway(gateway);
 
@@ -39,7 +39,7 @@ public class ShowAllCityInRegionTest {
 	@Ignore
 	@Test
 	public void logicTest() throws Exception {
-		CityListGateway gateway = new CityListGateway();
+		ListGateway<City> gateway = new ListGateway<City>();
 
 		GatewayResolver.setGateway(gateway);
 
@@ -73,7 +73,7 @@ public class ShowAllCityInRegionTest {
 
 	@Test
 	public void forwardTest() throws Exception {
-		CityListGateway gateway = new CityListGateway();
+		ListGateway<City> gateway = new ListGateway<City>();
 
 		GatewayResolver.setGateway(gateway);
 

@@ -25,7 +25,7 @@ public class CityBean implements EntityBean {
 	
 	private static final String TABLE_NAME = "CITY";
 	
-	private static final Logger logger = Logger.getLogger(CityBean.class);
+	//private static final Logger logger = Logger.getLogger(CityBean.class);
 	
 	public void setParentID(int parentId) {
 		this.parentID = parentId;

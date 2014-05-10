@@ -4,9 +4,9 @@ import java.util.*;
 import javax.persistence.*;
 import org.hibernate.annotations.GenericGenerator;
 
-@Entity
+@javax.persistence.Entity
 @Table(name="COUNTRY")
-public class Country {
+public class Country implements hibernate.logic.Entity {
 
 	@Id
     	@GeneratedValue(generator="increment")
@@ -96,5 +96,14 @@ public class Country {
 		if (id != other.id)
 			return false;
 		return true;
+	}
+	
+	public void setParentID(int id) {
+		//no parent
+	}
+	
+	public int getParentID() {
+		//no parent
+		return -1;
 	}
 }

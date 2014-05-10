@@ -18,7 +18,7 @@ public class RemoveRegionTest {
 
 	@Test(expected = ActionException.class)
 	public void actionExceptionTest() throws Exception {
-		RegionListGateway gateway = new RegionListGateway();
+		ListGateway<Region> gateway = new ListGateway<Region>();
 	
 		GatewayResolver.setGateway(gateway);
 
@@ -38,7 +38,7 @@ public class RemoveRegionTest {
 
 	@Test
 	public void logicTest() throws Exception {
-		RegionListGateway gateway = new RegionListGateway();
+		ListGateway<Region> gateway = new ListGateway<Region>();
 
 		GatewayResolver.setGateway(gateway);
 
@@ -49,7 +49,7 @@ public class RemoveRegionTest {
 					case "name" : return "skeleton";
 					case "population" : return "1000";
 					case "square" : return "0";
-					case "id" : return "10";
+					case "id" : return "35";
 					case "parent_id" : return "3";
 				}
 				return null;
@@ -72,7 +72,7 @@ public class RemoveRegionTest {
 
 	@Test
 	public void forwardTest() throws Exception {
-		RegionListGateway gateway = new RegionListGateway();
+		ListGateway<Region> gateway = new ListGateway<Region>();
 
 		GatewayResolver.setGateway(gateway);
 

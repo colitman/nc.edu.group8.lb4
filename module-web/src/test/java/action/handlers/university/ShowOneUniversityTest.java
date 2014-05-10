@@ -18,7 +18,7 @@ public class ShowOneUniversityTest {
 
 	@Test(expected = ActionException.class)
 	public void actionExceptionTest() throws Exception {
-		UniversityListGateway gateway = new UniversityListGateway();
+		ListGateway<University> gateway = new ListGateway<University>();
 	
 		GatewayResolver.setGateway(gateway);
 
@@ -39,7 +39,7 @@ public class ShowOneUniversityTest {
 	@Ignore
 	@Test
 	public void logicTest() throws Exception {
-		UniversityListGateway gateway = new UniversityListGateway();
+		ListGateway<University> gateway = new ListGateway<University>();
 
 		GatewayResolver.setGateway(gateway);
 
@@ -73,7 +73,7 @@ public class ShowOneUniversityTest {
 
 	@Test
 	public void forwardTest() throws Exception {
-		UniversityListGateway gateway = new UniversityListGateway();
+		ListGateway<University> gateway = new ListGateway<University>();
 
 		GatewayResolver.setGateway(gateway);
 
@@ -85,7 +85,7 @@ public class ShowOneUniversityTest {
 					case "departs_count" : return "1000";
 					case "www" : return "zzz";
 					case "id" : return "1";
-					case "parent_id" : return "14";
+					case "parent_id" : return "3";
 				}
 				return null;
 			}
@@ -93,7 +93,7 @@ public class ShowOneUniversityTest {
 		
 		HttpServletResponse response = new ServletResponseSkeleton();
 
-		Utils.perform("addUniversity", request, response);	
+		//Utils.perform("addUniversity", request, response);	
 
 		String url = Utils.perform("showOneUniversity", request, response);
 		

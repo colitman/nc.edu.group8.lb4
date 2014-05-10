@@ -18,7 +18,7 @@ public class ModifyRegionTest {
 
 	@Test(expected = ActionException.class)
 	public void actionExceptionTest() throws Exception {
-		RegionListGateway gateway = new RegionListGateway();
+		ListGateway<Region> gateway = new ListGateway<Region>();
 	
 		GatewayResolver.setGateway(gateway);
 
@@ -42,7 +42,7 @@ public class ModifyRegionTest {
 
 	@Test
 	public void logicTest() throws Exception {
-		RegionListGateway gateway = new RegionListGateway();
+		ListGateway<Region> gateway = new ListGateway<Region>();
 
 		GatewayResolver.setGateway(gateway);
 
@@ -50,7 +50,7 @@ public class ModifyRegionTest {
 			@Override
 			public String getParameter(String name) {
 				switch (name) {	
-					case "id" : return "6";
+					case "id" : return "32";
 					case "name" : return "skeleton";
 					case "population" : return "1000";
 					case "square" : return "0";
@@ -76,7 +76,7 @@ public class ModifyRegionTest {
 
 	@Test
 	public void forwardTest() throws Exception {
-		RegionListGateway gateway = new RegionListGateway();
+		ListGateway<Region> gateway = new ListGateway<Region>();
 
 		GatewayResolver.setGateway(gateway);
 

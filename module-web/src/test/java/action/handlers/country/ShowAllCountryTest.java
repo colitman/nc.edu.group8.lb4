@@ -19,7 +19,7 @@ public class ShowAllCountryTest {
 	@Ignore
 	@Test(expected = ActionException.class)
 	public void actionExceptionTest() throws Exception {
-		CountryListGateway gateway = new CountryListGateway();
+		ListGateway<Country> gateway = new ListGateway<Country>();
 	
 		GatewayResolver.setGateway(gateway);
 
@@ -40,7 +40,7 @@ public class ShowAllCountryTest {
 	@Ignore
 	@Test
 	public void logicTest() throws Exception {
-		CountryListGateway gateway = new CountryListGateway();
+		ListGateway<Country> gateway = new ListGateway<Country>();
 
 		GatewayResolver.setGateway(gateway);
 
@@ -74,7 +74,7 @@ public class ShowAllCountryTest {
 
 	@Test
 	public void forwardTest() throws Exception {
-		CountryListGateway gateway = new CountryListGateway();
+		ListGateway<Country> gateway = new ListGateway<Country>();
 
 		GatewayResolver.setGateway(gateway);
 

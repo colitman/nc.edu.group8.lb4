@@ -18,7 +18,7 @@ public class ModifyUniversityTest {
 
 	@Test(expected = ActionException.class)
 	public void actionExceptionTest() throws Exception {
-		UniversityListGateway gateway = new UniversityListGateway();
+		ListGateway<University> gateway = new ListGateway<University>();
 	
 		GatewayResolver.setGateway(gateway);
 
@@ -41,7 +41,7 @@ public class ModifyUniversityTest {
 
 	@Test
 	public void logicTest() throws Exception {
-		UniversityListGateway gateway = new UniversityListGateway();
+		ListGateway<University> gateway = new ListGateway<University>();
 
 		GatewayResolver.setGateway(gateway);
 
@@ -49,7 +49,7 @@ public class ModifyUniversityTest {
 			@Override
 			public String getParameter(String name) {
 				switch (name) {	
-					case "id" : return "6";
+					case "id" : return "45";
 					case "name" : return "skeleton";
 					case "departs_count" : return "10";
 					case "www" : return "zzz";
@@ -75,7 +75,7 @@ public class ModifyUniversityTest {
 
 	@Test
 	public void forwardTest() throws Exception {
-		UniversityListGateway gateway = new UniversityListGateway();
+		ListGateway<University> gateway = new ListGateway<University>();
 
 		GatewayResolver.setGateway(gateway);
 

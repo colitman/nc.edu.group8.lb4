@@ -18,7 +18,7 @@ public class AddUniversityTest {
 
 	@Test(expected = ActionException.class)
 	public void actionExceptionTest() throws Exception {
-		UniversityListGateway gateway = new UniversityListGateway();
+		ListGateway<University> gateway = new ListGateway<University>();
 	
 		GatewayResolver.setGateway(gateway);
 
@@ -41,7 +41,7 @@ public class AddUniversityTest {
 
 	@Test
 	public void logicTest() throws Exception {
-		UniversityListGateway gateway = new UniversityListGateway();
+		ListGateway<University> gateway = new ListGateway<University>();
 
 		GatewayResolver.setGateway(gateway);
 
@@ -72,7 +72,7 @@ public class AddUniversityTest {
 
 	@Test
 	public void forwardTest() throws Exception {
-		UniversityListGateway gateway = new UniversityListGateway();
+		ListGateway<University> gateway = new ListGateway<University>();
 
 		GatewayResolver.setGateway(gateway);
 
