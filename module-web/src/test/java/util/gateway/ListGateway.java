@@ -14,7 +14,6 @@ public class ListGateway<T extends Entity> implements Gateway<T> {
 
 	public void add(T entity) throws SQLException {
 		entity.setID(index++);
-		System.out.println(">>>>>>>>>>>>ID>>>>>>>>>>>>>>>" + entity.getID());
 		list.add(entity);
 	}
 
@@ -29,9 +28,9 @@ public class ListGateway<T extends Entity> implements Gateway<T> {
 	}	
 
 	public T get(Class<T> className, int id) throws SQLException {
-		for (int i = 0;  i < size(); i++) {
-			if (list.get(i).getID() == id) {
-				return list.get(i);
+		for (T entity : list) {
+			if (entity.getID() == id) {
+				return entity;
 			}
 		}
 		return null;
@@ -43,9 +42,9 @@ public class ListGateway<T extends Entity> implements Gateway<T> {
 
 	public Collection<T> getAllBy(Class className, int parentID) throws SQLException {
 		Collection<T> collection = new ArrayList<T>();
-		for (int i = 0; i < size(); i++) {
-			if (list.get(i).getParentID() == parentID) {
-				collection.add(list.get(i));
+		for (T entity : list) {
+			if (entity.getParentID() == parentID) {
+				collection.add(entity);
 			}
 		}
 		return collection;
