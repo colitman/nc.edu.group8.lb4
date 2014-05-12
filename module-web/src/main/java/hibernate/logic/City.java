@@ -1,7 +1,10 @@
 package hibernate.logic;
 
-import java.util.*;
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.GeneratedValue;
+
 import org.hibernate.annotations.GenericGenerator;
 
 @javax.persistence.Entity
@@ -11,9 +14,9 @@ public class City implements hibernate.logic.Entity {
 	@Column(name="PARENT_ID", nullable=false)
 	private int parentID;
 	@Id
-    	@GeneratedValue(generator="increment")
-    	@GenericGenerator(name="increment", strategy = "increment")
-    	@Column(name="ID", nullable=false)
+    @GeneratedValue(generator="increment")
+    @GenericGenerator(name="increment", strategy = "increment")
+    @Column(name="ID", nullable=false)
 	private int id;
 	@Column(name="NAME", nullable=false)
 	private String name;

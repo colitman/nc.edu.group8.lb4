@@ -1,7 +1,10 @@
 package hibernate.logic;
 
-import java.util.*;
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.GeneratedValue;
+
 import org.hibernate.annotations.GenericGenerator;
 
 @javax.persistence.Entity

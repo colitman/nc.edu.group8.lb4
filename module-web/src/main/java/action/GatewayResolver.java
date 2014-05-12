@@ -1,10 +1,10 @@
 package action;
 
-import hibernate.dao.*;
-import org.springframework.context.*;
-import org.springframework.context.support.*;
-import org.springframework.beans.factory.*;
-import org.apache.log4j.*;
+import hibernate.dao.Gateway;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.apache.log4j.Logger;
 
 public class GatewayResolver {
 	

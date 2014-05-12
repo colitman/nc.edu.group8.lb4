@@ -1,10 +1,8 @@
 package action;
 
-import java.util.*;
-import org.apache.log4j.*;
-import org.springframework.context.*;
-import org.springframework.context.support.*;
-import org.springframework.beans.factory.*;
+import org.apache.log4j.Logger;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class ActionFactory {
 	

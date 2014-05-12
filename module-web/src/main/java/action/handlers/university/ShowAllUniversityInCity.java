@@ -1,17 +1,25 @@
 package action.handlers.university;
 
-import logger.*;
-import action.*;
-import javax.servlet.*;
-import javax.servlet.http.*;
-import org.springframework.context.*;
-import org.springframework.context.support.*;
-import org.springframework.beans.factory.*;
-import org.apache.log4j.*;
-import hibernate.dao.*;
-import hibernate.logic.*;
+import logger.LoggerUtils;
+
+import action.GatewayResolver;
+import action.ActionException;
+import action.HttpAction;
+
+import hibernate.dao.Gateway;
+import hibernate.dao.EJBBeansGateway;
+import hibernate.logic.City;
+import hibernate.logic.Country;
+import hibernate.logic.Region;
+import hibernate.logic.University;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.log4j.Logger;
+import org.springframework.util.Assert;
+
 import java.util.Collection;
-import org.springframework.util.*;
 
 public class ShowAllUniversityInCity implements HttpAction {
 	

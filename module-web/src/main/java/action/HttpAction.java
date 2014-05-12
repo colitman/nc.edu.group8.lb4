@@ -1,8 +1,7 @@
 package action;
 
-import java.sql.SQLException;
-import javax.servlet.*;
-import javax.servlet.http.*;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 public interface HttpAction {
 	

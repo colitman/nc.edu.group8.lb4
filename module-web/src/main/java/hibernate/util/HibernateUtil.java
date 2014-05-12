@@ -1,9 +1,10 @@
 package hibernate.util;
 
-import org.hibernate.*;
-import org.hibernate.cfg.*;
-import org.hibernate.service.*;
-import org.apache.log4j.*;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+import org.hibernate.service.ServiceRegistryBuilder;
+import org.apache.log4j.Logger;
+
 import java.util.Locale;
 import java.io.File;
 

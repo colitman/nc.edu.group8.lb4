@@ -1,11 +1,19 @@
 package action;
 
 import static org.junit.Assert.*;
-import action.*;
-import org.junit.*;
-import java.util.*;
-import java.io.*;
 
+import action.ActionFactory;
+import action.WrongCommandException;
+
+import org.junit.Test;
+import org.junit.BeforeClass;
+import org.junit.AfterClass;
+
+import java.util.Collection;
+import java.util.ArrayList;
+
+import java.io.StringWriter;
+import java.io.PrintWriter;
 
 public class ActionFactoryTest {
 	

@@ -1,8 +1,7 @@
 package hibernate.dao;
 
-import hibernate.logic.*;
-import java.sql.*;
-import java.util.*;
+import java.sql.SQLException;
+import java.util.Collection;
 
 public interface Gateway<T> {
 	

@@ -1,13 +1,21 @@
 package action.handlers.region;
 
 import static org.junit.Assert.*;
-import org.junit.*;
-import action.*;
-import hibernate.logic.*;
-import util.*;
-import util.gateway.*;
-import javax.servlet.*;
-import javax.servlet.http.*;
+
+import org.junit.Test;
+
+import action.ActionException;
+import action.GatewayResolver;
+
+import hibernate.logic.Region;
+
+import util.Utils;
+import util.ServletRequestSkeleton;
+import util.ServletResponseSkeleton;
+import util.gateway.ListGateway;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 public class ModifyRegionTest {
 

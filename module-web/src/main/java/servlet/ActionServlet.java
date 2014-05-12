@@ -1,10 +1,15 @@
 package servlet;
 
-import logger.*;
-import action.*;
-import javax.servlet.*;
-import javax.servlet.http.*;
-import org.apache.log4j.*;
+import logger.LoggerUtils;
+
+import action.ActionFactory;
+import action.HttpAction;
+
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.log4j.Logger;
 
 public class ActionServlet extends HttpServlet {
 	

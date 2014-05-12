@@ -14,12 +14,19 @@ import javax.rmi.PortableRemoteObject;
 import org.springframework.stereotype.Service;
 import org.apache.log4j.Logger;
 
-import beans.city.*;
-import beans.country.*;
-import beans.region.*;
-import beans.uni.*;
+import beans.city.CityHome;
+import beans.city.CityRemote;
+import beans.country.CountryHome;
+import beans.country.CountryRemote;
+import beans.region.RegionHome;
+import beans.region.RegionRemote;
+import beans.uni.UniversityHome;
+import beans.uni.UniversityRemote;
 
-import hibernate.logic.*;
+import hibernate.logic.City;
+import hibernate.logic.Country;
+import hibernate.logic.Region;
+import hibernate.logic.University;
 
 @Service
 public class EJBBeansGateway<T> implements Gateway<T> {
