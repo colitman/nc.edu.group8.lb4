@@ -40,6 +40,12 @@ public class EJBBeansGateway<T> implements Gateway<T> {
 	
 	@Override
 	public void add(T entity) throws SQLException {
+		//String bean = EJBBeansFactory().getInstance().getBean(entity.class);
+		
+		//Object ref = context.lookup(bean);
+		
+		//TODO something
+		
 		try {
 			if (entity instanceof University) {
 				Object ref = context.lookup(UNIVERSITY_BEAN);
