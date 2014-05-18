@@ -15,7 +15,6 @@ public class EJBBeansFactory {
 	private static final Logger logger = Logger.getLogger(EJBBeansFactory.class);
 	
 	private EJBBeansFactory instance;
-	private Map<Class, String> map = init();
 	private Context context = createContext();
 	
 	
@@ -29,18 +28,14 @@ public class EJBBeansFactory {
 	}
 	
 	public Object getBean(Class someClass) {
-		return context.lookup(map.get(someClass));
-	}
-	
-	private Map<Class, String> init() {
-		Map<Class, String> map = new HashMap<Class, String>();
-		
-		map.put(University.class, 	"java:global.project.module-ejb-1.0.UniversityBean!beans.uni.UniversityHome");
-		map.put(Country.class, 		"java:global.project.module-ejb-1.0.CountryBean!beans.country.CountryHome");
-		map.put(Region.class, 		"java:global.project.module-ejb-1.0.RegionBean!beans.region.RegionHome");
-		map.put(City.class, 		"java:global.project.module-ejb-1.0.CityBean!beans.city.CityHome");
-		
-		return map;
+		Annotation bean = someClass.getAnnotation(Bean.class);
+		String path = null;
+		if (bean != null) {
+			path = bean.path(); 
+		} else {
+			throw new IllegalArgumentException("Annotation @Bean has not be found in " + someClass.getName());
+		}
+		return context.lookup(path);
 	}
 	
 	private Context createContext() {
