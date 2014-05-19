@@ -24,6 +24,12 @@ public class CityBean implements EntityBean {
 	private EntityContext context;
 	
 	private static final String TABLE_NAME = "CITY";
+	private static final String CREATE_QUERY = "insert into " + TABLE_NAME + " (PARENT_ID, ID, NAME, POPULATION, SQUARE) values (?, ?, ?, ?, ?)";
+	private static final String LOAD_QUERY = "select PARENT_ID, NAME, POPULATION, SQUARE from " + TABLE_NAME + " where ID = ?";
+	private static final String REMOVE_QUERY = "delete from " + TABLE_NAME + " where ID = ?";
+	private static final String UPDATE_QUERY = "update " + TABLE_NAME + " set PARENT_ID = ?, NAME = ?, POPULATION = ?, SQUARE = ? where ID = ?";
+	private static final String SELECT_BY_PK_QUERY = "select ID from " + TABLE_NAME + " where ID = ?";
+	private static final String SELECT_ALL_QUERY = "select ID from " + TABLE_NAME;
 	
 	//private static final Logger logger = Logger.getLogger(CityBean.class);
 	
@@ -159,7 +165,7 @@ public class CityBean implements EntityBean {
 			}
 			
 			con = DBTool.getTool().getConnection();
-			stm = con.prepareStatement("insert into " + TABLE_NAME + " (PARENT_ID, ID, NAME, POPULATION, SQUARE) values (?, ?, ?, ?, ?)");
+			stm = con.prepareStatement(CREATE_QUERY);
 			stm.setInt(1, pid);
 			stm.setInt(2, ID);
 			stm.setString(3, name);
@@ -185,7 +191,7 @@ public class CityBean implements EntityBean {
 			this.ID = (Integer) context.getPrimaryKey();
 			
 			con = DBTool.getTool().getConnection();
-			stm = con.prepareStatement("select PARENT_ID, NAME, POPULATION, SQUARE from " + TABLE_NAME + " where ID = ?");
+			stm = con.prepareStatement(LOAD_QUERY);
 			stm.setInt(1, ID);
 			rs = stm.executeQuery();
 			if(rs.next()) {
@@ -211,7 +217,7 @@ public class CityBean implements EntityBean {
 			PreparedStatement stm = null;
 			
 			con = DBTool.getTool().getConnection();
-			stm = con.prepareStatement("delete from " + TABLE_NAME + " where ID = ?");
+			stm = con.prepareStatement(REMOVE_QUERY);
 			stm.setInt(1, ID);
 			stm.executeUpdate();
 			
@@ -228,11 +234,7 @@ public class CityBean implements EntityBean {
 			PreparedStatement stm = null;
 			
 			con = DBTool.getTool().getConnection();
-			stm = con.prepareStatement("update " + TABLE_NAME + " set PARENT_ID = ?, "
-																	+ "NAME = ?, "
-																	+ "POPULATION = ?, "
-																	+ "SQUARE = ? "
-																+ "where ID = ?");
+			stm = con.prepareStatement(UPDATE_QUERY);
 			
 			stm.setInt(1, parentID);
 			stm.setString(2, name);
@@ -259,7 +261,7 @@ public class CityBean implements EntityBean {
 		
 		try {
 			con = DBTool.getTool().getConnection();
-			stm = con.prepareStatement("select ID from " + TABLE_NAME + " where ID = ?");
+			stm = con.prepareStatement(SELECT_BY_PK_QUERY);
 			stm.setInt(1, key);
 			rs = stm.executeQuery();
 			exists = rs.next();
@@ -281,7 +283,7 @@ public class CityBean implements EntityBean {
 		
 		try {
 			con = DBTool.getTool().getConnection();
-			stm = con.prepareStatement("select ID from " + TABLE_NAME);
+			stm = con.prepareStatement(SELECT_ALL_QUERY);
 			rs = stm.executeQuery();
 			
 			while(rs.next()) {

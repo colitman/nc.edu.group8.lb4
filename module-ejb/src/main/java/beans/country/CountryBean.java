@@ -26,6 +26,13 @@ public class CountryBean implements EntityBean {
 	
 	private static final String TABLE_NAME = "COUNTRY";
 	
+	private static final String CREATE_QUERY = "insert into " + TABLE_NAME + " (ID, NAME, LANG, CAPITAL, POPULATION, TIMEZONE) values (?, ?, ?, ?, ?, ?)";
+	private static final String LOAD_QUERY = "select NAME, LANG, CAPITAL, POPULATION, TIMEZONE from " + TABLE_NAME + " where ID = ?";
+	private static final String REMOVE_QUERY = "delete from " + TABLE_NAME + " where ID = ?";
+	private static final String UPDATE_QUERY = "update " + TABLE_NAME + " set NAME = ?, LANG = ?, CAPITAL = ?, POPULATION = ?, TIMEZONE = ? where ID = ?";
+	private static final String SELECT_BY_PK_QUERY = "select ID from " + TABLE_NAME + " where ID = ?";
+	private static final String SELECT_ALL_QUERY = "select ID from " + TABLE_NAME;
+	
 	public int getID() {
 		return ID;
 	}
@@ -169,7 +176,7 @@ public class CountryBean implements EntityBean {
 			
 			con = DBTool.getTool().getConnection();
 			
-			stm = con.prepareStatement("insert into " + TABLE_NAME + " (ID, NAME, LANG, CAPITAL, POPULATION, TIMEZONE) values (?, ?, ?, ?, ?, ?)");
+			stm = con.prepareStatement(CREATE_QUERY);
 			stm.setInt(1, ID);
 			stm.setString(2, name);
 			stm.setString(3, lang);
@@ -196,7 +203,7 @@ public class CountryBean implements EntityBean {
 			this.ID = (Integer) context.getPrimaryKey();
 			
 			con = DBTool.getTool().getConnection();
-			stm = con.prepareStatement("select NAME, LANG, CAPITAL, POPULATION, TIMEZONE from " + TABLE_NAME + " where ID = ?");
+			stm = con.prepareStatement(LOAD_QUERY);
 			stm.setInt(1, ID);
 			rs = stm.executeQuery();
 			if(rs.next()) {
@@ -223,7 +230,7 @@ public class CountryBean implements EntityBean {
 			PreparedStatement stm = null;
 			
 			con = DBTool.getTool().getConnection();
-			stm = con.prepareStatement("delete from " + TABLE_NAME + " where ID = ?");
+			stm = con.prepareStatement(REMOVE_QUERY);
 			stm.setInt(1, ID);
 			stm.executeUpdate();
 			
@@ -240,12 +247,7 @@ public class CountryBean implements EntityBean {
 			PreparedStatement stm = null;
 			
 			con = DBTool.getTool().getConnection();
-			stm = con.prepareStatement("update " + TABLE_NAME + " set NAME = ?, "
-																	+ "LANG = ?, "
-																	+ "CAPITAL = ?, "
-																	+ "POPULATION = ?, "
-																	+ "TIMEZONE = ? "
-																+ "where ID = ?");
+			stm = con.prepareStatement(UPDATE_QUERY);
 			
 			stm.setString(1, name);
 			stm.setString(2, lang);
@@ -273,7 +275,7 @@ public class CountryBean implements EntityBean {
 		
 		try {
 			con = DBTool.getTool().getConnection();
-			stm = con.prepareStatement("select ID from " + TABLE_NAME + " where ID = ?");
+			stm = con.prepareStatement(SELECT_BY_PK_QUERY);
 			stm.setInt(1, key);
 			rs = stm.executeQuery();
 			exists = rs.next();
@@ -295,7 +297,7 @@ public class CountryBean implements EntityBean {
 		
 		try {
 			con = DBTool.getTool().getConnection();
-			stm = con.prepareStatement("select ID from " + TABLE_NAME);
+			stm = con.prepareStatement(SELECT_ALL_QUERY);
 			rs = stm.executeQuery();
 			
 			while(rs.next()) {
