@@ -9,7 +9,8 @@ import org.hibernate.annotations.GenericGenerator;
 
 @javax.persistence.Entity
 @Table(name="UNIVERSITY")
-@Bean(path="java:global.project.module-ejb-1.0.UniversityBean!beans.uni.UniversityHome")
+@Bean(path="java:global.project.module-ejb-1.0.UniversityBean!beans.uni.UniversityHome",
+	  home=beans.uni.UniversityHome.class)
 public class University implements hibernate.logic.Entity {
 
 	@Column(name="PARENT_ID", nullable=false)

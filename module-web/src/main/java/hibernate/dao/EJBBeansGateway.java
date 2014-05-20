@@ -40,7 +40,7 @@ public class EJBBeansGateway<T> implements Gateway<T> {
 	
 	@Override
 	public void add(T entity) throws SQLException {
-		//Object ref = EJBBeansFactory().getInstance().getBean(entity.class);
+		//????? home = EJBBeansFactory().getInstance().getBean(entity.class);
 		
 		//TODO something
 		

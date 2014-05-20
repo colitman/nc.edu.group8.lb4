@@ -7,6 +7,7 @@ import java.util.Properties;
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
+import javax.rmi.PortableRemoteObject;
 
 import org.apache.log4j.Logger;
 
@@ -29,13 +30,20 @@ public class EJBBeansFactory {
 	
 	public Object getBean(Class someClass) {
 		Annotation bean = someClass.getAnnotation(Bean.class);
+		
 		String path = null;
+		Class home = null;
+		
 		if (bean != null) {
-			path = bean.path(); 
+			path = bean.path();
+			home = bean.home();
 		} else {
 			throw new IllegalArgumentException("Annotation @Bean has not be found in " + someClass.getName());
 		}
-		return context.lookup(path);
+		
+		Object ref = context.lookup(path);
+		
+		return PortableRemoteObject.narrow(ref, home);
 	}
 	
 	private Context createContext() {
