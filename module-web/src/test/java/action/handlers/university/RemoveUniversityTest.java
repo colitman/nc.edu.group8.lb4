@@ -57,7 +57,7 @@ public class RemoveUniversityTest {
 					case "name" : return "skeleton";
 					case "departs_count" : return "10";
 					case "www" : return "zzz";
-					case "id" : return "48";
+					case "id" : return "51";
 					case "parent_id" : return "3";
 				}
 				return null;

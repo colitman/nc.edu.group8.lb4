@@ -57,7 +57,7 @@ public class RemoveRegionTest {
 					case "name" : return "skeleton";
 					case "population" : return "1000";
 					case "square" : return "0";
-					case "id" : return "35";
+					case "id" : return "38";
 					case "parent_id" : return "3";
 				}
 				return null;

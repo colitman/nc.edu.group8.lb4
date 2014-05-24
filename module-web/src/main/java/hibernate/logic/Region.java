@@ -9,8 +9,6 @@ import org.hibernate.annotations.GenericGenerator;
 
 @javax.persistence.Entity
 @Table(name="REGION")
-@Bean(path="java:global.project.module-ejb-1.0.RegionBean!beans.region.RegionHome",
-	  home=beans.region.RegionHome.class)
 public class Region implements hibernate.logic.Entity {
 
 	@Column(name="PARENT_ID", nullable=false)

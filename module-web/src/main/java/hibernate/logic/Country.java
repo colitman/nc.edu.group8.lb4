@@ -9,8 +9,6 @@ import org.hibernate.annotations.GenericGenerator;
 
 @javax.persistence.Entity
 @Table(name="COUNTRY")
-@Bean(path="java:global.project.module-ejb-1.0.CountryBean!beans.country.CountryHome",
-	  home=beans.country.CountryHome.class)
 public class Country implements hibernate.logic.Entity {
 
 	@Id
